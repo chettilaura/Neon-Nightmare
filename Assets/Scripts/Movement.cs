@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float moveSpeed;
+    float moveSpeed;
+    public float walkSpeed;
+    public float dashSpeed;
     public Transform orientation;
 
     float horizontalInput;
@@ -28,6 +30,18 @@ public class Movement : MonoBehaviour
 
     Vector3 moveDir;
     Rigidbody RB;
+
+    public MovementState state;
+
+    public enum MovementState
+    {
+        walking,
+        dashing,
+        air
+    }
+
+    public bool dashing;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,8 +68,9 @@ public class Movement : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, Ground);
         MyInput();
         SpeedLimiter();
+        StateHandler();
 
-        if (isGrounded) 
+        if (state == MovementState.walking) 
         {
             RB.drag = groundDrag;
         }
@@ -69,6 +84,26 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
+    }
+
+    private void StateHandler()
+    {
+        if (dashing)
+        {
+            state = MovementState.dashing;
+            moveSpeed = dashSpeed;
+        }
+
+        else if (isGrounded)
+        {
+            state = MovementState.walking;
+            moveSpeed = walkSpeed;
+        }
+
+        else
+        {
+            state = MovementState.air;
+        }
     }
 
     private void MovePlayer()
@@ -116,7 +151,7 @@ public class Movement : MonoBehaviour
         
     }
 
-    private void Jump()
+    public void Jump()
     {
         exitingSlope = true;
         RB.velocity = new Vector3(RB.velocity.x, jumpForce, RB.velocity.z);
@@ -128,7 +163,7 @@ public class Movement : MonoBehaviour
         exitingSlope = false;
     }
 
-    private bool OnSlope()
+    public bool OnSlope()
     {
         if(Physics.Raycast(groundCheck.position, Vector3.down, out slopeHit, 0.3f, Ground))
         {
@@ -138,7 +173,17 @@ public class Movement : MonoBehaviour
         return false;
     }
 
-    private Vector3 GetSlopeMoveDirection()
+    public bool OnRamp()
+    {
+        if (Physics.Raycast(groundCheck.position, Vector3.down, out slopeHit, 0.3f, Ground))
+        {
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return (angle < maxSlopeAngle && angle >= 30);
+        }
+        return false;
+    }
+
+    public Vector3 GetSlopeMoveDirection()
     {
         return Vector3.ProjectOnPlane(moveDir, slopeHit.normal).normalized;
     }
