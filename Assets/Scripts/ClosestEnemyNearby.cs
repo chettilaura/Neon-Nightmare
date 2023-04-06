@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClosestEnemyNearby : MonoBehaviour
 {
     public Transform orientation;
-    public ParticleSystem particles;
+    public ParticleSystem particleSys;
     public float maxDistance;
     // Start is called before the first frame update
     void Start()
@@ -17,11 +17,12 @@ public class ClosestEnemyNearby : MonoBehaviour
     void Update()
     {
         FindClosestEnemy();
+        fireAtEnemy();
     }
 
-    void FindClosestEnemy()
+    Enemy FindClosestEnemy()
     {
-        var projectiles = particles.emission;
+        var projectiles = particleSys.emission;
         float distanceToClosest = Mathf.Infinity;
         Enemy closestEnemy = null;
         Enemy[] allEnemies = FindObjectsOfType<Enemy>();
@@ -45,6 +46,28 @@ public class ClosestEnemyNearby : MonoBehaviour
         {
             projectiles.enabled = false;
         }
+
+        return closestEnemy;
             
+    }
+
+    void fireAtEnemy()
+    {
+        ParticleSystem.Particle[] particles = new ParticleSystem.Particle[1000];
+        int count = particleSys.GetParticles(particles);
+
+        for (int i = 0; i < count; i++)
+        {
+            ParticleSystem.Particle particle = particles[i];
+
+            Vector3 v1 = particleSys.transform.TransformPoint(particle.position);
+            Vector3 v2 = FindClosestEnemy().transform.position;
+
+            Vector3 tarPosi = (v2 - v1) * (particle.remainingLifetime / particle.startLifetime);
+            particle.position = particleSys.transform.InverseTransformPoint(v2 - tarPosi);
+            particles[i] = particle;
+        }
+
+        particleSys.SetParticles(particles, count);
     }
 }
