@@ -18,7 +18,9 @@ public class ClosestEnemyNearby : MonoBehaviour
     {
         FindClosestEnemy();
         fireAtEnemy();
+
     }
+
 
     Enemy FindClosestEnemy()
     {
@@ -38,10 +40,8 @@ public class ClosestEnemyNearby : MonoBehaviour
         }
         if(distanceToClosest < maxDistance)
         {
-            Debug.DrawLine(orientation.position, closestEnemy.transform.position);
             projectiles.enabled = true;
         }
-
         else
         {
             projectiles.enabled = false;
@@ -55,7 +55,6 @@ public class ClosestEnemyNearby : MonoBehaviour
     {
         ParticleSystem.Particle[] particles = new ParticleSystem.Particle[1000];
         int count = particleSys.GetParticles(particles);
-
         for (int i = 0; i < count; i++)
         {
             ParticleSystem.Particle particle = particles[i];
