@@ -6,7 +6,7 @@ public class ClosestEnemyNearby : MonoBehaviour
 {
     public Transform orientation;
     public ParticleSystem particleSys;
-    public float maxDistance;
+    List<Transform> enemies = new List<Transform>();
     // Start is called before the first frame update
     void Start()
     {
@@ -17,34 +17,54 @@ public class ClosestEnemyNearby : MonoBehaviour
     void Update()
     {
         FindClosestEnemy();
-        fireAtEnemy();
+        if (FindClosestEnemy() != null)
+        {
+            fireAtEnemy();
+        }
+        
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "enemy")
+        {
+            enemies.Add(other.transform);
+        }
+    }
 
-    Enemy FindClosestEnemy()
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "enemy")
+        {
+            enemies.Remove(other.transform);
+        }
+    }
+
+    Transform FindClosestEnemy()
     {
         var projectiles = particleSys.emission;
         float distanceToClosest = Mathf.Infinity;
-        Enemy closestEnemy = null;
-        Enemy[] allEnemies = FindObjectsOfType<Enemy>();
+        Transform closestEnemy = null;
 
-        foreach(Enemy currentEnemy in allEnemies)
-        {
-            float distanceToEnemy = (currentEnemy.transform.position - orientation.position).sqrMagnitude;
-            if(distanceToEnemy < distanceToClosest)
-            {
-                distanceToClosest = distanceToEnemy;
-                closestEnemy = currentEnemy;
-            }
-        }
-        if(distanceToClosest < maxDistance)
-        {
-            projectiles.enabled = true;
-        }
-        else
+        if (enemies.Count == 0)
         {
             projectiles.enabled = false;
+        }
+
+        else
+        {
+            projectiles.enabled = true;
+            foreach (Transform currentEnemy in enemies)
+            {
+                float distanceToEnemy = (currentEnemy.position - orientation.position).sqrMagnitude;
+                if (distanceToEnemy < distanceToClosest)
+                {
+                    distanceToClosest = distanceToEnemy;
+                    closestEnemy = currentEnemy;
+                }
+            }
+
         }
 
         return closestEnemy;
@@ -60,7 +80,7 @@ public class ClosestEnemyNearby : MonoBehaviour
             ParticleSystem.Particle particle = particles[i];
 
             Vector3 v1 = particleSys.transform.TransformPoint(particle.position);
-            Vector3 v2 = FindClosestEnemy().transform.position;
+            Vector3 v2 = FindClosestEnemy().position;
 
             Vector3 tarPosi = (v2 - v1) * (particle.remainingLifetime / particle.startLifetime);
             particle.position = particleSys.transform.InverseTransformPoint(v2 - tarPosi);

@@ -832,7 +832,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287696198}
-  m_LocalRotation: {x: 0.02897758, y: 0.000000017199154, z: -4.985993e-10, w: 0.9995801}
+  m_LocalRotation: {x: 0.028977582, y: -0.000000017199154, z: 4.985993e-10, w: 0.9995801}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12342,7 +12342,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889084323}
-  m_LocalRotation: {x: 0.069525346, y: -0.000000017693017, z: 0.0000000012330971, w: 0.99758023}
+  m_LocalRotation: {x: 0.06952535, y: 0.00000001769301, z: -0.0000000012330967, w: 0.99758023}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18128,6 +18128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1265633418}
+  - component: {fileID: 1265633419}
   m_Layer: 0
   m_Name: Orientation
   m_TagString: Untagged
@@ -18150,6 +18151,19 @@ Transform:
   m_Father: {fileID: 1961454331}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1265633419
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265633417}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.512867, y: 12.234921, z: 19.262049}
+  m_Center: {x: 0.09432888, y: -0.21439886, z: 11.581628}
 --- !u!850595691 &1332097287
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -29657,7 +29671,7 @@ MonoBehaviour:
   orientation: {fileID: 1265633418}
   dashForce: 24
   dashDuration: 0.25
-  dashCooldown: 1.5
+  dashCooldown: 0.8
 --- !u!114 &1961454335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29672,7 +29686,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orientation: {fileID: 1265633418}
   particleSys: {fileID: 1133361868}
-  maxDistance: 400
 --- !u!1 &1997596342
 GameObject:
   m_ObjectHideFlags: 0
@@ -29700,7 +29713,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997596342}
-  m_LocalRotation: {x: 0.028977567, y: 0.000000034398315, z: -9.971982e-10, w: 0.9995801}
+  m_LocalRotation: {x: 0.028977567, y: -0.000000034398315, z: 9.971982e-10, w: 0.9995801}
   m_LocalPosition: {x: 0.04610312, y: 0.78999996, z: -6.4435797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
