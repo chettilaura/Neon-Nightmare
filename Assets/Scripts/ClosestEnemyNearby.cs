@@ -6,22 +6,27 @@ public class ClosestEnemyNearby : MonoBehaviour
 {
     public Transform orientation;
     public ParticleSystem particleSys;
+    Vector3 LastTarget = new Vector3(0,0,0);
     List<Transform> enemies = new List<Transform>();
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         FindClosestEnemy();
-        if (FindClosestEnemy() != null)
+        if (FindClosestEnemy() == null)
         {
-            fireAtEnemy();
+            fireAtEnemy(LastTarget);
         }
-        
+        else
+        {
+            fireAtEnemy(FindClosestEnemy().position);
+        }
+
 
     }
 
@@ -37,6 +42,7 @@ public class ClosestEnemyNearby : MonoBehaviour
     {
         if(other.tag == "enemy")
         {
+            LastTarget = other.transform.position;
             enemies.Remove(other.transform);
         }
     }
@@ -71,7 +77,7 @@ public class ClosestEnemyNearby : MonoBehaviour
             
     }
 
-    void fireAtEnemy()
+    void fireAtEnemy(Vector3 v2)
     {
         ParticleSystem.Particle[] particles = new ParticleSystem.Particle[1000];
         int count = particleSys.GetParticles(particles);
@@ -80,7 +86,7 @@ public class ClosestEnemyNearby : MonoBehaviour
             ParticleSystem.Particle particle = particles[i];
 
             Vector3 v1 = particleSys.transform.TransformPoint(particle.position);
-            Vector3 v2 = FindClosestEnemy().position;
+           
 
             Vector3 tarPosi = (v2 - v1) * (particle.remainingLifetime / particle.startLifetime);
             particle.position = particleSys.transform.InverseTransformPoint(v2 - tarPosi);
