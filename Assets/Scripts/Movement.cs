@@ -8,6 +8,8 @@ public class Movement : MonoBehaviour
     public float walkSpeed;
     public float dashSpeed;
     public Transform orientation;
+    public Transform playerRot;
+    Vector3 myNormal;
 
     float horizontalInput;
     float verticalInput;
@@ -22,10 +24,13 @@ public class Movement : MonoBehaviour
     public Transform groundCheck;
     public Material PlayerMaterial;
     public LayerMask Ground;
+    public LayerMask Magnetic;
     bool isGrounded;
+    public bool isMagnetic;
 
     public float maxSlopeAngle;
     public RaycastHit slopeHit;
+    RaycastHit magneticHit;
     private bool exitingSlope;
 
     Vector3 moveDir;
@@ -37,7 +42,8 @@ public class Movement : MonoBehaviour
     {
         walking,
         dashing,
-        air
+        air,
+        magnetic
     }
 
     public bool dashing;
@@ -48,6 +54,8 @@ public class Movement : MonoBehaviour
         RB = GetComponent<Rigidbody>();
         RB.freezeRotation = true;
         readyToJump = true;
+        isMagnetic = false;
+        myNormal = playerRot.up;
     }
     
     private void MyInput()
@@ -66,11 +74,12 @@ public class Movement : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, Ground);
+        isMagnetic = Physics.CheckSphere(groundCheck.position, 0.2f, Magnetic);
         MyInput();
         SpeedLimiter();
         StateHandler();
 
-        if (state == MovementState.walking) 
+        if (state == MovementState.walking || state == MovementState.magnetic) 
         {
             RB.drag = groundDrag;
         }
@@ -100,6 +109,12 @@ public class Movement : MonoBehaviour
             moveSpeed = walkSpeed;
         }
 
+        else if (isMagnetic)
+        {
+            state = MovementState.magnetic;
+            moveSpeed = walkSpeed;
+        }
+
         else
         {
             state = MovementState.air;
@@ -121,12 +136,21 @@ public class Movement : MonoBehaviour
             }
         }
 
+        else if(isMagnetic)
+        {
+            RB.AddForce(PlayerRotationMagnetic() * moveSpeed * 10f, ForceMode.Force);
+        }
+
         else if(isGrounded)
             RB.AddForce(moveDir.normalized * moveSpeed * 10f, ForceMode.Force);
         else if(!isGrounded)
             RB.AddForce(moveDir.normalized * moveSpeed * 7f * airMultiplier, ForceMode.Force);
 
-        RB.useGravity = !OnSlope();
+        if(OnSlope() || isMagnetic)
+        {
+            RB.useGravity = false;
+        }
+        else RB.useGravity = true;
     }
 
     private void SpeedLimiter()
@@ -186,6 +210,17 @@ public class Movement : MonoBehaviour
     public Vector3 GetSlopeMoveDirection()
     {
         return Vector3.ProjectOnPlane(moveDir, slopeHit.normal).normalized;
+    }
+
+    Vector3 PlayerRotationMagnetic()
+    {
+        Physics.Raycast(groundCheck.position, -groundCheck.up, out magneticHit, 0.3f, Magnetic);
+        myNormal = Vector3.Lerp(myNormal, magneticHit.normal, 10f * Time.deltaTime);
+        Vector3 myForward = Vector3.Cross(playerRot.right, myNormal);
+        Quaternion targetRot = Quaternion.LookRotation(myForward, myNormal);
+        playerRot.rotation = Quaternion.Lerp(playerRot.rotation, targetRot, 10f * Time.deltaTime);
+        RB.AddForce(-50f * magneticHit.normal);
+        return Vector3.ProjectOnPlane(moveDir, magneticHit.normal).normalized;
     }
 
 }
