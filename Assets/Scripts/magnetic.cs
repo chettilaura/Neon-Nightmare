@@ -16,9 +16,7 @@
      //private bool isGrounded;
      private float deltaGround = 0.2f; // character is grounded up to this distance
      private Vector3 surfaceNormal; // current surface normal
-     private Vector3 myNormal; // character normal
-     private float distGround; // distance from character position to ground
-  
+     private Vector3 myNormal; // character normal  
      private Transform myTransform;
      public BoxCollider boxCollider; // drag BoxCollider ref in editor
  
@@ -27,7 +25,6 @@
      myNormal = transform.up; // normal starts as character up direction
      myTransform = transform; //transform dell'empty con il box collider + rigid body 
      GetComponent<Rigidbody>().freezeRotation = true; // disable physics rotation
-     distGround = boxCollider.size.y - boxCollider.center.y; // distance from transform.position to ground
      }
  
      private void FixedUpdate(){
