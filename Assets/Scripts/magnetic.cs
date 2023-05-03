@@ -14,7 +14,7 @@
      private float lerpSpeed = 10; // smoothing speed
      private float gravity = 10; // gravity acceleration
      //private bool isGrounded;
-     private float deltaGround = 0.2f; // character is grounded up to this distance
+     //private float deltaGround = 0.2f; // character is grounded up to this distance
      private Vector3 surfaceNormal; // current surface normal
      private Vector3 myNormal; // character normal  
      private Transform myTransform;

@@ -35,12 +35,12 @@ public class Movement : MonoBehaviour
     public bool canDoubleJump=false;
     private bool exitingSlope; //when jumping on the slop, used not remove speed limitation while jumping on the slope 
     public bool dashing;
-
+private bool onSlope;
 
      //raycasts
     public RaycastHit slopeHit;
     RaycastHit magneticHit;
-    
+    private Vector3 magneticMovement;
 
     //movement states
     public MovementState state;
@@ -83,13 +83,12 @@ public class Movement : MonoBehaviour
         }
     }
 
-
+/*
     
-    void Update()
+    void Update2()
     {
         //check between child object "groundCheck" & ground/magnetic layer
-        isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, Ground);
-        isMagnetic = Physics.CheckSphere(groundCheck.position, 0.2f, Magnetic);
+        
         MyInput();
         SpeedLimiter();
         StateHandler();
@@ -106,33 +105,84 @@ public class Movement : MonoBehaviour
     }
 
 
-
-    private void FixedUpdate()
+ void OnDrawGizmosSelected()
     {
-        moveDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(groundCheck.position, 0.8f);
+    }
+    */
 
-        if(OnSlope() && !exitingSlope)
+
+//private bool pauseForEveryoneToSee;
+private void FixedUpdate(){ //mette le forze
+     if(onSlope && !exitingSlope)
         {
+            Debug.Log("è su slope");
             RB.AddForce(GetSlopeMoveDirection() * moveSpeed * 20f, ForceMode.Force);
 
             if (RB.velocity.y > 0)
             {
+                Debug.Log("slope");
                 RB.AddForce(Vector3.down * 80f, ForceMode.Force);
             }
         }
         else if(isMagnetic)
         {
-            RB.AddForce(PlayerRotationMagnetic() * moveSpeed * 10f, ForceMode.Force);
+            Debug.Log("è magnetico");
+            RB.AddForce(/*PlayerRotationMagnetic()*/-myNormal /** moveSpeed **/* 10f);
         }
-        else if(isGrounded)
+        else if(isGrounded){
+            Debug.Log("è a terra");
             RB.AddForce(moveDir.normalized * moveSpeed * 10f, ForceMode.Force);
-        else if(!isGrounded)
+        }
+        else if(!isGrounded){
+            Debug.Log("è in aria");
             RB.AddForce(moveDir.normalized * moveSpeed * 7f * airMultiplier, ForceMode.Force);
-        if(OnSlope() || isMagnetic)
+        }
+}
+
+
+
+    private void Update()
+    {        
+        CheckSurface(); //è check di tutte le superfici : controlla superficie che ha sotto
+
+        MyInput();
+        SpeedLimiter();
+        StateHandler();
+
+        if (state == MovementState.walking || state == MovementState.magnetic) 
+        {
+            RB.drag = groundDrag;
+        }
+        else
+        {
+            RB.drag = 1f;
+        }
+
+
+        moveDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        //isGrounded = Physics.CheckSphere(groundCheck.position, 0.8f, Ground);
+       // isMagnetic = Physics.CheckSphere(groundCheck.position, 0.8f, Magnetic);
+       /*
+        if(!pauseForEveryoneToSee&&isMagnetic){
+            pauseForEveryoneToSee=true;
+        }else if(pauseForEveryoneToSee&&!isMagnetic){
+            Debug.Break();
+            pauseForEveryoneToSee=false;
+        }
+        */
+
+
+        if(onSlope || isMagnetic)
         {
             RB.useGravity = false;
+            Debug.Log("no garvity");
         }
-        else RB.useGravity = true;
+        else {RB.useGravity = true;
+        Debug.Log("si garvity");
+        }
     }
 
 
@@ -166,7 +216,7 @@ public class Movement : MonoBehaviour
     private void SpeedLimiter()
     {
 
-        if (OnSlope() && !exitingSlope)
+        if (onSlope && !exitingSlope)
         {
             if (RB.velocity.magnitude > moveSpeed)
             {
@@ -200,7 +250,7 @@ public class Movement : MonoBehaviour
 
 
     //NB in order to check the distance from the ground we use one ray that starts from the center of the player and goes down a bit more of its half height
-    public bool OnSlope()
+   /* public bool OnSlope()
     {
         if(Physics.Raycast(groundCheck.position, Vector3.down, out slopeHit, 0.3f, Ground))
         {
@@ -208,10 +258,10 @@ public class Movement : MonoBehaviour
             return (angle < maxSlopeAngle && angle != 0);
         }
         return false;
-    }
+    }*/
 
 
-    public bool OnRamp()
+    public bool OnRamp() //usato in dash
     {
         if (Physics.Raycast(groundCheck.position, Vector3.down, out slopeHit, 0.3f, Ground))
         {
@@ -220,16 +270,77 @@ public class Movement : MonoBehaviour
         }
         return false;
     }
+    
 
 
     public Vector3 GetSlopeMoveDirection()
     {
-        return Vector3.ProjectOnPlane(moveDir, slopeHit.normal).normalized;
+        return Vector3.ProjectOnPlane(moveDir, magneticHit.normal).normalized;
     }
 
 
-    Vector3 PlayerRotationMagnetic()
+    [SerializeField]
+    private LayerMask envLayers;
+    [SerializeField]
+    private LookAround lookAroundScript;
+    [SerializeField]
+    private float lerpSpeed=1;
+    [SerializeField]
+    private float turnSpeed=90;
+
+
+    private void CheckSurface(){
+    if(Physics.SphereCast(groundCheck.position,0.5f,-groundCheck.up,out magneticHit,0.5f,envLayers)){ //lancia raggio e incontra diverse superfici
+        if(magneticHit.transform.gameObject.layer==LayerMask.NameToLayer("Slope")){
+             lookAroundScript.enabled=true;
+             onSlope=true;
+        }else if(magneticHit.transform.gameObject.layer==LayerMask.NameToLayer("Magnetic")){
+            isMagnetic=true;
+            isGrounded=false;
+            onSlope=false;
+            lookAroundScript.enabled=false;
+        /* Debug.Log(magneticHit.transform.gameObject.name);
+        magneticMovement = Vector3.ProjectOnPlane(moveDir, magneticHit.normal).normalized;
+        Debug.DrawRay(groundCheck.position, magneticMovement, Color.red);
+        Vector3 magneticForce= -magneticHit.normal* 100f;*/
+
+              //  playerRot.rotation=Quaternion.LookRotation(magneticMovement, magneticHit.normal);
+
+            myNormal = Vector3.Lerp(myNormal, magneticHit.normal, lerpSpeed*Time.deltaTime); //normale capsula si allinea a normale terreno
+            playerRot.Rotate(0, /*Input.GetAxis("Horizontal")*/horizontalInput*turnSpeed*Time.deltaTime, 0); // capsula ruota su se stessa e poi si muove con davanti e dietro
+
+            Vector3 myForward = Vector3.Cross(playerRot.right, myNormal); // find forward direction with new myNormal (prodotto vettoriale): 
+            Quaternion targetRot = Quaternion.LookRotation(myForward, myNormal); // align character to the new myNormal while keeping the forward direction:
+            playerRot.rotation = Quaternion.Lerp(playerRot.rotation, targetRot, lerpSpeed*Time.deltaTime); //rotazione su piano precedente spostata su nuovo piano
+            playerRot.Translate(0, 0, verticalInput*moveSpeed*Time.deltaTime); // move the character forth/back with Vertical axis:
+
+        }else if(magneticHit.transform.gameObject.layer==LayerMask.NameToLayer("Ground")){
+            lookAroundScript.enabled=true;
+            isGrounded=true;
+            isMagnetic=false;
+            onSlope=false;
+        }
+}else{
+    lookAroundScript.enabled=true;
+        isGrounded=false;
+         isMagnetic=false;
+        onSlope=false;
+    }
+
+}
+
+/*
+    Vector3 PlayerRotationMagnetic2()
     {
+        Physics.Raycast(groundCheck.position, -groundCheck.up, out magneticHit, 0.8f, Magnetic);
+        Debug.Log(magneticHit.transform.gameObject.name);
+        Vector3 direction = Vector3.ProjectOnPlane(moveDir, magneticHit.normal).normalized;
+        Debug.DrawRay(groundCheck.position, direction, Color.red);
+        Vector3 magneticForce= -magneticHit.normal* 100f;
+                playerRot.rotation=Quaternion.LookRotation(direction, magneticHit.normal);
+
+      //  direction+=magneticForce;
+        
         Physics.Raycast(groundCheck.position, -groundCheck.up, out magneticHit, 0.3f, Magnetic);
         myNormal = Vector3.Lerp(myNormal, magneticHit.normal, 10f * Time.deltaTime);
         Vector3 myForward = Vector3.Cross(playerRot.right, myNormal);
@@ -237,6 +348,10 @@ public class Movement : MonoBehaviour
         playerRot.rotation = Quaternion.Lerp(playerRot.rotation, targetRot, 10f * Time.deltaTime);
         RB.AddForce(-50f * magneticHit.normal);
         return Vector3.ProjectOnPlane(moveDir, magneticHit.normal).normalized;
+        
+
+         return direction.normalized;
     }
+    */
 
 }
