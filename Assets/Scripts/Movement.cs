@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
     public bool canDoubleJump=false;
     private bool exitingSlope; //when jumping on the slop, used not remove speed limitation while jumping on the slope 
     public bool dashing;
-private bool onSlope;
+    private bool onSlope;
 
      //raycasts
     public RaycastHit slopeHit;
@@ -288,35 +288,43 @@ private void FixedUpdate(){ //mette le forze
     [SerializeField]
     private float turnSpeed=90;
 
-
+public delegate void ReturnOnGroundDelegate();
+public event ReturnOnGroundDelegate returnOnGroundEvent;
     private void CheckSurface(){
     if(Physics.SphereCast(groundCheck.position,0.5f,-groundCheck.up,out magneticHit,0.5f,envLayers)){ //lancia raggio e incontra diverse superfici
-        if(magneticHit.transform.gameObject.layer==LayerMask.NameToLayer("Slope")){
-             lookAroundScript.enabled=true;
-             onSlope=true;
-        }else if(magneticHit.transform.gameObject.layer==LayerMask.NameToLayer("Magnetic")){
+    float angle = Vector3.Angle(Vector3.up, magneticHit.normal);
+            if (angle < maxSlopeAngle && angle != 0){
+                onSlope=true;
+            }
+        /*if(magneticHit.transform.gameObject.layer==LayerMask.NameToLayer("Slope")){
+            // lookAroundScript.enabled=true;
+             //onSlope=true;
+             
+        }*//*else if(magneticHit.transform.gameObject.layer==LayerMask.NameToLayer("Magnetic")){
             isMagnetic=true;
             isGrounded=false;
             onSlope=false;
             lookAroundScript.enabled=false;
-        /* Debug.Log(magneticHit.transform.gameObject.name);
-        magneticMovement = Vector3.ProjectOnPlane(moveDir, magneticHit.normal).normalized;
-        Debug.DrawRay(groundCheck.position, magneticMovement, Color.red);
-        Vector3 magneticForce= -magneticHit.normal* 100f;*/
+
+       
 
               //  playerRot.rotation=Quaternion.LookRotation(magneticMovement, magneticHit.normal);
 
             myNormal = Vector3.Lerp(myNormal, magneticHit.normal, lerpSpeed*Time.deltaTime); //normale capsula si allinea a normale terreno
-            playerRot.Rotate(0, /*Input.GetAxis("Horizontal")*/horizontalInput*turnSpeed*Time.deltaTime, 0); // capsula ruota su se stessa e poi si muove con davanti e dietro
+            playerRot.Rotate(0, horizontalInput*turnSpeed*Time.deltaTime, 0); // capsula ruota su se stessa e poi si muove con davanti e dietro
 
             Vector3 myForward = Vector3.Cross(playerRot.right, myNormal); // find forward direction with new myNormal (prodotto vettoriale): 
             Quaternion targetRot = Quaternion.LookRotation(myForward, myNormal); // align character to the new myNormal while keeping the forward direction:
             playerRot.rotation = Quaternion.Lerp(playerRot.rotation, targetRot, lerpSpeed*Time.deltaTime); //rotazione su piano precedente spostata su nuovo piano
             playerRot.Translate(0, 0, verticalInput*moveSpeed*Time.deltaTime); // move the character forth/back with Vertical axis:
 
-        }else if(magneticHit.transform.gameObject.layer==LayerMask.NameToLayer("Ground")){
+        }*/else //if(magneticHit.transform.gameObject.layer==LayerMask.NameToLayer("Ground"))
+        {
             lookAroundScript.enabled=true;
             isGrounded=true;
+            if(returnOnGroundEvent!=null){
+                returnOnGroundEvent.Invoke();
+            }
             isMagnetic=false;
             onSlope=false;
         }

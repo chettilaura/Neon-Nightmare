@@ -23,7 +23,7 @@ public class Dash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
             dash();
 
         if(dashCooldownTimer > 0)
