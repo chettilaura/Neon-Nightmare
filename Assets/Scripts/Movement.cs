@@ -27,6 +27,7 @@ public class Movement : MonoBehaviour
     public float maxSlopeAngle;
     public RaycastHit slopeHit;
     private bool exitingSlope;
+    public bool canDoubleJump=false;
 
     Vector3 moveDir;
     Rigidbody RB;
@@ -54,13 +55,34 @@ public class Movement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-        if (Input.GetKey(KeyCode.Space) && readyToJump && isGrounded)
+        //if (Input.GetKey(KeyCode.Space) && readyToJump && isGrounded)
+         if (Input.GetKeyDown(KeyCode.Space) && readyToJump && isGrounded)
         {
             readyToJump = false;
             Jump();
-            Invoke(nameof(ResetJump), jumpCooldown);
+            Debug.Log("jump");
+            canDoubleJump=true;
+            //Invoke(nameof(ResetJump), jumpCooldown);
+        }else if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump==true &&  RB.velocity.y>0.1f && !isGrounded){ //doppio salto
+            RB.velocity = new Vector3(RB.velocity.x, /*RB.velocity.y*doubleJumpOffset*/ jumpForce, RB.velocity.z);
+            Debug.Log("double jump");
+            canDoubleJump=false;
         }
     }
+
+     public void Jump()
+    {
+        exitingSlope = true;
+        RB.velocity = new Vector3(RB.velocity.x, jumpForce, RB.velocity.z);
+    }
+
+    /*
+    private void ResetJump()
+    {
+        readyToJump = true;
+        exitingSlope = false;
+    }
+    */
 
     // Update is called once per frame
     void Update()
@@ -98,6 +120,10 @@ public class Movement : MonoBehaviour
         {
             state = MovementState.walking;
             moveSpeed = walkSpeed;
+
+            //post salto
+            readyToJump = true;
+            exitingSlope = false;
         }
 
         else
@@ -151,17 +177,7 @@ public class Movement : MonoBehaviour
         
     }
 
-    public void Jump()
-    {
-        exitingSlope = true;
-        RB.velocity = new Vector3(RB.velocity.x, jumpForce, RB.velocity.z);
-    }
-
-    private void ResetJump()
-    {
-        readyToJump = true;
-        exitingSlope = false;
-    }
+   
 
     public bool OnSlope()
     {
