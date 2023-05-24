@@ -320,7 +320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564452578}
   m_LocalRotation: {x: 0.006006905, y: 0.7437568, z: -0.0108707175, w: 0.6683349}
-  m_LocalPosition: {x: -8.97, y: 1.28, z: -15.76}
+  m_LocalPosition: {x: -9.84, y: 1.37, z: -7.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -463,7 +463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2203f77a1df23f4eaf9a042e991f8e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.073
+      value: 0.215
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2203f77a1df23f4eaf9a042e991f8e7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -497,9 +497,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4258411891960909470, guid: c2203f77a1df23f4eaf9a042e991f8e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c2203f77a1df23f4eaf9a042e991f8e7, type: 3}
       propertyPath: m_Name
       value: v1rusBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 3628327861471813274, guid: c2203f77a1df23f4eaf9a042e991f8e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.187
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: c2203f77a1df23f4eaf9a042e991f8e7, type: 3}
       propertyPath: m_Controller
@@ -544,6 +552,10 @@ PrefabInstance:
     - target: {fileID: 7286198339179551741, guid: c2203f77a1df23f4eaf9a042e991f8e7, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.00037
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398112338685670284, guid: c2203f77a1df23f4eaf9a042e991f8e7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5866666021909216657, guid: c2203f77a1df23f4eaf9a042e991f8e7, type: 3}
