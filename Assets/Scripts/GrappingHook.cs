@@ -12,7 +12,7 @@ public class GrappingHook : MonoBehaviour
   Vector3 startingPoint,endPoint;
   float seconds;
   [SerializeField] private Rigidbody rb;
-  //[SerializeField] private Movement movement;
+  [SerializeField] private Movement movement;
   [SerializeField] private LineRenderer lineRenderer;
   [Tooltip("Forza con cui il player viene tirato verso il gancio")]
   [SerializeField] private float grapplingForce=4000;
@@ -21,11 +21,15 @@ public class GrappingHook : MonoBehaviour
     {
         if ((Input.GetMouseButton(1))&&(!isHooked)) {//mirino
             preview.SetActive(true);
+            //movement.canDoubleJump=false;
+            //movement.readyToJump=false;
 
             if (Input.GetMouseButtonDown(0)) {
                 isHooked=true;
+                movement.canDoubleJump=false;
+                movement.readyToJump=false;
                 preview.SetActive(false);
-                seconds=0 ;
+                seconds=0;
                 startingPoint = launchPoint.position;
                 endPoint=preview.transform.position;
                 hook.position = startingPoint;
@@ -60,12 +64,12 @@ public class GrappingHook : MonoBehaviour
     }
     private IEnumerator DelayRecharge(){
         yield return new WaitForSeconds(0.5f);
-        //movement.returnOnGroundEvent+=RechargeHook;
+        movement.returnOnGroundEvent+=RechargeHook;
         lineRenderer.enabled=false;
     }
     private void RechargeHook() {
         isHooked=false;
-        //movement.returnOnGroundEvent-=RechargeHook;
+        movement.returnOnGroundEvent-=RechargeHook;
         hook.gameObject.SetActive(false);
     } 
 }

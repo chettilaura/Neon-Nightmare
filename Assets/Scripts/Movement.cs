@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
-    bool readyToJump;
+    public bool readyToJump;
 
     public Transform groundCheck;
     public Material PlayerMaterial;
@@ -42,6 +42,8 @@ public class Movement : MonoBehaviour
     }
 
     public bool dashing;
+    public delegate void ReturnOnGroundDelegate() ;
+    public event ReturnOnGroundDelegate returnOnGroundEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -124,6 +126,11 @@ public class Movement : MonoBehaviour
             //post salto
             readyToJump = true;
             exitingSlope = false;
+
+            //hook
+            if(returnOnGroundEvent!=null) {
+                returnOnGroundEvent. Invoke ( ) ;
+            }
         }
 
         else
