@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClosestEnemyNearby : MonoBehaviour
+public class Closest_EnemyNearby : MonoBehaviour
 {
     public Transform orientation;
     public ParticleSystem particleSys;

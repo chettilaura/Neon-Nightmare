@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dash : MonoBehaviour
+public class Dash_script : MonoBehaviour
 {
     public Transform orientation;
     Rigidbody RB;
-    private Movement movement;
+    private Mov movement;
 
     public float dashForce;
     public float dashDuration;
@@ -17,7 +17,7 @@ public class Dash : MonoBehaviour
     void Start()
     {
         RB = GetComponent<Rigidbody>();
-        movement = GetComponent<Movement>();
+        movement = GetComponent<Mov>();
     }
 
     // Update is called once per frame

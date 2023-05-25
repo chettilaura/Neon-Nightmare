@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrappingHook : MonoBehaviour
+public class Grapping_Hook : MonoBehaviour
 {
 
    [SerializeField] GameObject preview;
@@ -12,7 +12,7 @@ public class GrappingHook : MonoBehaviour
   Vector3 startingPoint,endPoint;
   float seconds;
   [SerializeField] private Rigidbody rb;
-  [SerializeField] private Movement movement;
+  [SerializeField] private Mov movement;
   [SerializeField] private LineRenderer lineRenderer;
   [Tooltip("Forza con cui il player viene tirato verso il gancio")]
   [SerializeField] private float grapplingForce=4000;

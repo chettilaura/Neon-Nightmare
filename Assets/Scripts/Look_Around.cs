@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LookAround : MonoBehaviour
+public class Look_Around : MonoBehaviour
 {
     public Transform orientation;
     public Transform player;

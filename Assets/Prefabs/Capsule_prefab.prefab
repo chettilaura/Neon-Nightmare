@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7383631990994288930}
   - component: {fileID: 9006357194202965820}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Capsule_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
