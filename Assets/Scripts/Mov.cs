@@ -64,12 +64,14 @@ public class Mov : MonoBehaviour
             Jump();
             Debug.Log("jump");
             canDoubleJump=true;
+
             //Invoke(nameof(ResetJump), jumpCooldown);
-        }else if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump==true &&  RB.velocity.y>0.1f && !isGrounded){ //doppio salto
+            Debug.Log(RB.velocity);
+        }else if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump==true &&  RB.velocity.y!=0f && !isGrounded){ //doppio salto
             RB.velocity = new Vector3(RB.velocity.x, /*RB.velocity.y*doubleJumpOffset*/ jumpForce, RB.velocity.z);
             Debug.Log("double jump");
             canDoubleJump=false;
-        }
+        } 
     }
 
      public void Jump()

@@ -41,7 +41,7 @@ public class Grapping_Hook : MonoBehaviour
         }else{
             preview.SetActive(false);
         }
-    Debug.Log(Time.deltaTime);
+    //Debug.Log(Time.deltaTime);
 
         if(isHooked==true){
             if(seconds<1){
