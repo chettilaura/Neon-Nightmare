@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrappingHook : MonoBehaviour
+public class Grapping_Hook : MonoBehaviour
 {
 
    [SerializeField] GameObject preview;
-    [SerializeField] Transform hook;
+   [SerializeField] Transform hook;
    [SerializeField] Transform launchPoint;
    private bool isHooked = false;
   Vector3 startingPoint,endPoint;
   float seconds;
   [SerializeField] private Rigidbody rb;
-  [SerializeField] private Movement movement;
+  [SerializeField] private Mov movement;
   [SerializeField] private LineRenderer lineRenderer;
   [Tooltip("Forza con cui il player viene tirato verso il gancio")]
   [SerializeField] private float grapplingForce=4000;
@@ -21,16 +21,20 @@ public class GrappingHook : MonoBehaviour
     {
         if ((Input.GetMouseButton(1))&&(!isHooked)) {//mirino
             preview.SetActive(true);
+            //movement.canDoubleJump=false;
+            //movement.readyToJump=false;
 
             if (Input.GetMouseButtonDown(0)) {
                 isHooked=true;
+                movement.canDoubleJump=false;
+                movement.readyToJump=false;
                 preview.SetActive(false);
-                seconds=0 ;
+                seconds=0;
                 startingPoint = launchPoint.position;
                 endPoint=preview.transform.position;
                 hook.position = startingPoint;
                 hook.gameObject.SetActive(true);
-                   lineRenderer.enabled=true;
+                lineRenderer.enabled=true;
             }
 
 
@@ -47,7 +51,7 @@ public class GrappingHook : MonoBehaviour
                 seconds=1;
     rb.AddForce((endPoint-startingPoint).normalized*grapplingForce,ForceMode.Force);
     //iniza a seguire l'evento
-    //movement.returnOnGroundEvent+=RechargeHook; //quando il player tocca terra ricarica il gancio
+    
     StartCoroutine(DelayRecharge());
             }
            
