@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Mov : MonoBehaviour
@@ -40,7 +41,8 @@ public class Mov : MonoBehaviour
     {
         walking,
         dashing,
-        air
+        air,
+        idle
     }
 
     public bool dashing;
@@ -63,16 +65,17 @@ public class Mov : MonoBehaviour
         //if (Input.GetKey(KeyCode.Space) && readyToJump && isGrounded)
          if (Input.GetKeyDown(KeyCode.Space) && readyToJump && isGrounded)
         {
-            animator.SetBool("isJumping", true);
             readyToJump = false;
             Jump();
             Debug.Log("jump");
             canDoubleJump=true;
+            animator.SetBool("isJumping", true);
 
             //Invoke(nameof(ResetJump), jumpCooldown);
-            Debug.Log(RB.velocity);
-        }else if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump==true &&  RB.velocity.y!=0f && !isGrounded){ //doppio salto
-            animator.SetBool("isJumping", true);
+            //Debug.Log(RB.velocity);
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump==true &&  RB.velocity.y!=0f && !isGrounded){ //doppio salto
+            animator.SetBool("doubleJump", true);
             RB.velocity = new Vector3(RB.velocity.x, /*RB.velocity.y*doubleJumpOffset*/ jumpForce, RB.velocity.z);
             Debug.Log("double jump");
             canDoubleJump=false;
@@ -81,6 +84,7 @@ public class Mov : MonoBehaviour
 
      public void Jump()
     {
+        
         exitingSlope = true;
         RB.velocity = new Vector3(RB.velocity.x, jumpForce, RB.velocity.z);
     }
@@ -109,8 +113,6 @@ public class Mov : MonoBehaviour
         {
             RB.drag = 1f;
         }
-        animator.SetFloat("Speed", RB.velocity.magnitude);
-        Debug.Log(RB.velocity.magnitude);
         
     }
 
@@ -129,18 +131,29 @@ public class Mov : MonoBehaviour
 
         else if (isGrounded)
         {
-            animator.SetBool("isJumping", false);
-            state = MovementState.walking;
-            moveSpeed = walkSpeed;
+            if(RB.velocity.magnitude != 0f)
+            {
+                animator.SetBool("isWalking", true);
+                animator.SetBool("isJumping", false);
+                state = MovementState.walking;
+                moveSpeed = walkSpeed;
 
-            //post salto
-            readyToJump = true;
-            exitingSlope = false;
+                //post salto
+                readyToJump = true;
+                exitingSlope = false;
 
-            //hook
-            if(returnOnGroundEvent!=null) {
-                returnOnGroundEvent. Invoke ( ) ;
+                //hook
+                if (returnOnGroundEvent != null)
+                {
+                    returnOnGroundEvent.Invoke();
+                }
+            } else
+            {
+                state = MovementState.idle;
+                animator.SetBool("isWalking", false);
+                animator.SetBool("isJumping", false);
             }
+
         }
 
         else
