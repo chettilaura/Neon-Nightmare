@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Mov : MonoBehaviour
 {
+    private Animator animator;
     float moveSpeed;
     public float walkSpeed;
     public float dashSpeed;
@@ -29,6 +30,7 @@ public class Mov : MonoBehaviour
     private bool exitingSlope;
     public bool canDoubleJump=false;
 
+
     Vector3 moveDir;
     Rigidbody RB;
 
@@ -49,6 +51,7 @@ public class Mov : MonoBehaviour
     void Start()
     {
         RB = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();    
         RB.freezeRotation = true;
         readyToJump = true;
     }
@@ -60,6 +63,7 @@ public class Mov : MonoBehaviour
         //if (Input.GetKey(KeyCode.Space) && readyToJump && isGrounded)
          if (Input.GetKeyDown(KeyCode.Space) && readyToJump && isGrounded)
         {
+            animator.SetBool("isJumping", true);
             readyToJump = false;
             Jump();
             Debug.Log("jump");
@@ -68,6 +72,7 @@ public class Mov : MonoBehaviour
             //Invoke(nameof(ResetJump), jumpCooldown);
             Debug.Log(RB.velocity);
         }else if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump==true &&  RB.velocity.y!=0f && !isGrounded){ //doppio salto
+            animator.SetBool("isJumping", true);
             RB.velocity = new Vector3(RB.velocity.x, /*RB.velocity.y*doubleJumpOffset*/ jumpForce, RB.velocity.z);
             Debug.Log("double jump");
             canDoubleJump=false;
@@ -104,7 +109,9 @@ public class Mov : MonoBehaviour
         {
             RB.drag = 1f;
         }
-            
+        animator.SetFloat("Speed", RB.velocity.magnitude);
+        Debug.Log(RB.velocity.magnitude);
+        
     }
 
     private void FixedUpdate()
@@ -122,6 +129,7 @@ public class Mov : MonoBehaviour
 
         else if (isGrounded)
         {
+            animator.SetBool("isJumping", false);
             state = MovementState.walking;
             moveSpeed = walkSpeed;
 
