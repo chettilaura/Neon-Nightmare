@@ -33,22 +33,32 @@ public class PlayerLifeDeath : MonoBehaviour
             playerHealth = maxPlayerHealth;
         }
         HealthBarFiller();
+        if (playerHealth <= 0)
+        {
+            _playerAnimator.SetBool("isDying", true);
+        }
     }
 
 
     public void lightAttack()
     {
         playerHealth -= lightDamage;
+        if (playerHealth < 0)
+            playerHealth = 0;
     }
 
     public void mediumAttack()
     {
         playerHealth -= mediumDamage;
+        if (playerHealth < 0)
+            playerHealth = 0;
     }
 
     public void bigAttack()
     {
         playerHealth -= bigDamage;
+        if (playerHealth < 0)
+            playerHealth = 0;
     }
 
 

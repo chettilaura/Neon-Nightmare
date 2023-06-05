@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class Enemy_script : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private PlayerLifeDeath PlayerLifeDeath;
     void Start()
     {
         gameObject.tag = "enemy";
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            PlayerLifeDeath = other.GetComponent<PlayerLifeDeath>();
+            PlayerLifeDeath.lightAttack();
+        }
+            
     }
 
     // Update is called once per frame
