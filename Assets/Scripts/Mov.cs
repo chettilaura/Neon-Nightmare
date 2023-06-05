@@ -16,10 +16,13 @@ public class Mov : MonoBehaviour
 
     public float groundDrag;
 
+    private float _jumpButtonPressedTime;
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
     public bool readyToJump;
+
+    private float _lastGroundedTime;
 
     public Transform groundCheck;
     public Material PlayerMaterial;
@@ -62,15 +65,25 @@ public class Mov : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+        if(horizontalInput!= 0 || verticalInput != 0)
+        {
+            animator.SetBool("isWalking", true);
+            state = MovementState.walking;
+        } else
+        {
+            animator.SetBool("isWalking", false);
+            state = MovementState.idle;
+        }
         //if (Input.GetKey(KeyCode.Space) && readyToJump && isGrounded)
          if (Input.GetKeyDown(KeyCode.Space) && readyToJump && isGrounded)
         {
+            _jumpButtonPressedTime = Time.time;
             readyToJump = false;
             Jump();
             Debug.Log("jump");
             canDoubleJump=true;
             animator.SetBool("isJumping", true);
-
+           
             //Invoke(nameof(ResetJump), jumpCooldown);
             //Debug.Log(RB.velocity);
         }
@@ -114,6 +127,12 @@ public class Mov : MonoBehaviour
             RB.drag = 1f;
         }
         
+        if(RB.velocity.y < 0.5f && state == MovementState.air)
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", true);
+            animator.SetBool("doubleJump", false);
+        }
     }
 
     private void FixedUpdate()
@@ -131,11 +150,11 @@ public class Mov : MonoBehaviour
 
         else if (isGrounded)
         {
-            if(RB.velocity.magnitude != 0f)
+            _lastGroundedTime = Time.time;
+            animator.SetBool("isFalling", false);
+            animator.SetBool("doubleJump", false);
+            if (RB.velocity.magnitude != 0f)
             {
-                animator.SetBool("isWalking", true);
-                animator.SetBool("isJumping", false);
-                state = MovementState.walking;
                 moveSpeed = walkSpeed;
 
                 //post salto
@@ -147,12 +166,7 @@ public class Mov : MonoBehaviour
                 {
                     returnOnGroundEvent.Invoke();
                 }
-            } else
-            {
-                state = MovementState.idle;
-                animator.SetBool("isWalking", false);
-                animator.SetBool("isJumping", false);
-            }
+            } 
 
         }
 

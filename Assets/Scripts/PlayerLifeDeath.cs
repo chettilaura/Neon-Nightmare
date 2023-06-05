@@ -33,9 +33,10 @@ public class PlayerLifeDeath : MonoBehaviour
             playerHealth = maxPlayerHealth;
         }
         HealthBarFiller();
-        if (playerHealth <= 0)
+        if (playerHealth == 0)
         {
             _playerAnimator.SetBool("isDying", true);
+            //transform.rigi
         }
     }
 
