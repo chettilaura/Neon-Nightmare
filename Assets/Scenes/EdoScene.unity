@@ -241,15 +241,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359222039787, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.16018224
+      value: 0.16018225
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359222039787, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000004252742
+      value: -0.000000023309845
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359222039787, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -6.9012535e-10
+      value: 0.000000003782667
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359368337064, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalPosition.x
@@ -261,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359368337064, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.4435797
+      value: -1.7135798
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359368337064, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.x
@@ -309,6 +309,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 725767006}
   player: {fileID: 488686627}
+  bulletPrefab: {fileID: 1458738847811660533, guid: 7e57852d051937846aa1a55ab0fc85b4, type: 3}
+  BulletSpawnPoint: {fileID: 1205425075}
+  bulletSpeed: 10
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 64
@@ -909,6 +912,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &1205425075 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5059347814186031789, guid: 8fa57493556042341b46082b89c1369c, type: 3}
+  m_PrefabInstance: {fileID: 729240010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1501299051
 GameObject:
   m_ObjectHideFlags: 0

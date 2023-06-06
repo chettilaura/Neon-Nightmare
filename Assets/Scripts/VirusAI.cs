@@ -6,7 +6,11 @@ public class VirusAI : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform player;
+    public GameObject bulletPrefab;
+    public Transform BulletSpawnPoint;
+    public float bulletSpeed;
     public LayerMask WhatIsGround, WhatIsPlayer;
+
 
     //patroling
     public Vector3 walkPoint;
@@ -62,7 +66,8 @@ public class VirusAI : MonoBehaviour
         transform.LookAt(player);
         if (!alreadyAttacked)
         {
-            ///AttackCodeHere
+            var bullet = Instantiate(bulletPrefab, BulletSpawnPoint.position, BulletSpawnPoint.rotation);
+            bullet.GetComponent<Rigidbody>().velocity = new Vector3(BulletSpawnPoint.forward.x * bulletSpeed, 0f, BulletSpawnPoint.forward.z * bulletSpeed);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
