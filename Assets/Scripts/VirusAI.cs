@@ -63,11 +63,11 @@ public class VirusAI : MonoBehaviour
     private void Attack()
     {
         agent.SetDestination(transform.position);
-        transform.LookAt(player);
+        transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
         if (!alreadyAttacked)
         {
             var bullet = Instantiate(bulletPrefab, BulletSpawnPoint.position, BulletSpawnPoint.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = new Vector3(BulletSpawnPoint.forward.x * bulletSpeed, 0f, BulletSpawnPoint.forward.z * bulletSpeed);
+            bullet.GetComponent<Rigidbody>().velocity = BulletSpawnPoint.forward * bulletSpeed;
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
