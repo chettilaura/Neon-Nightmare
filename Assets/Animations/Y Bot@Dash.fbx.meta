@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 8a11539717c0c3f47a31011720f08f8e
+guid: bcff054ec109fe24ab35e8c376888aa1
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Jump (1)
+    second: Jump (2)
   - first:
       74: 5539831331247536789
     second: Jump
@@ -50,7 +50,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
@@ -532,23 +532,23 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Y Bot@Jump (1)(Clone)
+    - name: Y Bot@Jump (2)(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Alpha_Surface
-      parentName: Y Bot@Jump (1)(Clone)
+      parentName: Y Bot@Jump (2)(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Alpha_Joints
-      parentName: Y Bot@Jump (1)(Clone)
+      parentName: Y Bot@Jump (2)(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:Hips
-      parentName: Y Bot@Jump (1)(Clone)
+      parentName: Y Bot@Jump (2)(Clone)
       position: {x: -0.0006904592, y: 0.99203867, z: 0.0106563615}
       rotation: {x: -0.000000011580703, y: 0.0000013853428, z: -0.00004390895, w: 1}
       scale: {x: 1, y: 1, z: 1}

@@ -133,6 +133,14 @@ public class Mov : MonoBehaviour
             animator.SetBool("isFalling", true);
             animator.SetBool("doubleJump", false);
         }
+
+        if(state == MovementState.dashing)
+        {
+            animator.SetBool("dashing", true);
+        } else
+        {
+            animator.SetBool("dashing", false);
+        }
     }
 
     private void FixedUpdate()
@@ -166,7 +174,7 @@ public class Mov : MonoBehaviour
                 {
                     returnOnGroundEvent.Invoke();
                 }
-            } 
+            }
 
         }
 
