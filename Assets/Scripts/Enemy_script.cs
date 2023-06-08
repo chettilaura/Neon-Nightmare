@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy_script : MonoBehaviour
 {
     private PlayerLifeDeath PlayerLifeDeath;
+    private int count = 100;
 
 
 
@@ -14,16 +15,17 @@ public class Enemy_script : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (this.gameObject.CompareTag("spam"))
+            PlayerLifeDeath = other.GetComponent<PlayerLifeDeath>();
+            if (count == 100)
             {
-                PlayerLifeDeath = other.GetComponent<PlayerLifeDeath>();
                 PlayerLifeDeath.lightAttack();
+                count = 0;
             }
-
+            count++;
         }
             
     }

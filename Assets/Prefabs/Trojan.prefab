@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4830959524856455893}
   - component: {fileID: 5419330302744668313}
-  - component: {fileID: 8199302892730812263}
   m_Layer: 0
   m_Name: Trojan
   m_TagString: Untagged
@@ -47,18 +46,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4818974, y: 3.8279548, z: 1.2593307}
   m_Center: {x: -0.58040905, y: -1.1052487, z: 0.12966537}
---- !u!114 &8199302892730812263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8332614409894793170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edf3a716b8cbced478591bb1b3158fcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &562770258921602899
 PrefabInstance:
   m_ObjectHideFlags: 0

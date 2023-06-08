@@ -6,7 +6,6 @@ TagManager:
   tags:
   - enemy
   - Checkpoint
-  - spam
   layers:
   - Default
   - TransparentFX
