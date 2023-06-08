@@ -91,7 +91,7 @@ public class ClosestEnemyNearby : MonoBehaviour
                                     
                             RaycastHit hit;
                             if(closestEnemy!=null){
-                                if (Physics.Raycast(playerObj_orientation.position, closestEnemy.position - playerObj_orientation.position, out hit)){
+                                if (Physics.Raycast(playerObj_orientation.position, closestEnemy.position - playerObj_orientation.position, out hit, Mathf.Infinity, 9)){ //9 è il layer del player, così ignora quel layer nel raycast
                                     Debug.DrawRay(playerObj_orientation.position, closestEnemy.position - playerObj_orientation.position, Color.red);
                                     Debug.Log(hit.transform.tag);
 
