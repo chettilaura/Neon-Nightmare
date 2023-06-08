@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1617057497649444621}
   - component: {fileID: 1617057497649444620}
   m_Layer: 5
-  m_Name: Image (6)
+  m_Name: Tacchetta7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 1617057497802525016}
   - component: {fileID: 1617057497802525019}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Tacchetta3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 1617057498055572781}
   - component: {fileID: 1617057498055572780}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 1617057498590957849}
   - component: {fileID: 1617057498590957848}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Tacchetta1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 1617057498813764459}
   - component: {fileID: 1617057498813764458}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: Tacchetta4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 1617057498955123781}
   - component: {fileID: 1617057498955123780}
   m_Layer: 5
-  m_Name: Image (4)
+  m_Name: Tacchetta5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -569,7 +569,7 @@ GameObject:
   - component: {fileID: 1617057499213571520}
   - component: {fileID: 1617057499213571523}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Tacchetta2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 1617057499430036552}
   - component: {fileID: 1617057499430036555}
   m_Layer: 5
-  m_Name: Image (5)
+  m_Name: Tacchetta6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

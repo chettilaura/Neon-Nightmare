@@ -502,23 +502,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359222039787, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.16018224
+      value: 0.16018225
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359222039787, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000004252742
+      value: 0.000000023309845
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359222039787, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -6.9012535e-10
+      value: -0.000000003782667
       objectReference: {fileID: 0}
     - target: {fileID: 5005750360493636026, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000171347
+      value: 0.000000017134711
       objectReference: {fileID: 0}
     - target: {fileID: 5005750360493636026, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000015688795
+      value: -0.0000000015688806
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25de85cb6cec9147928819e989db584, type: 3}
@@ -1160,26 +1160,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1617057497649444622, guid: b3b7b15fcb63af24e83c21ef8d45b1a7, type: 3}
-      propertyPath: m_Name
-      value: Tacchetta7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1617057497802525013, guid: b3b7b15fcb63af24e83c21ef8d45b1a7, type: 3}
-      propertyPath: m_Name
-      value: Tacchetta3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1617057498055572782, guid: b3b7b15fcb63af24e83c21ef8d45b1a7, type: 3}
-      propertyPath: m_Name
-      value: Base
-      objectReference: {fileID: 0}
-    - target: {fileID: 1617057498590957850, guid: b3b7b15fcb63af24e83c21ef8d45b1a7, type: 3}
-      propertyPath: m_Name
-      value: Tacchetta1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1617057498813764452, guid: b3b7b15fcb63af24e83c21ef8d45b1a7, type: 3}
-      propertyPath: m_Name
-      value: Tacchetta4
-      objectReference: {fileID: 0}
     - target: {fileID: 1617057498819643492, guid: b3b7b15fcb63af24e83c21ef8d45b1a7, type: 3}
       propertyPath: m_Name
       value: GUI
@@ -1267,18 +1247,6 @@ PrefabInstance:
     - target: {fileID: 1617057498819643496, guid: b3b7b15fcb63af24e83c21ef8d45b1a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1617057498955123782, guid: b3b7b15fcb63af24e83c21ef8d45b1a7, type: 3}
-      propertyPath: m_Name
-      value: Tacchetta5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1617057499213571549, guid: b3b7b15fcb63af24e83c21ef8d45b1a7, type: 3}
-      propertyPath: m_Name
-      value: Tacchetta2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1617057499430036549, guid: b3b7b15fcb63af24e83c21ef8d45b1a7, type: 3}
-      propertyPath: m_Name
-      value: Tacchetta6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3b7b15fcb63af24e83c21ef8d45b1a7, type: 3}
