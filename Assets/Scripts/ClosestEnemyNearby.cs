@@ -6,6 +6,7 @@ public class ClosestEnemyNearby : MonoBehaviour
 {
     public Transform orientation;
     public Transform playerObj_orientation;
+    private Transform _closestEnemy;
     public ParticleSystem particleSys;
     Vector3 LastTarget = new Vector3(0,0,0);
     List<Transform> enemies = new List<Transform>();
@@ -19,14 +20,14 @@ public class ClosestEnemyNearby : MonoBehaviour
    
     void Update()
     {
-        FindClosestEnemy();
-        if (FindClosestEnemy() == null)
+        _closestEnemy = FindClosestEnemy();
+        if (_closestEnemy == null)
         {
-            fireAtEnemy(LastTarget);
+            //fireAtEnemy(LastTarget);
         }
         else
         {
-            fireAtEnemy(FindClosestEnemy().position);
+            fireAtEnemy(_closestEnemy.position);
         }
 
 
@@ -92,12 +93,14 @@ public class ClosestEnemyNearby : MonoBehaviour
                             if(closestEnemy!=null){
                                 if (Physics.Raycast(playerObj_orientation.position, closestEnemy.position - playerObj_orientation.position, out hit)){
                                     Debug.DrawRay(playerObj_orientation.position, closestEnemy.position - playerObj_orientation.position, Color.red);
+                                    Debug.Log(hit.transform.tag);
 
-                                    if (hit.transform.tag != "enemy" && hit.transform.tag != "Player")
+                                if (hit.transform.tag != "enemy" /*&& hit.transform.tag != "Player"*/)
                                     {
+                                        projectiles.enabled = false;
                                         Debug.Log(hit.transform.tag);
                                         Debug.Log("oggetto in mezzo che non è enemy");
-                                        return null;
+                                        closestEnemy = null;
                                     }
                                 
                                 }
