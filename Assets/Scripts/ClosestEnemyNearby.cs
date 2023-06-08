@@ -5,6 +5,7 @@ using UnityEngine;
 public class ClosestEnemyNearby : MonoBehaviour
 {
     public Transform orientation;
+    public Transform playerObj_orientation;
     public ParticleSystem particleSys;
     Vector3 LastTarget = new Vector3(0,0,0);
     List<Transform> enemies = new List<Transform>();
@@ -40,7 +41,7 @@ public class ClosestEnemyNearby : MonoBehaviour
         if(other.tag == "enemy")
         {
             enemies.Add(other.transform);
-            Debug.Log("nemico entrato in zona");
+            //Debug.Log("nemico entrato in zona");
         }
     }
 
@@ -50,7 +51,7 @@ public class ClosestEnemyNearby : MonoBehaviour
         {
             LastTarget = other.transform.position;
             enemies.Remove(other.transform);
-            Debug.Log("nemico uscito da zona");
+            //Debug.Log("nemico uscito da zona");
         }
     }
 
@@ -62,7 +63,7 @@ public class ClosestEnemyNearby : MonoBehaviour
 
         if (enemies.Count == 0)
         {
-            projectiles.enabled = false;
+            projectiles.enabled = false; //fine sparo quando non ci sono nemici
         }
 
         else
@@ -73,6 +74,8 @@ public class ClosestEnemyNearby : MonoBehaviour
             foreach (Transform currentEnemy in enemies)
             {
                 float distanceToEnemy = (currentEnemy.position - orientation.position).sqrMagnitude;
+                
+
                 if (distanceToEnemy < distanceToClosest)
                 {
                     distanceToClosest = distanceToEnemy;
@@ -80,7 +83,28 @@ public class ClosestEnemyNearby : MonoBehaviour
                 }
             }
 
+        
+
+                            //a fine ciclo sugli enemies controllo che non ci sia oggetto in mezzo tra player e nemico scelto
+                            //se c'è e quello è il più vicino ritorno null -> nella update andrà a prendermi il lastTarget
+                                    
+                            RaycastHit hit;
+                            if(closestEnemy!=null){
+                                if (Physics.Raycast(playerObj_orientation.position, closestEnemy.position - playerObj_orientation.position, out hit)){
+                                    Debug.DrawRay(playerObj_orientation.position, closestEnemy.position - playerObj_orientation.position, Color.red);
+
+                                    if (hit.transform.tag != "enemy" && hit.transform.tag != "Player")
+                                    {
+                                        Debug.Log(hit.transform.tag);
+                                        Debug.Log("oggetto in mezzo che non è enemy");
+                                        return null;
+                                    }
+                                
+                                }
+                            }
+
         }
+        
 
         return closestEnemy;
             
@@ -88,7 +112,7 @@ public class ClosestEnemyNearby : MonoBehaviour
 
     void fireAtEnemy(Vector3 v2)
     {
-        Debug.Log("sparo");
+        //Debug.Log("sparo");
         ParticleSystem.Particle[] particles = new ParticleSystem.Particle[1000];
         int count = particleSys.GetParticles(particles);
         for (int i = 0; i < count; i++)

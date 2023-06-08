@@ -7,7 +7,7 @@ public class Enemy_script : MonoBehaviour
     private PlayerLifeDeath PlayerLifeDeath;
 
 
-    
+
     void Start()
     {
         gameObject.tag = "enemy";
@@ -19,7 +19,7 @@ public class Enemy_script : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             PlayerLifeDeath = other.GetComponent<PlayerLifeDeath>();
-            PlayerLifeDeath.lightAttack();
+            //PlayerLifeDeath.lightAttack();
         }
             
     }
