@@ -8,13 +8,14 @@ public class ClosestEnemyNearby : MonoBehaviour
     public ParticleSystem particleSys;
     Vector3 LastTarget = new Vector3(0,0,0);
     List<Transform> enemies = new List<Transform>();
-    // Start is called before the first frame update
+    
+
     void Start()
     {
 
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         FindClosestEnemy();
@@ -30,11 +31,16 @@ public class ClosestEnemyNearby : MonoBehaviour
 
     }
 
+    
+    //tiene lista di enemies che aggiunge e rimuove quando entrano e escono dal trigger (ontriggerenter e ontriggerexit)
+
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "enemy")
         {
             enemies.Add(other.transform);
+            Debug.Log("nemico entrato in zona");
         }
     }
 
@@ -44,6 +50,7 @@ public class ClosestEnemyNearby : MonoBehaviour
         {
             LastTarget = other.transform.position;
             enemies.Remove(other.transform);
+            Debug.Log("nemico uscito da zona");
         }
     }
 
@@ -61,6 +68,8 @@ public class ClosestEnemyNearby : MonoBehaviour
         else
         {
             projectiles.enabled = true;
+
+            //ciclo su enemies
             foreach (Transform currentEnemy in enemies)
             {
                 float distanceToEnemy = (currentEnemy.position - orientation.position).sqrMagnitude;
@@ -79,6 +88,7 @@ public class ClosestEnemyNearby : MonoBehaviour
 
     void fireAtEnemy(Vector3 v2)
     {
+        Debug.Log("sparo");
         ParticleSystem.Particle[] particles = new ParticleSystem.Particle[1000];
         int count = particleSys.GetParticles(particles);
         for (int i = 0; i < count; i++)

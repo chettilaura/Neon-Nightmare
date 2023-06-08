@@ -5,10 +5,15 @@ using UnityEngine;
 public class Enemy_script : MonoBehaviour
 {
     private PlayerLifeDeath PlayerLifeDeath;
+
+
+    
     void Start()
     {
         gameObject.tag = "enemy";
     }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -19,9 +24,5 @@ public class Enemy_script : MonoBehaviour
             
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
