@@ -18,8 +18,12 @@ public class Enemy_script : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerLifeDeath = other.GetComponent<PlayerLifeDeath>();
-            //PlayerLifeDeath.lightAttack();
+            if (this.gameObject.CompareTag("spam"))
+            {
+                PlayerLifeDeath = other.GetComponent<PlayerLifeDeath>();
+                PlayerLifeDeath.lightAttack();
+            }
+
         }
             
     }

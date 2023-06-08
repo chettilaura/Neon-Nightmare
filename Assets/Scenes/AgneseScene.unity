@@ -252,6 +252,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sp4m
       objectReference: {fileID: 0}
+    - target: {fileID: 259880176221654222, guid: 9885ae0a057c4a345869ad4f8e9e3fbf, type: 3}
+      propertyPath: m_TagString
+      value: spam
+      objectReference: {fileID: 0}
     - target: {fileID: 2674254829685373543, guid: 9885ae0a057c4a345869ad4f8e9e3fbf, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -498,15 +502,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359222039787, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.16018225
+      value: 0.16018222
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359222039787, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000023309845
+      value: 0.000000025470568
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359222039787, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000003782667
+      value: -0.0000000041333035
       objectReference: {fileID: 0}
     - target: {fileID: 5005750360493636026, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.y
