@@ -9,6 +9,7 @@ public class VirusAI : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform BulletSpawnPoint;
     public float bulletSpeed;
+    public float bulletSpread;
     public LayerMask WhatIsGround, WhatIsPlayer;
 
 
@@ -66,8 +67,9 @@ public class VirusAI : MonoBehaviour
         transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
         if (!alreadyAttacked)
         {
+            float randomRange = Random.Range(-bulletSpread, bulletSpread);
             var bullet = Instantiate(bulletPrefab, BulletSpawnPoint.position, BulletSpawnPoint.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = BulletSpawnPoint.forward * bulletSpeed;
+            bullet.GetComponent<Rigidbody>().velocity = Quaternion.Euler(0f, randomRange, 0f) * BulletSpawnPoint.forward * bulletSpeed;
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
