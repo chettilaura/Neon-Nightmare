@@ -76,7 +76,6 @@ public class PatrolState : State
     public override void Tik()
     {
         _spam.SetWayPointDestination();
-        Debug.Log("Patrol");
     }
 
     public override void Exit()
