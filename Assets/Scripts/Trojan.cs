@@ -9,7 +9,7 @@ public class Trojan : MonoBehaviour
     public NavMeshAgent agent;
     public Transform player;
     public LayerMask WhatIsGround, WhatIsPlayer;
-    
+    public Explosion explotion_script;
 
     //patroling
     public Vector3 walkPoint;
@@ -18,17 +18,18 @@ public class Trojan : MonoBehaviour
 
     //attacking
 
-    public float attackRange = 5f; // Distanza massima per attaccare
     public ParticleSystem explosionParticleSystem;  // Riferimento al Particle System dell'esplosione
 
     //states
     public float sightRange, explosionRange;
     public bool playerInSight, playerInExplosionRange;
+    public bool ableToCharge;
 
     private void Awake()
     {
         player = GameObject.Find("PlayerCapsule").transform;
         agent = GetComponent<NavMeshAgent>();
+        ableToCharge=true;
     }
 
     private void Update()
@@ -37,8 +38,8 @@ public class Trojan : MonoBehaviour
         playerInExplosionRange = Physics.CheckSphere(transform.position, explosionRange, WhatIsPlayer);
 
         if (!playerInSight && !playerInExplosionRange) Patrol();
-        if (playerInSight && !playerInExplosionRange) Charge();
-        if(playerInSight && playerInExplosionRange) Explode();
+        if (playerInSight && ableToCharge) Charge();
+       // if (playerInSight && playerInExplosionRange) Explode();
     }
 
     private void Patrol()
@@ -61,36 +62,33 @@ public class Trojan : MonoBehaviour
             walkPointSet = true;
     }
 
+
+    private IEnumerator WaitBeforeNextAttack()
+    {
+        ableToCharge=false;
+        yield return new WaitForSeconds(2);
+        ableToCharge=true;
+    }
+
+
     private void Charge()
-    {
-                transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
+    {         
+                transform.LookAt(new Vector3(player.position.x, player.position.y, player.position.z));
                 agent.SetDestination(player.position);
-                 //CARICA
+
     }
 
-
-
-    private void Explode()
+private void OnCollisionEnter(Collision other)
     {
-        
-    ParticleSystem explosionInstance = Instantiate(explosionParticleSystem, transform.position, Quaternion.identity);
-    // Avvia il Particle System
-        explosionInstance.Play();
-        StartCoroutine(WaitForExplosionToFinish(explosionInstance));
-
+        if (other.collider.gameObject.CompareTag("Player"))
+        {
+        // Avvia il Particle System
+        explosionParticleSystem.Play();
+        StartCoroutine(WaitBeforeNextAttack());
+        StartCoroutine(explotion_script.ChangeColliderStatus());
+        }
     }
 
-
-private IEnumerator WaitForExplosionToFinish(ParticleSystem explosionInstance)
-{
-       while (explosionInstance.IsAlive(true))
-    {
-        yield return null;
-    }
-
-    // Il Particle System ha terminato di riprodurre le particelle
-    // Puoi eseguire altre azioni o distruggere l'istanza dell'esplosione
-    Destroy(explosionInstance.gameObject);
-}
+   
 
 }

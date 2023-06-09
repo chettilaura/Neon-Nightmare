@@ -93,13 +93,13 @@ public class ClosestEnemyNearby : MonoBehaviour
                             if(closestEnemy!=null){
                                 if (Physics.Raycast(playerObj_orientation.position, closestEnemy.position - playerObj_orientation.position, out hit, Mathf.Infinity, 9)){ //9 è il layer del player, così ignora quel layer nel raycast
                                     Debug.DrawRay(playerObj_orientation.position, closestEnemy.position - playerObj_orientation.position, Color.red);
-                                    Debug.Log(hit.transform.tag);
+                                  //  Debug.Log(hit.transform.tag);
 
                                 if (hit.transform.tag != "enemy" /*&& hit.transform.tag != "Player"*/)
                                     {
                                         projectiles.enabled = false;
-                                        Debug.Log(hit.transform.tag);
-                                        Debug.Log("oggetto in mezzo che non è enemy");
+                                        //Debug.Log(hit.transform.tag);
+                                        //Debug.Log("oggetto in mezzo che non è enemy");
                                         closestEnemy = null;
                                     }
                                 
