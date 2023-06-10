@@ -19,7 +19,9 @@ public class Enemy_script : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerLifeDeath = other.GetComponent<PlayerLifeDeath>();
+            //PlayerLifeDeath = other.GetComponent<PlayerLifeDeath>();
+            //PlayerLifeDeath= other.GetComponentInChildren<PlayerLifeDeath>();
+            PlayerLifeDeath = other.GetComponentInParent<PlayerLifeDeath>();
             if (count == 100)
             {
                 PlayerLifeDeath.lightAttack();

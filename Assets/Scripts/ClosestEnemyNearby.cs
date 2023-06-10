@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +9,9 @@ public class ClosestEnemyNearby : MonoBehaviour
     public ParticleSystem particleSys;
     Vector3 LastTarget = new Vector3(0,0,0);
     List<Transform> enemies = new List<Transform>();
+
+    private VirusLifeSystem virusLife;
+    private int _countTime = 100;
     
 
     void Start()
@@ -84,27 +86,39 @@ public class ClosestEnemyNearby : MonoBehaviour
                 }
             }
 
-        
 
-                            //a fine ciclo sugli enemies controllo che non ci sia oggetto in mezzo tra player e nemico scelto
-                            //se c'è e quello è il più vicino ritorno null -> nella update andrà a prendermi il lastTarget
-                                    
-                            RaycastHit hit;
-                            if(closestEnemy!=null){
-                                if (Physics.Raycast(playerObj_orientation.position, closestEnemy.position - playerObj_orientation.position, out hit, Mathf.Infinity, 9)){ //9 è il layer del player, così ignora quel layer nel raycast
-                                    Debug.DrawRay(playerObj_orientation.position, closestEnemy.position - playerObj_orientation.position, Color.red);
-                                  //  Debug.Log(hit.transform.tag);
 
-                                if (hit.transform.tag != "enemy" /*&& hit.transform.tag != "Player"*/)
-                                    {
-                                        projectiles.enabled = false;
-                                        //Debug.Log(hit.transform.tag);
-                                        //Debug.Log("oggetto in mezzo che non è enemy");
-                                        closestEnemy = null;
-                                    }
-                                
-                                }
-                            }
+            //a fine ciclo sugli enemies controllo che non ci sia oggetto in mezzo tra player e nemico scelto
+            //se c'è e quello è il più vicino ritorno null -> nella update andrà a prendermi il lastTarget
+
+            RaycastHit hit;
+            if (closestEnemy != null)
+            {
+                if (Physics.Raycast(playerObj_orientation.position, closestEnemy.position - playerObj_orientation.position, out hit, Mathf.Infinity, 9))
+                { //9 è il layer del player, così ignora quel layer nel raycast
+                    Debug.DrawRay(playerObj_orientation.position, closestEnemy.position - playerObj_orientation.position, Color.red);
+                    //  Debug.Log(hit.transform.tag);
+                    virusLife = hit.transform.GetComponent<VirusLifeSystem>();
+
+                    if (hit.transform.tag != "enemy" /*&& hit.transform.tag != "Player"*/)
+                    {
+                        projectiles.enabled = false;
+                        //Debug.Log(hit.transform.tag);
+                        //Debug.Log("oggetto in mezzo che non è enemy");
+                        closestEnemy = null;
+                    }
+                    else
+                    {
+                        if (_countTime == 100  && virusLife.virusHealth>0)
+                        {
+                            virusLife.Attack();
+                            _countTime = 0;
+                        }
+                        _countTime++;
+                    }
+
+                }
+            }
 
         }
         
@@ -131,5 +145,6 @@ public class ClosestEnemyNearby : MonoBehaviour
         }
 
         particleSys.SetParticles(particles, count);
+
     }
 }

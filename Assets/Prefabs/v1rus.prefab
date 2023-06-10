@@ -339,9 +339,10 @@ GameObject:
   - component: {fileID: 5555008398556364916}
   - component: {fileID: 3469957930063300769}
   - component: {fileID: 6336615766732501669}
+  - component: {fileID: 8871876436610766810}
   m_Layer: 0
   m_Name: v1rus
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -377,10 +378,10 @@ Animator:
   m_GameObject: {fileID: 3941990352683619156}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 2c69d1e7f1ceff048b464bf5773f6fe7, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3e015e533c6c8f9459df9bcfda71a8b2, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -509,6 +510,21 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8871876436610766810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3941990352683619156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5a7bdcc2e21d649acd6e582dfd60ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virusHealth: 100
+  maxVirusHealth: 100
+  damage: 10
 --- !u!1 &4291730668062767290
 GameObject:
   m_ObjectHideFlags: 0

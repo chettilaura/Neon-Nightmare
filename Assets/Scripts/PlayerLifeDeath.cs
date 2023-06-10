@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerLifeDeath : MonoBehaviour
 {
     [SerializeField] private Animator _playerAnimator;
+    [SerializeField] private GameObject _playerCamera;
 
     [Space]
     [Range(0, 100f)] public float playerHealth;
@@ -29,8 +30,10 @@ public class PlayerLifeDeath : MonoBehaviour
     {
         if(transform.position.y < -10f)
         {
-           transform.position = _respawnPoint;
+            _playerCamera.transform.position = _respawnPoint;
+            transform.position = _respawnPoint;
             playerHealth = maxPlayerHealth;
+            Debug.Log(_respawnPoint);
         }
         HealthBarFiller();
         if (playerHealth == 0)
@@ -79,6 +82,7 @@ public class PlayerLifeDeath : MonoBehaviour
         if (other.gameObject.CompareTag("Checkpoint"))
         {
             _respawnPoint = other.transform.position;
+            _respawnPoint.y = 20f;
             Destroy(other.gameObject);
             Debug.Log("checkpoint");
         }
