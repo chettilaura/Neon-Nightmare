@@ -12,6 +12,7 @@ public class ClosestEnemyNearby : MonoBehaviour
 
     private VirusLifeSystem virusLife;
     private int _countTime = 100;
+    private bool fire= false;
     
 
     void Start()
@@ -22,6 +23,14 @@ public class ClosestEnemyNearby : MonoBehaviour
    
     void Update()
     {
+        //sparo con F
+        if (Input.GetKeyDown(KeyCode.F)){
+            fire=true; 
+        }else{
+            fire=false;
+        }
+
+        
         _closestEnemy = FindClosestEnemy();
         if (_closestEnemy == null)
         {
@@ -29,8 +38,12 @@ public class ClosestEnemyNearby : MonoBehaviour
         }
         else
         {
+                
+            Debug.Log("sparo");
             fireAtEnemy(_closestEnemy.position);
+                
         }
+    
 
 
     }
@@ -67,11 +80,12 @@ public class ClosestEnemyNearby : MonoBehaviour
         if (enemies.Count == 0)
         {
             projectiles.enabled = false; //fine sparo quando non ci sono nemici
+            fire=false;
         }
 
         else
         {
-            projectiles.enabled = true;
+            if (fire)  projectiles.enabled = true; //controllo se premuto tasto F per sparare
 
             //ciclo su enemies
             foreach (Transform currentEnemy in enemies)
@@ -103,6 +117,7 @@ public class ClosestEnemyNearby : MonoBehaviour
                     if (hit.transform.tag != "enemy" /*&& hit.transform.tag != "Player"*/)
                     {
                         projectiles.enabled = false;
+                        fire=false;
                         //Debug.Log(hit.transform.tag);
                         //Debug.Log("oggetto in mezzo che non è enemy");
                         closestEnemy = null;
@@ -129,6 +144,11 @@ public class ClosestEnemyNearby : MonoBehaviour
 
     void fireAtEnemy(Vector3 v2)
     {
+        RaycastHit hit;
+        if (Physics.Raycast(playerObj_orientation.position, v2 - playerObj_orientation.position, out hit, Mathf.Infinity, 9)){
+            Debug.DrawRay(playerObj_orientation.position, v2 - playerObj_orientation.position, Color.red);
+        }
+
         //Debug.Log("sparo");
         ParticleSystem.Particle[] particles = new ParticleSystem.Particle[1000];
         int count = particleSys.GetParticles(particles);
