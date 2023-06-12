@@ -472,6 +472,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9052590132832205389, guid: 231bb143e6f1afa478aabeb4bdaca4bc, type: 3}
   m_PrefabInstance: {fileID: 539359711}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &196803125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9052590132832205388, guid: 231bb143e6f1afa478aabeb4bdaca4bc, type: 3}
+  m_PrefabInstance: {fileID: 1204160594}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &214256455
 Mesh:
   m_ObjectHideFlags: 0
@@ -12196,6 +12201,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1011060782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9052590132832205388, guid: 231bb143e6f1afa478aabeb4bdaca4bc, type: 3}
+  m_PrefabInstance: {fileID: 539359711}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1011060783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011060782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5a7bdcc2e21d649acd6e582dfd60ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virusHealth: 100
+  maxVirusHealth: 100
+  damage: 5
 --- !u!43 &1034590543
 Mesh:
   m_ObjectHideFlags: 0
@@ -12918,6 +12943,26 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
   m_PVRTiledBaking: 0
+--- !u!1 &1379632107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9052590132832205388, guid: 231bb143e6f1afa478aabeb4bdaca4bc, type: 3}
+  m_PrefabInstance: {fileID: 615411390}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1379632108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379632107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5a7bdcc2e21d649acd6e582dfd60ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virusHealth: 100
+  maxVirusHealth: 100
+  damage: 5
 --- !u!1 &1484475773
 GameObject:
   m_ObjectHideFlags: 0
@@ -24103,14 +24148,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 796632735117476354, guid: 316f373fe32d1c743953d5b4fd8e3c0a, type: 3}
-      propertyPath: m_TagString
-      value: enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4276043484084019565, guid: 316f373fe32d1c743953d5b4fd8e3c0a, type: 3}
-      propertyPath: m_TagString
-      value: enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 4830959524856455893, guid: 316f373fe32d1c743953d5b4fd8e3c0a, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -24155,21 +24192,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5761257189564239427, guid: 316f373fe32d1c743953d5b4fd8e3c0a, type: 3}
-      propertyPath: m_TagString
-      value: enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6706634683294260897, guid: 316f373fe32d1c743953d5b4fd8e3c0a, type: 3}
-      propertyPath: m_TagString
-      value: enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 8332614409894793170, guid: 316f373fe32d1c743953d5b4fd8e3c0a, type: 3}
       propertyPath: m_Name
       value: Trojan
-      objectReference: {fileID: 0}
-    - target: {fileID: 8332614409894793170, guid: 316f373fe32d1c743953d5b4fd8e3c0a, type: 3}
-      propertyPath: m_TagString
-      value: enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 316f373fe32d1c743953d5b4fd8e3c0a, type: 3}
@@ -24686,6 +24711,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9052590132832205389, guid: 231bb143e6f1afa478aabeb4bdaca4bc, type: 3}
   m_PrefabInstance: {fileID: 1204160594}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2122106149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196803125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5a7bdcc2e21d649acd6e582dfd60ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virusHealth: 100
+  maxVirusHealth: 100
+  damage: 5
 --- !u!1001 &5005750360157970463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24697,6 +24737,38 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 1188406411, guid: e25de85cb6cec9147928819e989db584, type: 3}
+      propertyPath: HealthBarIMG.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188406411, guid: e25de85cb6cec9147928819e989db584, type: 3}
+      propertyPath: HealthBarIMG.Array.data[0]
+      value: 
+      objectReference: {fileID: 965062845}
+    - target: {fileID: 1188406411, guid: e25de85cb6cec9147928819e989db584, type: 3}
+      propertyPath: HealthBarIMG.Array.data[1]
+      value: 
+      objectReference: {fileID: 965062844}
+    - target: {fileID: 1188406411, guid: e25de85cb6cec9147928819e989db584, type: 3}
+      propertyPath: HealthBarIMG.Array.data[2]
+      value: 
+      objectReference: {fileID: 965062843}
+    - target: {fileID: 1188406411, guid: e25de85cb6cec9147928819e989db584, type: 3}
+      propertyPath: HealthBarIMG.Array.data[3]
+      value: 
+      objectReference: {fileID: 965062842}
+    - target: {fileID: 1188406411, guid: e25de85cb6cec9147928819e989db584, type: 3}
+      propertyPath: HealthBarIMG.Array.data[4]
+      value: 
+      objectReference: {fileID: 965062841}
+    - target: {fileID: 1188406411, guid: e25de85cb6cec9147928819e989db584, type: 3}
+      propertyPath: HealthBarIMG.Array.data[5]
+      value: 
+      objectReference: {fileID: 965062840}
+    - target: {fileID: 1188406411, guid: e25de85cb6cec9147928819e989db584, type: 3}
+      propertyPath: HealthBarIMG.Array.data[6]
+      value: 
+      objectReference: {fileID: 965062839}
     - target: {fileID: 1716458997, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: HealthBarIMG.Array.data[0]
       value: 
@@ -24787,15 +24859,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359222039787, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.16018225
+      value: 0.16018222
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359222039787, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000023309845
+      value: -0.000000025470568
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359222039787, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000003782667
+      value: 0.0000000041333035
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359222039789, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_Layer
@@ -24831,11 +24903,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5005750360493636026, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017134711
+      value: 0.0000000171347
       objectReference: {fileID: 0}
     - target: {fileID: 5005750360493636026, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000015688806
+      value: -0.0000000015688795
       objectReference: {fileID: 0}
     - target: {fileID: 5005750360493636028, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_Layer

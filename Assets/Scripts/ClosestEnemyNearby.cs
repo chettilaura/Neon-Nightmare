@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ClosestEnemyNearby : MonoBehaviour
@@ -11,7 +12,7 @@ public class ClosestEnemyNearby : MonoBehaviour
     List<Transform> enemies = new List<Transform>();
 
     private VirusLifeSystem virusLife;
-    private int _countTime = 100;
+    private int _countTime = 50;
     private bool fire= false;
     
 
@@ -23,27 +24,28 @@ public class ClosestEnemyNearby : MonoBehaviour
    
     void Update()
     {
+
+        _closestEnemy = FindClosestEnemy();
         //sparo con F
-        if (Input.GetKeyDown(KeyCode.F)){
-            fire=true; 
-        }else{
+        if (Input.GetKey(KeyCode.F)){
+            fire=true;
+
+            if (_closestEnemy != null)
+            {
+                Debug.Log("sparo");
+                fireAtEnemy(_closestEnemy.position);
+                if (_countTime == 50 && virusLife.virusHealth > 0)
+                {
+                    virusLife.Attack();
+                    _countTime = 0;
+                }
+                _countTime++;
+            }
+        }
+        else{
             fire=false;
         }
 
-        
-        _closestEnemy = FindClosestEnemy();
-        if (_closestEnemy == null)
-        {
-            //fireAtEnemy(LastTarget);
-        }
-        else
-        {
-                
-            Debug.Log("sparo");
-            fireAtEnemy(_closestEnemy.position);
-                
-        }
-    
 
 
     }
@@ -85,19 +87,26 @@ public class ClosestEnemyNearby : MonoBehaviour
 
         else
         {
-            if (fire)  projectiles.enabled = true; //controllo se premuto tasto F per sparare
+            if (fire)
+                projectiles.enabled = true; //controllo se premuto tasto F per sparare
+            else
+                projectiles.enabled = false;
 
             //ciclo su enemies
             foreach (Transform currentEnemy in enemies)
             {
-                float distanceToEnemy = (currentEnemy.position - orientation.position).sqrMagnitude;
-                
-
-                if (distanceToEnemy < distanceToClosest)
+                if (currentEnemy != null)
                 {
-                    distanceToClosest = distanceToEnemy;
-                    closestEnemy = currentEnemy;
+                    float distanceToEnemy = (currentEnemy.position - orientation.position).sqrMagnitude;
+
+
+                    if (distanceToEnemy < distanceToClosest)
+                    {
+                        distanceToClosest = distanceToEnemy;
+                        closestEnemy = currentEnemy;
+                    }
                 }
+
             }
 
 
@@ -112,7 +121,6 @@ public class ClosestEnemyNearby : MonoBehaviour
                 { //9 è il layer del player, così ignora quel layer nel raycast
                     Debug.DrawRay(playerObj_orientation.position, closestEnemy.position - playerObj_orientation.position, Color.red);
                     //  Debug.Log(hit.transform.tag);
-                    virusLife = hit.transform.GetComponent<VirusLifeSystem>();
 
                     if (hit.transform.tag != "enemy" /*&& hit.transform.tag != "Player"*/)
                     {
@@ -124,12 +132,15 @@ public class ClosestEnemyNearby : MonoBehaviour
                     }
                     else
                     {
-                        if (_countTime == 100  && virusLife.virusHealth>0)
+                        virusLife = hit.transform.GetComponent<VirusLifeSystem>();
+                        if (virusLife == null)
                         {
-                            virusLife.Attack();
-                            _countTime = 0;
+                            virusLife = hit.transform.GetComponentInChildren<VirusLifeSystem>();
+                            if (virusLife == null)
+                            {
+                                virusLife = hit.transform.GetComponentInParent<VirusLifeSystem>();
+                            }
                         }
-                        _countTime++;
                     }
 
                 }
@@ -165,6 +176,6 @@ public class ClosestEnemyNearby : MonoBehaviour
         }
 
         particleSys.SetParticles(particles, count);
-
+        //Debug.Log(virusLife.gameObject.name);
     }
 }

@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4830959524856455893}
   - component: {fileID: 5419330302744668313}
+  - component: {fileID: 3010109317407991108}
   m_Layer: 0
   m_Name: Trojan
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +48,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4818974, y: 3.8279548, z: 1.2593307}
   m_Center: {x: -0.58040905, y: -1.1052487, z: 0.12966537}
+--- !u!114 &3010109317407991108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332614409894793170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5a7bdcc2e21d649acd6e582dfd60ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virusHealth: 100
+  maxVirusHealth: 100
+  damage: 10
 --- !u!1001 &562770258921602899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98,6 +114,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2675810909900987918, guid: 65410b44f7a622e49926ea1bc414cb66, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
     - target: {fileID: -385309821539948940, guid: 65410b44f7a622e49926ea1bc414cb66, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -106,9 +126,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: trojan_LOD_single
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 65410b44f7a622e49926ea1bc414cb66, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1039246113155984576, guid: 65410b44f7a622e49926ea1bc414cb66, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366471239458266686, guid: 65410b44f7a622e49926ea1bc414cb66, type: 3}
+      propertyPath: m_TagString
+      value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: 65410b44f7a622e49926ea1bc414cb66, type: 3}
       propertyPath: m_LODs.Array.data[0].screenRelativeHeight
@@ -121,6 +149,10 @@ PrefabInstance:
     - target: {fileID: 4742473837712756890, guid: 65410b44f7a622e49926ea1bc414cb66, type: 3}
       propertyPath: m_LODs.Array.data[2].screenRelativeHeight
       value: 0.035072673
+      objectReference: {fileID: 0}
+    - target: {fileID: 5204829051554459920, guid: 65410b44f7a622e49926ea1bc414cb66, type: 3}
+      propertyPath: m_TagString
+      value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7707038276896823685, guid: 65410b44f7a622e49926ea1bc414cb66, type: 3}
       propertyPath: m_Materials.Array.data[0]

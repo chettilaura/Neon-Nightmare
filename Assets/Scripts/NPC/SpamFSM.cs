@@ -17,9 +17,14 @@ public class SpamFSM : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
     private int _currentWayPointIndex = 0;
 
+    private VirusLifeSystem _virusLife;
+    private ParticleSystem _particles;
+
     void Start()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        _virusLife = GetComponent<VirusLifeSystem>();
+        _particles = GetComponentInChildren<ParticleSystem>();
 
         _stateMachine = new FiniteStateMachine<SpamFSM>(this);
 
@@ -38,7 +43,16 @@ public class SpamFSM : MonoBehaviour
         _stateMachine.SetState(patrolState);
     }
 
-    void Update() => _stateMachine.Tik();
+    void Update()
+    {
+        _stateMachine.Tik();
+
+        if(_virusLife.virusHealth == 0)
+        {
+            _particles.Stop();
+            Destroy(transform.gameObject);
+        }
+    }
     public void StopAgent(bool stop) => _navMeshAgent.isStopped = stop;
     public void SetWayPointDestination()
     {
