@@ -1459,9 +1459,10 @@ GameObject:
   - component: {fileID: 5872693097740356409}
   - component: {fileID: 1667986527109348424}
   - component: {fileID: 6265991682422437726}
+  - component: {fileID: 2553555516678269544}
   m_Layer: 0
   m_Name: v2rusBoss
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1537,6 +1538,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2553555516678269544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6499872859152945539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5a7bdcc2e21d649acd6e582dfd60ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virusHealth: 100
+  maxVirusHealth: 100
+  damage: 5
 --- !u!1 &6659396135923894925
 GameObject:
   m_ObjectHideFlags: 0

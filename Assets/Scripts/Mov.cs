@@ -67,11 +67,9 @@ public class Mov : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
         if(horizontalInput!= 0 || verticalInput != 0)
         {
-            animator.SetBool("isWalking", true);
             state = MovementState.walking;
         } else
         {
-            animator.SetBool("isWalking", false);
             state = MovementState.idle;
         }
         //if (Input.GetKey(KeyCode.Space) && readyToJump && isGrounded)
@@ -126,21 +124,8 @@ public class Mov : MonoBehaviour
         {
             RB.drag = 1f;
         }
-        
-        if(RB.velocity.y < 0.5f && state == MovementState.air)
-        {
-            animator.SetBool("isJumping", false);
-            animator.SetBool("isFalling", true);
-            animator.SetBool("doubleJump", false);
-        }
+        animations();
 
-        if(state == MovementState.dashing)
-        {
-            animator.SetBool("dashing", true);
-        } else
-        {
-            animator.SetBool("dashing", false);
-        }
     }
 
     private void FixedUpdate()
@@ -159,8 +144,7 @@ public class Mov : MonoBehaviour
         else if (isGrounded)
         {
             _lastGroundedTime = Time.time;
-            animator.SetBool("isFalling", false);
-            animator.SetBool("doubleJump", false);
+
             if (RB.velocity.magnitude != 0f)
             {
                 moveSpeed = walkSpeed;
@@ -254,6 +238,38 @@ public class Mov : MonoBehaviour
     public Vector3 GetSlopeMoveDirection()
     {
         return Vector3.ProjectOnPlane(moveDir, slopeHit.normal).normalized;
+    }
+
+    private void animations()
+    {
+
+        if (isGrounded)
+        {
+            animator.SetBool("isFalling", false);
+            animator.SetBool("doubleJump", false);
+        }
+        if (RB.velocity.y < -0.1f && state == MovementState.air)
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", true);
+            animator.SetBool("doubleJump", false);
+        }
+
+        if(state == MovementState.walking)
+            animator.SetBool("isWalking", true);
+        else
+            animator.SetBool("isWalking", false);
+
+
+        if (state == MovementState.dashing)
+        {
+            animator.SetBool("dashing", true);
+        }
+        else
+        {
+            animator.SetBool("dashing", false);
+        }
+
     }
 
 }

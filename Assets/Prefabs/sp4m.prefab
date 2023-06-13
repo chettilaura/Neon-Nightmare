@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1819322288588385728}
   - component: {fileID: 1080936292}
   - component: {fileID: 1080936293}
+  - component: {fileID: 2010294204}
   m_Layer: 0
   m_Name: sp4m
   m_TagString: enemy
@@ -105,6 +106,21 @@ NavMeshAgent:
   m_BaseOffset: 1.38
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2010294204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259880176221654222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5a7bdcc2e21d649acd6e582dfd60ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virusHealth: 100
+  maxVirusHealth: 100
+  damage: 20
 --- !u!1 &4562870630561140966
 GameObject:
   m_ObjectHideFlags: 0
