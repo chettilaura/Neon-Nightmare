@@ -4349,6 +4349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sp4m
       objectReference: {fileID: 0}
+    - target: {fileID: 259880176221654222, guid: 9885ae0a057c4a345869ad4f8e9e3fbf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1421786098646479273, guid: 9885ae0a057c4a345869ad4f8e9e3fbf, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -39471,6 +39475,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1188406411, guid: e25de85cb6cec9147928819e989db584, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1726608968926049279, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_Name
       value: player+camera
