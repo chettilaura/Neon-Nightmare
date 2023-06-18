@@ -17,7 +17,7 @@ public class virusBullet : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            playerLifeDeath = other.GetComponent<PlayerLifeDeath>();
+            playerLifeDeath = other.GetComponentInParent<PlayerLifeDeath>();
             playerLifeDeath.lightAttack();
             Destroy(gameObject);
         }
