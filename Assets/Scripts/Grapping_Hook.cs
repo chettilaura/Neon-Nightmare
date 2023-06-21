@@ -16,6 +16,7 @@ public class Grapping_Hook : MonoBehaviour
   [SerializeField] private LineRenderer lineRenderer;
   [Tooltip("Forza con cui il player viene tirato verso il gancio")]
   [SerializeField] private float grapplingForce=4000;
+  public GameObject transistor_bagpack;
    
     void Update()
     {
@@ -35,6 +36,7 @@ public class Grapping_Hook : MonoBehaviour
                 hook.position = startingPoint;
                 hook.gameObject.SetActive(true);
                 lineRenderer.enabled=true;
+                transistor_bagpack.SetActive(false);
             }
 
 
@@ -71,5 +73,6 @@ public class Grapping_Hook : MonoBehaviour
         isHooked=false;
         movement.returnOnGroundEvent-=RechargeHook;
         hook.gameObject.SetActive(false);
+        transistor_bagpack.SetActive(true);
     } 
 }
