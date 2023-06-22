@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.01805879, g: 0.10902778, b: 0.18239778, a: 1}
+  m_IndirectSpecularColor: {r: 0.018042764, g: 0.10906933, b: 0.18250501, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -36051,7 +36051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stoneClips:
-  - {fileID: 8300000, guid: ffee5c1ef5cca4b908d876d9d13c337b, type: 3}
+  - {fileID: 8300000, guid: 5a774919f8f514b02835cfac851399df, type: 3}
   audioSource: {fileID: 945809061}
 --- !u!82 &945809061
 AudioSource:
@@ -36162,7 +36162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stoneClips:
-  - {fileID: 8300000, guid: b1acb953e22204771a4abd48a99049c0, type: 3}
+  - {fileID: 8300000, guid: 6fc3cefbc2926451c87487af0c83c08f, type: 3}
   audioSource: {fileID: 945809061}
 --- !u!1 &946258942
 GameObject:
@@ -48195,15 +48195,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359222039787, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.16018224
+      value: 0.16018225
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359222039787, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000004252742
+      value: 0.000000023309845
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359222039787, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -6.9012535e-10
+      value: -0.000000003782667
       objectReference: {fileID: 0}
     - target: {fileID: 5005750359368337064, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48229,6 +48229,18 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 5005750359421258466, guid: e25de85cb6cec9147928819e989db584, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 945809061}
+    - target: {fileID: 5005750359421258466, guid: e25de85cb6cec9147928819e989db584, type: 3}
+      propertyPath: stoneClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5005750359421258466, guid: e25de85cb6cec9147928819e989db584, type: 3}
+      propertyPath: stoneClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 81d5f99b0d01f40088e4aa72f11a7791, type: 3}
     - target: {fileID: 5005750359421258469, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -48299,11 +48311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5005750360493636026, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017134711
+      value: -0.0000000171347
       objectReference: {fileID: 0}
     - target: {fileID: 5005750360493636026, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000015688806
+      value: 0.0000000015688795
       objectReference: {fileID: 0}
     - target: {fileID: 7477726923746347816, guid: e25de85cb6cec9147928819e989db584, type: 3}
       propertyPath: m_IsActive

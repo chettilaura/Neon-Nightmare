@@ -33,6 +33,8 @@ public class Mov : MonoBehaviour
     public RaycastHit slopeHit;
     private bool exitingSlope;
     public bool canDoubleJump=false;
+    private bool atterraggio_post_salto=false;
+    private bool flag_start_partita = true;
 
 
     Vector3 moveDir;
@@ -51,6 +53,9 @@ public class Mov : MonoBehaviour
     public bool dashing;
     public delegate void ReturnOnGroundDelegate() ;
     public event ReturnOnGroundDelegate returnOnGroundEvent;
+
+    [SerializeField] private AudioClip[] stoneClips;
+    [SerializeField] AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -98,6 +103,7 @@ public class Mov : MonoBehaviour
         
         exitingSlope = true;
         RB.velocity = new Vector3(RB.velocity.x, jumpForce, RB.velocity.z);
+        
     }
 
     /*
@@ -157,6 +163,8 @@ public class Mov : MonoBehaviour
                 if (returnOnGroundEvent != null)
                 {
                     returnOnGroundEvent.Invoke();
+                    AudioClip clip2 = stoneClips[0];
+                    audioSource.PlayOneShot(clip2);
                 }
             }
 
@@ -165,6 +173,7 @@ public class Mov : MonoBehaviour
         else
         {
             state = MovementState.air;
+            flag_start_partita=false;
         }
     }
 
@@ -185,8 +194,10 @@ public class Mov : MonoBehaviour
 
         else if(isGrounded)
             RB.AddForce(moveDir.normalized * moveSpeed * 10f, ForceMode.Force);
-        else if(!isGrounded)
+        else if(!isGrounded){
             RB.AddForce(moveDir.normalized * moveSpeed * 7f * airMultiplier, ForceMode.Force);
+            atterraggio_post_salto=true;
+        }
 
         RB.useGravity = !OnSlope();
     }
@@ -247,6 +258,11 @@ public class Mov : MonoBehaviour
         {
             animator.SetBool("isFalling", false);
             animator.SetBool("doubleJump", false);
+            if (atterraggio_post_salto==true && flag_start_partita==false){
+                AudioClip clip = stoneClips[0];
+                audioSource.PlayOneShot(clip);
+                atterraggio_post_salto=false;
+            }
         }
         if (RB.velocity.y < -0.1f && state == MovementState.air)
         {
