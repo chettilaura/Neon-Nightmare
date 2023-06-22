@@ -17,6 +17,9 @@ public class Grapping_Hook : MonoBehaviour
   [Tooltip("Forza con cui il player viene tirato verso il gancio")]
   [SerializeField] private float grapplingForce=4000;
   public GameObject transistor_bagpack;
+
+  [SerializeField] private AudioClip[] stoneClips;
+[SerializeField] AudioSource audioSource;
    
     void Update()
     {
@@ -37,6 +40,9 @@ public class Grapping_Hook : MonoBehaviour
                 hook.gameObject.SetActive(true);
                 lineRenderer.enabled=true;
                 transistor_bagpack.SetActive(false);
+
+                AudioClip clip2 = stoneClips[0];
+                audioSource.PlayOneShot(clip2);
             }
 
 
