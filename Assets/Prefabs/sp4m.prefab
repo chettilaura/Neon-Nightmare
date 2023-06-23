@@ -462,8 +462,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _target: {fileID: 0}
-  _minChaseDistance: 3
-  _minAttackDistance: 2
+  _minChaseDistance: 100
+  _minAttackDistance: 70
   _stoppingDistance: 1
 --- !u!195 &1080936293
 NavMeshAgent:
@@ -475,7 +475,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1.26
+  m_Speed: 2.37
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
