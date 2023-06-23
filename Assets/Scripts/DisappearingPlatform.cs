@@ -21,20 +21,30 @@ public class DisappearingPlatform : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
-        if(currentTime >= disappearingTime)
+        if (isEnabled)
         {
-            currentTime = 0;
-            Hide();
-        }else if(currentTime >= (disappearingTime * 1/3) && currentTime < (disappearingTime * 2 / 3) && isEnabled)
+            if (currentTime >= disappearingTime)
+            {
+                currentTime = 0;
+                Hide();
+            }
+            else if (currentTime >= 6 && currentTime < 8)
+            {
+                _platforms[0].SetActive(false);
+                _platforms[1].SetActive(true);
+            }
+            else if (currentTime >= 8 && currentTime < disappearingTime)
+            {
+                _platforms[1].SetActive(false);
+                _platforms[2].SetActive(true);
+
+            }
+        } else
         {
-            _platforms[0].SetActive(false);
-            _platforms[1].SetActive(true);
-        } else if (currentTime >= (disappearingTime * 2 / 3) && isEnabled)
-        {
-            _platforms[1].SetActive(false);
-            _platforms[2].SetActive(true);
-            
+            if (currentTime >= 1)
+                Hide();
         }
+
 
         
     }
