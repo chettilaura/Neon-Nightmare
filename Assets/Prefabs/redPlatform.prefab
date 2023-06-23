@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6618897896655733582}
   - component: {fileID: 8953151491056482180}
   - component: {fileID: 1666005540054757558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: redPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

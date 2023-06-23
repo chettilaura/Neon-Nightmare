@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6342279364612555566}
   - component: {fileID: 1429324529}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DisappearingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,6 +293,10 @@ PrefabInstance:
     - target: {fileID: 1590279011522673895, guid: f37b27210fb6d2d4c83f7045518cb80e, type: 3}
       propertyPath: m_Name
       value: yellowPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590279011522673895, guid: f37b27210fb6d2d4c83f7045518cb80e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1590279011522673895, guid: f37b27210fb6d2d4c83f7045518cb80e, type: 3}
       propertyPath: m_IsActive
