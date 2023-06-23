@@ -117,7 +117,7 @@ public class Mov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, Ground);
+        isGrounded = Physics.CheckSphere(groundCheck.position, 0.05f, Ground);
         MyInput();
         SpeedLimiter();
         StateHandler();
