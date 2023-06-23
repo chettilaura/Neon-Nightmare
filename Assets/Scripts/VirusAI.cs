@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class VirusAI : MonoBehaviour
 {
     public NavMeshAgent agent;
-    public Transform player;
+    public GameObject player;
     public GameObject bulletPrefab;
     public Transform BulletSpawnPoint;
     public float bulletSpeed;
@@ -29,7 +29,7 @@ public class VirusAI : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("PlayerCapsule").transform;
+        player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -68,7 +68,7 @@ public class VirusAI : MonoBehaviour
     private void Attack()
     {
         agent.SetDestination(transform.position);
-        transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
+        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
         if (!alreadyAttacked)
         {
             float randomRange = Random.Range(-bulletSpread, bulletSpread);
@@ -86,7 +86,7 @@ public class VirusAI : MonoBehaviour
 
     private void Flee()
     {
-        Vector3 FleeDirection = player.position - transform.position;
+        Vector3 FleeDirection = player.transform.position - transform.position;
         FleeDirection.Normalize();
         Vector3 FleeDestination = transform.position - FleeDirection * fleeRange;
         agent.SetDestination(FleeDestination);

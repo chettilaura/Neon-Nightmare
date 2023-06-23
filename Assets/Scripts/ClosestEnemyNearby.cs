@@ -6,40 +6,65 @@ public class ClosestEnemyNearby : MonoBehaviour
 {
     public Transform orientation;
     public Transform playerObj_orientation;
-    private Transform _closestEnemy;
+    private GameObject _closestEnemy;
+    private List<GameObject> _enemiesNearby = new List<GameObject>();
     public ParticleSystem particleSys;
     Vector3 LastTarget = new Vector3(0,0,0);
-    List<Transform> enemies = new List<Transform>();
+    GameObject[] enemies;
 
     private VirusLifeSystem virusLife;
     private int _countTime = 50;
     private bool fire= false;
+
+    [SerializeField] float _minDistance = 300;
     
 
     void Start()
     {
-
+        
     }
 
    
     void Update()
     {
-
+        enemies = GameObject.FindGameObjectsWithTag("enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            float dist = (enemy.transform.position - transform.position).sqrMagnitude;
+            if(dist < _minDistance && !_enemiesNearby.Contains(enemy))
+            {
+                _enemiesNearby.Add(enemy);
+            } else
+            {
+                _enemiesNearby.Remove(enemy);
+            }
+        }
         _closestEnemy = FindClosestEnemy();
         //sparo con F
         if (Input.GetKey(KeyCode.F)){
-            fire=true;
-
+            
             if (_closestEnemy != null)
             {
-                Debug.Log("sparo");
-                fireAtEnemy(_closestEnemy.position);
-                if (_countTime == 50 && virusLife.virusHealth > 0)
+                float dist = (_closestEnemy.transform.position - transform.position).sqrMagnitude;
+                if(dist <= _minDistance)
                 {
-                    virusLife.Attack();
-                    _countTime = 0;
+                    fire = true;
+                    Debug.Log("sparo");
+                    fireAtEnemy(_closestEnemy.transform.position);
+                    if (_countTime == 50 && virusLife.virusHealth > 0)
+                    {
+                        virusLife.Attack();
+                        _countTime = 0;
+                    }
+                    _countTime++;
+                } else
+                {
+                    fire = false;
                 }
-                _countTime++;
+
+            } else
+            {
+                fire = false;
             }
         }
         else{
@@ -54,32 +79,13 @@ public class ClosestEnemyNearby : MonoBehaviour
     //tiene lista di enemies che aggiunge e rimuove quando entrano e escono dal trigger (ontriggerenter e ontriggerexit)
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "enemy")
-        {
-            enemies.Add(other.transform);
-            //Debug.Log("nemico entrato in zona");
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.tag == "enemy")
-        {
-            LastTarget = other.transform.position;
-            enemies.Remove(other.transform);
-            //Debug.Log("nemico uscito da zona");
-        }
-    }
-
-    Transform FindClosestEnemy()
+    GameObject FindClosestEnemy()
     {
         var projectiles = particleSys.emission;
         float distanceToClosest = Mathf.Infinity;
-        Transform closestEnemy = null;
+        GameObject closestEnemy = null;
 
-        if (enemies.Count == 0)
+        if (enemies.Length == 0)
         {
             projectiles.enabled = false; //fine sparo quando non ci sono nemici
             fire=false;
@@ -93,14 +99,14 @@ public class ClosestEnemyNearby : MonoBehaviour
                 projectiles.enabled = false;
 
             //ciclo su enemies
-            foreach (Transform currentEnemy in enemies)
+            foreach (GameObject currentEnemy in _enemiesNearby)
             {
                 if (currentEnemy != null)
                 {
-                    float distanceToEnemy = (currentEnemy.position - orientation.position).sqrMagnitude;
+                    float distanceToEnemy = (currentEnemy.transform.position - transform.position).sqrMagnitude;
 
 
-                    if (distanceToEnemy < distanceToClosest)
+                    if (distanceToEnemy < distanceToClosest && distanceToEnemy<= _minDistance)
                     {
                         distanceToClosest = distanceToEnemy;
                         closestEnemy = currentEnemy;
@@ -117,12 +123,12 @@ public class ClosestEnemyNearby : MonoBehaviour
             RaycastHit hit;
             if (closestEnemy != null)
             {
-                if (Physics.Raycast(playerObj_orientation.position, closestEnemy.position - playerObj_orientation.position, out hit, Mathf.Infinity, 9))
+                if (Physics.Raycast(playerObj_orientation.position, closestEnemy.transform.position - playerObj_orientation.position, out hit, Mathf.Infinity, 9))
                 { //9 è il layer del player, così ignora quel layer nel raycast
-                    Debug.DrawRay(playerObj_orientation.position, closestEnemy.position - playerObj_orientation.position, Color.red);
+                    Debug.DrawRay(playerObj_orientation.position, closestEnemy.transform.position - playerObj_orientation.position, Color.red);
                     //  Debug.Log(hit.transform.tag);
 
-                    if (hit.transform.tag != "enemy" /*&& hit.transform.tag != "Player"*/)
+                    if (hit.transform.tag != "enemy" /*&& hit.transform.tag != "Player"*/ )
                     {
                         projectiles.enabled = false;
                         fire=false;

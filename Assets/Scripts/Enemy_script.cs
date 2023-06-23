@@ -22,6 +22,7 @@ public class Enemy_script : MonoBehaviour
             //PlayerLifeDeath = other.GetComponent<PlayerLifeDeath>();
             //PlayerLifeDeath= other.GetComponentInChildren<PlayerLifeDeath>();
             PlayerLifeDeath = other.GetComponentInParent<PlayerLifeDeath>();
+            Debug.Log("Dentro");
             if (count == 100)
             {
                 PlayerLifeDeath.lightAttack();
