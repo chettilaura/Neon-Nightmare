@@ -7,6 +7,7 @@ public class ClosestEnemyNearby : MonoBehaviour
     public Transform orientation;
     public Transform playerObj_orientation;
     private GameObject _closestEnemy;
+    private Animator _animator;
     private List<GameObject> _enemiesNearby = new List<GameObject>();
     public ParticleSystem particleSys;
     Vector3 LastTarget = new Vector3(0,0,0);
@@ -21,7 +22,7 @@ public class ClosestEnemyNearby : MonoBehaviour
 
     void Start()
     {
-        
+        _animator = GetComponent<Animator>();
     }
 
    
@@ -94,9 +95,16 @@ public class ClosestEnemyNearby : MonoBehaviour
         else
         {
             if (fire)
+            {
                 projectiles.enabled = true; //controllo se premuto tasto F per sparare
+                _animator.SetLayerWeight(_animator.GetLayerIndex("UpperBody"), 1);
+            }
             else
+            {
                 projectiles.enabled = false;
+                _animator.SetLayerWeight(_animator.GetLayerIndex("UpperBody"), 0);
+            }
+
 
             //ciclo su enemies
             foreach (GameObject currentEnemy in _enemiesNearby)
