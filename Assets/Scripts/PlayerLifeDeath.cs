@@ -18,11 +18,24 @@ public class PlayerLifeDeath : MonoBehaviour
     public float mediumDamage = 20;
     public float bigDamage = 30;
 
+    private Mov _movementScript;
+    private Dash_script _scriptDash;
+    private Grapping_Hook _scriptHook;
+    private ClosestEnemyNearby _scriptClosestEnemyNearby;
+
+    protected float _timeForRespawn = 5;
+    private float _time = 0;
+
     private Vector3 _respawnPoint;
     void Start()
     {
         playerHealth = maxPlayerHealth;
         _respawnPoint = transform.position;
+        _respawnPoint.y += 20f;
+        _movementScript = GetComponent<Mov>();
+        _scriptDash = GetComponent<Dash_script>();
+        _scriptHook = GetComponent<Grapping_Hook>();
+        _scriptClosestEnemyNearby = GetComponent<ClosestEnemyNearby>();
     }
 
     // Update is called once per frame
@@ -33,13 +46,27 @@ public class PlayerLifeDeath : MonoBehaviour
             _playerCamera.transform.position = _respawnPoint;
             transform.position = _respawnPoint;
             playerHealth = maxPlayerHealth;
-            Debug.Log(_respawnPoint);
         }
         HealthBarFiller();
         if (playerHealth == 0)
         {
             _playerAnimator.SetBool("isDying", true);
-            //transform.rigi
+            _movementScript.enabled = false;
+            _scriptDash.enabled = false;
+            _scriptHook.enabled = false;
+            _scriptClosestEnemyNearby.enabled = false;
+            _time += Time.deltaTime;
+            if (_time >= _timeForRespawn)
+            {
+                _playerAnimator.SetBool("isDying", false);
+                playerHealth = maxPlayerHealth;
+                transform.position = _respawnPoint;
+                _playerCamera.transform.position = _respawnPoint;
+                _movementScript.enabled = true;
+                _scriptDash.enabled = true;
+                _scriptHook.enabled = true;
+                _scriptClosestEnemyNearby.enabled = true;
+            }
         }
     }
 
@@ -84,7 +111,6 @@ public class PlayerLifeDeath : MonoBehaviour
             _respawnPoint = other.transform.position;
             _respawnPoint.y = 20f;
             Destroy(other.gameObject);
-            Debug.Log("checkpoint");
         }
     }
 }

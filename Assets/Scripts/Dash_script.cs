@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Dash_script : MonoBehaviour
@@ -13,11 +14,13 @@ public class Dash_script : MonoBehaviour
 
     public float dashCooldown;
     float dashCooldownTimer;
+    private Animator _animator;
     // Start is called before the first frame update
     void Start()
     {
         RB = GetComponent<Rigidbody>();
         movement = GetComponent<Mov>();
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,6 +28,7 @@ public class Dash_script : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
             dash();
+            
 
         if(dashCooldownTimer > 0)
         {

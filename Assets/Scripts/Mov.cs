@@ -23,7 +23,6 @@ public class Mov : MonoBehaviour
     public bool readyToJump;
 
     private float _lastGroundedTime;
-
     public Transform groundCheck;
     public Material PlayerMaterial;
     public LayerMask Ground;
@@ -256,11 +255,12 @@ public class Mov : MonoBehaviour
 
         if (isGrounded)
         {
+            animator.SetBool("grappingHook", false);
             animator.SetBool("isFalling", false);
             animator.SetBool("doubleJump", false);
             if (atterraggio_post_salto==true && flag_start_partita==false){
-                AudioClip clip = stoneClips[0];
-                audioSource.PlayOneShot(clip);
+                //AudioClip clip = stoneClips[0];
+                //audioSource.PlayOneShot(clip);
                 atterraggio_post_salto=false;
             }
         }

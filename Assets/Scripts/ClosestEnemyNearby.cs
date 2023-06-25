@@ -58,18 +58,30 @@ public class ClosestEnemyNearby : MonoBehaviour
                         _countTime = 0;
                     }
                     _countTime++;
+                    _animator.SetLayerWeight(1, 1);
+                    _animator.SetBool("firing", true);
                 } else
                 {
                     fire = false;
+                    _animator.SetLayerWeight(1, 0);
+                    if (_animator.GetCurrentAnimatorStateInfo(1).IsName("NotFire"))
+                        _animator.SetBool("firing", false);
+                    Debug.Log("primo else");
                 }
 
             } else
             {
                 fire = false;
+                //_animator.SetBool("firing", false);
+                Debug.Log("secondo else");
             }
         }
         else{
             fire=false;
+            _animator.SetBool("firing", false);
+            if(_animator.GetCurrentAnimatorStateInfo(1).IsName("NotFire"))
+                _animator.SetLayerWeight(1, 0);
+            Debug.Log("terzo else");
         }
 
 
@@ -97,12 +109,10 @@ public class ClosestEnemyNearby : MonoBehaviour
             if (fire)
             {
                 projectiles.enabled = true; //controllo se premuto tasto F per sparare
-                _animator.SetLayerWeight(_animator.GetLayerIndex("UpperBody"), 1);
             }
             else
             {
                 projectiles.enabled = false;
-                _animator.SetLayerWeight(_animator.GetLayerIndex("UpperBody"), 0);
             }
 
 

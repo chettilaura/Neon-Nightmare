@@ -20,16 +20,26 @@ public class Grapping_Hook : MonoBehaviour
 
   [SerializeField] private AudioClip[] stoneClips;
 [SerializeField] AudioSource audioSource;
-   
+
+    private Animator _animator;
+
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
     void Update()
     {
         if ((Input.GetMouseButton(1))&&(!isHooked)) {//mirino
             preview.SetActive(true);
             //movement.canDoubleJump=false;
             //movement.readyToJump=false;
+            _animator.SetBool("grappingHookStart", true);
 
             if (Input.GetMouseButtonDown(0)) {
-                isHooked=true;
+                _animator.SetBool("grappingHook", true);
+                _animator.SetBool("grappingHookStart", false);
+                isHooked =true;
                 movement.canDoubleJump=false;
                 movement.readyToJump=false;
                 preview.SetActive(false);
