@@ -41,7 +41,7 @@ public class PlayerLifeDeath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y < -10f)
+        if(transform.position.y < 15f)
         {
             _playerCamera.transform.position = _respawnPoint;
             transform.position = _respawnPoint;
@@ -109,7 +109,7 @@ public class PlayerLifeDeath : MonoBehaviour
         if (other.gameObject.CompareTag("Checkpoint"))
         {
             _respawnPoint = other.transform.position;
-            _respawnPoint.y = 20f;
+            //_respawnPoint.y = 20f;
             Destroy(other.gameObject);
         }
     }
