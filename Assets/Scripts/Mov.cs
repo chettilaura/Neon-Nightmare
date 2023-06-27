@@ -101,7 +101,8 @@ public class Mov : MonoBehaviour
     {
         
         exitingSlope = true;
-        RB.velocity = new Vector3(RB.velocity.x, jumpForce, RB.velocity.z);
+        RB.AddForce(0f, jumpForce, 0f, ForceMode.Impulse);
+        //RB.velocity = new Vector3(RB.velocity.x, jumpForce, RB.velocity.z);
         
     }
 
@@ -120,7 +121,10 @@ public class Mov : MonoBehaviour
         MyInput();
         SpeedLimiter();
         StateHandler();
-
+        if (state == MovementState.idle)
+        {
+            RB.velocity = Vector3.zero;
+        }
         if (state == MovementState.walking) 
         {
             RB.drag = groundDrag;
