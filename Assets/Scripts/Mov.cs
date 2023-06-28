@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.ProBuilder.Shapes;
 
 public class Mov : MonoBehaviour
 {
@@ -74,7 +75,9 @@ public class Mov : MonoBehaviour
             state = MovementState.walking;
         } else
         {
-            state = MovementState.idle;
+            if(isGrounded)
+                state = MovementState.idle;
+            
         }
         //if (Input.GetKey(KeyCode.Space) && readyToJump && isGrounded)
          if (Input.GetKeyDown(KeyCode.Space) && readyToJump && isGrounded)
@@ -117,9 +120,11 @@ public class Mov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, 0.05f, Ground);
+        isGrounded = Physics.CheckSphere(groundCheck.position, 0.02f, Ground);
+
         MyInput();
         SpeedLimiter();
+        animations();
         StateHandler();
         if (state == MovementState.idle)
         {
@@ -133,7 +138,7 @@ public class Mov : MonoBehaviour
         {
             RB.drag = 1f;
         }
-        animations();
+
 
     }
 
@@ -256,22 +261,30 @@ public class Mov : MonoBehaviour
 
     private void animations()
     {
-
+        RaycastHit hit;
+        Vector3 rayCastOrigin = transform.position;
         if (isGrounded)
         {
             animator.SetBool("grappingHook", false);
             animator.SetBool("isFalling", false);
+            animator.SetBool("isLanding", false);
             animator.SetBool("doubleJump", false);
             if (atterraggio_post_salto==true && flag_start_partita==false){
                 //AudioClip clip = stoneClips[0];
                 //audioSource.PlayOneShot(clip);
                 atterraggio_post_salto=false;
             }
-        }
-        if (RB.velocity.y < -0.1f && state == MovementState.air)
+        } else if (Physics.CheckSphere(transform.position , 0.5f, Ground) && animator.GetBool("isFalling"))
         {
-            animator.SetBool("isJumping", false);
+            animator.SetBool("isLanding", true);
+            animator.SetBool("isFalling", false);
+            animator.SetBool("doubleJump", false);
+        }
+
+        if (RB.velocity.y < -0.5f && state == MovementState.air)
+        {
             animator.SetBool("isFalling", true);
+            animator.SetBool("isJumping", false);
             animator.SetBool("doubleJump", false);
         }
 
@@ -290,6 +303,13 @@ public class Mov : MonoBehaviour
             animator.SetBool("dashing", false);
         }
 
+        if(state == MovementState.idle)
+            animator.SetBool("isIdle", true);
+        else
+            animator.SetBool("isIdle", false);
+
     }
+
+
 
 }
