@@ -340,9 +340,21 @@ PrefabInstance:
       propertyPath: hook
       value: 
       objectReference: {fileID: 242529096}
+    - target: {fileID: 8570994164589820003, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
+      propertyPath: transistor_bagpack
+      value: 
+      objectReference: {fileID: 646348468}
     - target: {fileID: 8570994164589820007, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570994164589820007, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570994164589820007, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8570994164589820014, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
       propertyPath: groundCheck
@@ -358,15 +370,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8570994164956119176, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.16018222
+      value: 0.16018225
       objectReference: {fileID: 0}
     - target: {fileID: 8570994164956119176, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000025470568
+      value: -0.000000023309845
       objectReference: {fileID: 0}
     - target: {fileID: 8570994164956119176, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000041333035
+      value: 0.000000003782667
       objectReference: {fileID: 0}
     - target: {fileID: 8570994164983777261, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
       propertyPath: m_LocalPosition.y
@@ -755,6 +767,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25de85cb6cec9147928819e989db584, type: 3}
+--- !u!1 &646348468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8570994166013801946, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
+  m_PrefabInstance: {fileID: 491542741}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &666832777 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8570994165212371890, guid: bc0052ddabeb49047af38966e9448e61, type: 3}

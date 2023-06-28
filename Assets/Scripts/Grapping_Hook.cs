@@ -19,7 +19,7 @@ public class Grapping_Hook : MonoBehaviour
   public GameObject transistor_bagpack;
 
   [SerializeField] private AudioClip[] stoneClips;
-[SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource audioSource;
 
     private Animator _animator;
 
@@ -38,7 +38,7 @@ public class Grapping_Hook : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0)) {
                 _animator.SetBool("grappingHook", true);
-                _animator.SetBool("grappingHookStart", false);
+                //_animator.SetBool("grappingHookStart", false);
                 isHooked =true;
                 movement.canDoubleJump=false;
                 movement.readyToJump=false;
@@ -51,13 +51,14 @@ public class Grapping_Hook : MonoBehaviour
                 lineRenderer.enabled=true;
                 transistor_bagpack.SetActive(false);
 
-                AudioClip clip2 = stoneClips[0];
-                audioSource.PlayOneShot(clip2);
+                //AudioClip clip2 = stoneClips[0];
+                //audioSource.PlayOneShot(clip2);
             }
 
 
         }else{
             preview.SetActive(false);
+            _animator.SetBool("grappingHookStart", false);
         }
     //Debug.Log(Time.deltaTime);
 

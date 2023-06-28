@@ -171,8 +171,8 @@ public class Mov : MonoBehaviour
                 if (returnOnGroundEvent != null)
                 {
                     returnOnGroundEvent.Invoke();
-                    AudioClip clip2 = stoneClips[0];
-                    audioSource.PlayOneShot(clip2);
+                    //AudioClip clip2 = stoneClips[0];
+                    //audioSource.PlayOneShot(clip2);
                 }
             }
 
@@ -261,8 +261,6 @@ public class Mov : MonoBehaviour
 
     private void animations()
     {
-        RaycastHit hit;
-        Vector3 rayCastOrigin = transform.position;
         if (isGrounded)
         {
             animator.SetBool("grappingHook", false);
