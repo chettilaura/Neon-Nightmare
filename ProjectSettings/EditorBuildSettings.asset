@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EmaScene.unity
     guid: f024c8ae05a7b104d8ba455d6350744d
+  - enabled: 1
+    path: Assets/Scenes/testing.unity
+    guid: e93124bedb1f1a74cb6ef59963056dd2
+  - enabled: 1
+    path: Assets/Scenes/BennyScene.unity
+    guid: eb54077aa0ab99344ab8089834b7bc67
   m_configObjects: {}
