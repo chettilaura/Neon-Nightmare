@@ -68,10 +68,10 @@ public class Grapping_Hook : MonoBehaviour
                 hook.position = Vector3.Lerp(startingPoint, endPoint, seconds );
             }else if(seconds!=1){
                 seconds=1;
-    rb.AddForce((endPoint-startingPoint).normalized*grapplingForce,ForceMode.Force);
-    //iniza a seguire l'evento
+                rb.AddForce((endPoint-startingPoint).normalized*grapplingForce,ForceMode.Force);
+                //iniza a seguire l'evento
     
-    StartCoroutine(DelayRecharge());
+                 StartCoroutine(DelayRecharge());
             }
            
            /* if(seconds>=1){ //hook piazzato

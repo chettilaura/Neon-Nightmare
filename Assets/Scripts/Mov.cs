@@ -70,15 +70,16 @@ public class Mov : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-        if(horizontalInput!= 0 || verticalInput != 0)
+        if (isGrounded)
         {
-            state = MovementState.walking;
-        } else
-        {
-            if(isGrounded)
+            if (horizontalInput != 0 || verticalInput != 0)
+            {
+                state = MovementState.walking;
+            }
+            else
                 state = MovementState.idle;
-            
         }
+
         //if (Input.GetKey(KeyCode.Space) && readyToJump && isGrounded)
          if (Input.GetKeyDown(KeyCode.Space) && readyToJump && isGrounded)
         {
@@ -265,7 +266,7 @@ public class Mov : MonoBehaviour
         {
             animator.SetBool("grappingHook", false);
             animator.SetBool("isFalling", false);
-            animator.SetBool("isLanding", false);
+            //animator.SetBool("isLanding", false);
             animator.SetBool("doubleJump", false);
             if (atterraggio_post_salto==true && flag_start_partita==false){
                 //AudioClip clip = stoneClips[0];
@@ -279,7 +280,7 @@ public class Mov : MonoBehaviour
             animator.SetBool("doubleJump", false);
         }
 
-        if (RB.velocity.y < -0.5f && state == MovementState.air)
+        if (RB.velocity.y < 0f && state == MovementState.air)
         {
             animator.SetBool("isFalling", true);
             animator.SetBool("isJumping", false);
@@ -287,14 +288,17 @@ public class Mov : MonoBehaviour
         }
 
         if(state == MovementState.walking)
+        {
             animator.SetBool("isWalking", true);
-        else
+            animator.SetBool("isLanding", false);
+        } else
             animator.SetBool("isWalking", false);
 
-
-        if (state == MovementState.dashing)
+        float time;
+        if (dashing)
         {
             animator.SetBool("dashing", true);
+            
         }
         else
         {
