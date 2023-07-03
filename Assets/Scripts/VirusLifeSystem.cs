@@ -28,9 +28,9 @@ public class VirusLifeSystem : MonoBehaviour
     {
         if(virusHealth == 0)
         {
-            Debug.Log("Dead");
             _lifeSlider.gameObject.SetActive(false);
             _animator.SetBool("isDead", true);
+            Invoke("Destroy", 10);
         }
         _lifeSlider.value = virusHealth/100f;
     }
@@ -38,5 +38,10 @@ public class VirusLifeSystem : MonoBehaviour
     public void Attack()
     {
         virusHealth -= damage;
+    }
+
+    public void Destroy()
+    {
+        transform.gameObject.SetActive(false);
     }
 }
