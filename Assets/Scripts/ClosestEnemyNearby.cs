@@ -81,7 +81,6 @@ public class ClosestEnemyNearby : MonoBehaviour
             _animator.SetBool("firing", false);
             if(_animator.GetCurrentAnimatorStateInfo(1).IsName("NotFire"))
                 _animator.SetLayerWeight(1, 0);
-            Debug.Log("terzo else");
         }
 
 

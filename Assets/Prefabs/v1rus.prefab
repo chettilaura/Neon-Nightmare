@@ -753,7 +753,6 @@ GameObject:
   - component: {fileID: 8909540987752660639}
   - component: {fileID: 8795215907033726531}
   - component: {fileID: 1771616234043193361}
-  - component: {fileID: 5555008398556364916}
   - component: {fileID: 3469957930063300769}
   - component: {fileID: 6336615766732501669}
   - component: {fileID: 8871876436610766810}
@@ -863,18 +862,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6560917, y: 0.77430725, z: 0.7098236}
   m_Center: {x: -0.010746956, y: 1.789402, z: -0.037612915}
---- !u!114 &5555008398556364916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3941990352683619156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edf3a716b8cbced478591bb1b3158fcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3469957930063300769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -899,6 +886,7 @@ MonoBehaviour:
   WhatIsPlayer:
     serializedVersion: 2
     m_Bits: 512
+  isActive: 0
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   timeBetweenAttacks: 0.75

@@ -10,6 +10,7 @@ public class VirusLifeSystem : MonoBehaviour
     [Range(0, 100f)] public float virusHealth;
     public float maxVirusHealth = 100f;
     public float damage;
+    private Animator _animator;
 
     [SerializeField] private Slider _lifeSlider;
 
@@ -19,6 +20,7 @@ public class VirusLifeSystem : MonoBehaviour
         virusHealth = maxVirusHealth;
         //_lifeSlider =  GetComponent<Slider>();
         _lifeSlider.value = maxVirusHealth;
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class VirusLifeSystem : MonoBehaviour
         {
             Debug.Log("Dead");
             _lifeSlider.gameObject.SetActive(false);
+            _animator.SetBool("isDead", true);
         }
         _lifeSlider.value = virusHealth/100f;
     }
