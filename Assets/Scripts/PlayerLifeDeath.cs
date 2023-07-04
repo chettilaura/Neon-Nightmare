@@ -102,6 +102,19 @@ public class PlayerLifeDeath : MonoBehaviour
             else 
                 HealthBarIMG[i].enabled = false;
         }
+        if (playerHealth > maxPlayerHealth)
+        {
+            //inserire nuovo simbolo
+        } else
+        {
+            //rimuovere simbolo
+        }
+    }
+
+    public void BonusLife()
+    {
+        playerHealth += 50;
+
     }
 
     private void OnTriggerEnter(Collider other)

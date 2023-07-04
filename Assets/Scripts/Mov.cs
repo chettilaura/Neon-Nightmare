@@ -264,7 +264,7 @@ public class Mov : MonoBehaviour
     {
         if (isGrounded)
         {
-            animator.SetBool("grappingHook", false);
+            animator.SetBool("hook", false);
             animator.SetBool("isFalling", false);
             //animator.SetBool("isLanding", false);
             animator.SetBool("doubleJump", false);
@@ -294,7 +294,6 @@ public class Mov : MonoBehaviour
         } else
             animator.SetBool("isWalking", false);
 
-        float time;
         if (dashing)
         {
             animator.SetBool("dashing", true);
