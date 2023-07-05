@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c0a8bfadc5719d45a11d3ded2f12442, type: 3}
+  m_Name: First_power_up_2
+  m_EditorClassIdentifier: 
+  speakerLeft: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
+  speakerRight: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
+  lines:
+  - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
+    text: You can grab me and let me shoot to every enemy now. I think with this
+      we will be able to reach the next piece I need.
+    mood: 0
+  - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
+    text: The next? How many are there?
+    mood: 0
+  - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
+    text: It will be a long journey, but you will be rewarded I promise.
+    mood: 0
+  - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
+    text: Fine then, where are we headed?
+    mood: 0
+  - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
+    text: We should reach the Memory Hill, there should be a bus able to transport
+      us following the road where you found me.
+    mood: 0
+  - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
+    text: "Fine then, let\u2019s go there."
+    mood: 0
+  question: {fileID: 0}
+  nextConversation: {fileID: 0}

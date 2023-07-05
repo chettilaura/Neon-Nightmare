@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c0a8bfadc5719d45a11d3ded2f12442, type: 3}
+  m_Name: First_dialog
+  m_EditorClassIdentifier: 
+  speakerLeft: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
+  speakerRight: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
+  lines:
+  - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
+    text: "Wait, how did I reach this pub? I don\u2019t remember anything."
+    mood: 0
+  - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
+    text: 'Hey you, are you too drunk to walk? '
+    mood: 0
+  - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
+    text: "Listen Here. There were too many loud noises coming from outside of the
+      pub, if you want to have a free drink go check what\u2019s happening."
+    mood: 0
+  - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
+    text: 'Hold on Mr Bartender, did you see me coming in this bar before? '
+    mood: 0
+  - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
+    text: "What are you saying? You don\u2019t know how you got here?"
+    mood: 0
+  - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
+    text: You were sleeping on the table all this whole time, now get up and go check
+      outside behind the pub.
+    mood: 0
+  question: {fileID: 0}
+  nextConversation: {fileID: 0}
