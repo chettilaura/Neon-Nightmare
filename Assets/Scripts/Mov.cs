@@ -159,13 +159,14 @@ public class Mov : MonoBehaviour
         else if (isGrounded)
         {
             _lastGroundedTime = Time.time;
+            readyToJump = true;
 
             if (RB.velocity.magnitude != 0f)
             {
                 moveSpeed = walkSpeed;
 
                 //post salto
-                readyToJump = true;
+
                 exitingSlope = false;
 
                 //hook
