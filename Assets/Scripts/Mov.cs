@@ -64,6 +64,7 @@ public class Mov : MonoBehaviour
         animator = GetComponent<Animator>();    
         RB.freezeRotation = true;
         readyToJump = true;
+        RB.AddForce(Vector3.forward , ForceMode.Impulse);
     }
     
     private void MyInput()
@@ -160,10 +161,11 @@ public class Mov : MonoBehaviour
         {
             _lastGroundedTime = Time.time;
             readyToJump = true;
+            moveSpeed = walkSpeed;
 
             if (RB.velocity.magnitude != 0f)
             {
-                moveSpeed = walkSpeed;
+                //moveSpeed = walkSpeed;
 
                 //post salto
 
@@ -183,7 +185,8 @@ public class Mov : MonoBehaviour
         else
         {
             state = MovementState.air;
-            flag_start_partita=false;
+            flag_start_partita = false;
+
         }
     }
 
@@ -275,7 +278,6 @@ public class Mov : MonoBehaviour
             }
         } else if (Physics.CheckSphere(transform.position , 0.5f, Ground) && animator.GetBool("isFalling"))
         {
-            animator.SetBool("isLanding", true);
             animator.SetBool("isFalling", false);
             animator.SetBool("doubleJump", false);
         }
@@ -290,7 +292,6 @@ public class Mov : MonoBehaviour
         if(state == MovementState.walking)
         {
             animator.SetBool("isWalking", true);
-            animator.SetBool("isLanding", false);
         } else
             animator.SetBool("isWalking", false);
 

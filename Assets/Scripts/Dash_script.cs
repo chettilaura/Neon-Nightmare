@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Dash_script : MonoBehaviour
 {
     public Transform orientation;
+    [SerializeField] private Transform _player;
     Rigidbody RB;
     private Mov movement;
 
@@ -44,6 +46,10 @@ public class Dash_script : MonoBehaviour
         Vector3 direction = orientation.forward * verticalInput + orientation.right * horizontalInput;
         if (verticalInput == 0 && horizontalInput == 0)
             direction = orientation.forward;
+
+        if (direction != Vector3.zero)
+            _player.rotation = Quaternion.Slerp(_player.rotation, orientation.rotation, 20);
+           // _player.rotation = Quaternion.LookRotation(direction);
 
         return direction.normalized;
     }
