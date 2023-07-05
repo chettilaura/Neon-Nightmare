@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Bartender
   portrait: {fileID: 21300000, guid: ee5e60367723e6a419b98ebc45c2e84f, type: 3}
-  portraitAngry: {fileID: 0}
+  portraitAngry: {fileID: 21300000, guid: ee5e60367723e6a419b98ebc45c2e84f, type: 3}

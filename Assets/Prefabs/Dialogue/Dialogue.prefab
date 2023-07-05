@@ -358,6 +358,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.047169805
       objectReference: {fileID: 0}
+    - target: {fileID: 2655534372868466295, guid: 998c7b2e7df7d7546af0b12cba9c880e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3469965074653298988, guid: 998c7b2e7df7d7546af0b12cba9c880e, type: 3}
       propertyPath: dialog
       value: 
@@ -461,6 +465,9 @@ MonoBehaviour:
       m_Calls: []
   speakerLeft: {fileID: 8639410479107687000}
   speakerRight: {fileID: 8249371629016209778}
+  rampino: {fileID: 0}
+  movimenti: {fileID: 0}
+  dash: {fileID: 0}
 --- !u!224 &8639410480264944533 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2655534371855990714, guid: 998c7b2e7df7d7546af0b12cba9c880e, type: 3}
