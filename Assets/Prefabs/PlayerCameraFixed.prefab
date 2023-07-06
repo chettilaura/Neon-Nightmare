@@ -564,6 +564,7 @@ GameObject:
   - component: {fileID: 8570994164589820003}
   - component: {fileID: 8570994164589820002}
   - component: {fileID: 8570994164589820001}
+  - component: {fileID: 8217843135594865371}
   - component: {fileID: 8570994164589820000}
   - component: {fileID: 8570994164589820007}
   - component: {fileID: 1654839580}
@@ -739,6 +740,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602fdc58b6b51b343abb623770b69db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8217843135594865371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8570994164589820005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bfb939c24a3de40ac27c2685419056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rampino: {fileID: 8570994164589820014}
+  movimenti: {fileID: 8570994164589820014}
+  dash: {fileID: 0}
+  containerGameObject: {fileID: 0}
 --- !u!120 &8570994164589820000
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1453,7 +1470,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8570994164956119183}
-  m_LocalRotation: {x: 0.16018222, y: 0.000000025470568, z: -0.0000000041333035, w: 0.9870875}
+  m_LocalRotation: {x: 0.16018222, y: -0.000000025470568, z: 0.0000000041333035, w: 0.9870875}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2640,7 +2657,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8570994165545319225}
-  m_LocalRotation: {x: 0.091180116, y: -0.0000000171347, z: 0.0000000015688795, w: 0.9958344}
+  m_LocalRotation: {x: 0.091180116, y: 0.000000017134711, z: -0.0000000015688806, w: 0.9958344}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
