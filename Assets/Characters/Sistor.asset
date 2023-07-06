@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Sistor
   portrait: {fileID: 21300000, guid: 4e2df44f394346e49bb7186ab8bd6183, type: 3}
-  portraitAngry: {fileID: 21300000, guid: 4e2df44f394346e49bb7186ab8bd6183, type: 3}
+  portraitAngry: {fileID: 0}

@@ -1,36 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Grapping_Hook : MonoBehaviour
 {
 
-    [SerializeField] GameObject preview;
-    [SerializeField] Transform hook;
-    [SerializeField] Transform launchPointR;
-    [SerializeField] Transform launchPointL;
+   [SerializeField] GameObject preview;
+   [SerializeField] Transform hook;
+   [SerializeField] Transform launchPoint;
+   private bool isHooked = false;
+  Vector3 startingPoint,endPoint;
+  float seconds;
+  [SerializeField] private Rigidbody rb;
+  [SerializeField] private Mov movement;
+  [SerializeField] private LineRenderer lineRenderer;
+  [Tooltip("Forza con cui il player viene tirato verso il gancio")]
+  [SerializeField] private float grapplingForce=4000;
+  public GameObject transistor_bagpack;
 
-
-    [SerializeField] private Rigidbody rb;
-    [SerializeField] private Mov movement;
-    [SerializeField] private LineRenderer lineRenderer;
-    [Tooltip("Forza con cui il player viene tirato verso il gancio")]
-    [SerializeField] private float grapplingForce=4000;
-    public GameObject transistor_bagpack;
-    [SerializeField] private Transform orientation;
-    [SerializeField] private Transform _player;
-
-    [SerializeField] private AudioClip[] stoneClips;
+  [SerializeField] private AudioClip[] stoneClips;
     [SerializeField] AudioSource audioSource;
 
     private Animator _animator;
     private Vector3 moveDir;
-    private bool isHooked = false;
-    Vector3 startingPoint, endPoint;
-    float seconds;
-    private bool beenHooked= false;
-    private Quaternion _rotation;
 
     private void Start()
     {
@@ -39,23 +31,11 @@ public class Grapping_Hook : MonoBehaviour
 
     void Update()
     {
-        _rotation = _player.rotation;
-        var launchPoint = (launchPointR.position + launchPointL.position) / 2;
-        lineRenderer.SetPosition(0, launchPoint);
+        lineRenderer.SetPosition(0, launchPoint.position);
         lineRenderer.SetPosition(1, hook.position);
         if ((Input.GetMouseButton(1))&&(!isHooked)) {//mirino
-
             preview.SetActive(true);
-
-            _player.rotation = Quaternion.Slerp(_player.rotation, orientation.rotation, Time.deltaTime * 4);
-            if(_rotation!= _player.rotation)
-            {
-                _animator.SetLayerWeight(2, 1);
-                Debug.Log("qui");
-                _animator.SetBool("rotating", true);
-            } else 
-                _animator.SetBool("rotating", false);
-
+            moveDir = preview.transform.forward * Input.GetAxisRaw("Vertical") + preview.transform.right * Input.GetAxisRaw("Horizontal");
             //movement.canDoubleJump=false;
             //movement.readyToJump=false;
             _animator.SetBool("grappingHookStart", true);
@@ -64,17 +44,17 @@ public class Grapping_Hook : MonoBehaviour
 
             if (Input.GetMouseButton(0)) {
                 _animator.SetBool("hook", true);
-                // _animator.SetBool("grappingHookStart", false);;
+               // _animator.SetBool("grappingHookStart", false);
+
                 isHooked =true;
                 movement.canDoubleJump=false;
                 movement.readyToJump=false;
                 preview.SetActive(false);
                 seconds=0;
-                startingPoint = launchPoint;
+                startingPoint = launchPoint.position;
                 endPoint=preview.transform.position;
                 hook.position = startingPoint;
                 hook.gameObject.SetActive(true);
-                beenHooked=true;
                 
                 
 
@@ -86,14 +66,8 @@ public class Grapping_Hook : MonoBehaviour
         }else{
             preview.SetActive(false);
             _animator.SetBool("grappingHookStart", false);
-            _animator.SetLayerWeight(2, 0);
-            if (!beenHooked)
-            {
-                lineRenderer.enabled = false;
-            }
+            lineRenderer.enabled = false;
         }
-
-
         //Debug.Log(Time.deltaTime);
 
         if (isHooked == true)
@@ -118,11 +92,7 @@ public class Grapping_Hook : MonoBehaviour
 
         }
         else
-        {
             _animator.SetBool("hook", false);
-            beenHooked = false;
-        }
-
     }
     private IEnumerator DelayRecharge(){
         yield return new WaitForSeconds(0.5f);
@@ -135,5 +105,4 @@ public class Grapping_Hook : MonoBehaviour
         hook.gameObject.SetActive(false);
         transistor_bagpack.SetActive(true);
     } 
-
 }

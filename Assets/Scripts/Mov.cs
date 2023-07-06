@@ -264,6 +264,7 @@ public class Mov : MonoBehaviour
     {
         if (isGrounded)
         {
+            animator.SetBool("hook", false);
             animator.SetBool("isFalling", false);
             //animator.SetBool("isLanding", false);
             animator.SetBool("doubleJump", false);

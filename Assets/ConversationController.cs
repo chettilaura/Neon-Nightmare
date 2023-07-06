@@ -18,14 +18,8 @@ public class ConversationController : MonoBehaviour
     private SpeakerUIController speakerUILeft;
     private SpeakerUIController speakerUIRight;
 
-    public MonoBehaviour rampino;
-    public MonoBehaviour movimenti;
-    public MonoBehaviour dash;
-    [SerializeField] private GameObject containerGameObject;
-
     private int activeLineIndex;
     private bool conversationStarted = false;
-    private bool first_line = false;
 
     public void ChangeConversation(Conversation nextConversation) {
         conversationStarted = false;
@@ -33,32 +27,14 @@ public class ConversationController : MonoBehaviour
         AdvanceLine();
     }
 
-    public void setMovement_interact(MonoBehaviour movimenti, MonoBehaviour dash, MonoBehaviour rampino, GameObject containerGameObject){
-            this.rampino = rampino;
-            this.movimenti = movimenti;
-            this.dash = dash;
-            this.containerGameObject = containerGameObject;
-
-            this.containerGameObject.SetActive(false);
-    }
-
     private void Start()
     {
         speakerUILeft  = speakerLeft.GetComponent<SpeakerUIController>();
         speakerUIRight = speakerRight.GetComponent<SpeakerUIController>();
-        this.rampino = rampino;
-        this.movimenti = movimenti;
-        this.dash = dash;
     }
 
     private void Update()
     {
-        if(first_line == false)
-        {
-            AdvanceLine();
-            first_line=true;
-            return;
-        }
         if (Input.GetKeyDown("space"))
             AdvanceLine();
         else if (Input.GetKeyDown("x"))
@@ -70,12 +46,6 @@ public class ConversationController : MonoBehaviour
         conversationStarted = false;
         speakerUILeft.Hide();
         speakerUIRight.Hide();
-        rampino.enabled = true;
-        movimenti.enabled = true;
-        dash.enabled = true;
-        GameObject parentObject = this.transform.parent.gameObject.transform.parent.gameObject;
-        containerGameObject.SetActive(true);
-        Destroy(parentObject);
     }
 
     private void Initialize() {
