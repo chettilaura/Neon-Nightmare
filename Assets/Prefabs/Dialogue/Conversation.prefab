@@ -225,6 +225,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeakerUI Left
       objectReference: {fileID: 0}
+    - target: {fileID: 1877377122074451489, guid: 8a36c3aba99971845baa474cc12bfb82, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1877377122074451490, guid: 8a36c3aba99971845baa474cc12bfb82, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
