@@ -12,6 +12,7 @@ public class PlayerLifeDeath : MonoBehaviour
     [Range(0, 100f)] public float playerHealth;
     public float maxPlayerHealth = 100f;
     public Image[] HealthBarIMG;
+    public Image bonus;
 
     [Space]
     public float lightDamage = 10;
@@ -99,16 +100,25 @@ public class PlayerLifeDeath : MonoBehaviour
         {
             if (playerHealth <= maxPlayerHealth && playerHealth > maxPlayerHealth / HealthBarIMG.Length * i)
                 HealthBarIMG[i].enabled = true;
-            else 
+            else
                 HealthBarIMG[i].enabled = false;
+
+            if (playerHealth >= 65)
+                HealthBarIMG[i].color = Color.green;
+            else if (playerHealth >= 30)
+                HealthBarIMG[i].color = Color.yellow;
+            else if (playerHealth < 30)
+                HealthBarIMG[i].color = Color.red;
         }
         if (playerHealth > maxPlayerHealth)
         {
-            //inserire nuovo simbolo
+            bonus.enabled = true;
         } else
         {
-            //rimuovere simbolo
+            bonus.enabled = false;
         }
+
+
     }
 
     public void BonusLife()
