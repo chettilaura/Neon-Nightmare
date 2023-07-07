@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ugly_Green
   m_EditorClassIdentifier: 
   colorMode: 3
-  topLeft: {r: 0.12615702, g: 0.5943396, b: 0.1866607, a: 1}
-  topRight: {r: 0.1254902, g: 0.59607846, b: 0.1882353, a: 1}
-  bottomLeft: {r: 0.23673463, g: 1, b: 0, a: 1}
-  bottomRight: {r: 0.23529412, g: 1, b: 0, a: 1}
+  topLeft: {r: 0.007843138, g: 0.003921569, b: 0.03529412, a: 1}
+  topRight: {r: 0.9960785, g: 0.9960785, b: 0.9803922, a: 1}
+  bottomLeft: {r: 0, g: 0.003921569, b: 0.039215688, a: 1}
+  bottomRight: {r: 0.043137256, g: 0.03137255, b: 0.33333334, a: 1}

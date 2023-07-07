@@ -7,7 +7,8 @@ public class Teleport : MonoBehaviour
 {
     public void OnTriggerEnter(Collider other)
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(2);
+
     }
 }
