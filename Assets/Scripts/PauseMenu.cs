@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    [SerializeField] private Slider _volumeSlider;
+    [SerializeField] private Toggle _notFullScreen;
 
     public GameObject PauseMenuUI;
 
@@ -52,5 +55,19 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Quitting game...");
         Application.Quit();
+    }
+
+    public void FullScreen()
+    {
+        if(_notFullScreen.isOn)
+            Screen.fullScreen = false;
+        else
+            Screen.fullScreen = true;
+    }
+
+    public void ChangeVolume()
+    {
+        AudioListener.volume = _volumeSlider.value;
+        Debug.Log("volume :" + _volumeSlider.value);
     }
 }
