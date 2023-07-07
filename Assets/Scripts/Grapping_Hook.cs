@@ -44,13 +44,12 @@ public class Grapping_Hook : MonoBehaviour
         lineRenderer.SetPosition(0, launchPoint);
         lineRenderer.SetPosition(1, hook.position);
         if ((Input.GetMouseButton(1))&&(!isHooked)) {//mirino
-
+            _animator.SetLayerWeight(2, 1);
             preview.SetActive(true);
 
             _player.rotation = Quaternion.Slerp(_player.rotation, orientation.rotation, Time.deltaTime * 4);
             if(_rotation!= _player.rotation)
             {
-                _animator.SetLayerWeight(2, 1);
                 Debug.Log("qui");
                 _animator.SetBool("rotating", true);
             } else 
@@ -94,6 +93,7 @@ public class Grapping_Hook : MonoBehaviour
         }
 
 
+
         //Debug.Log(Time.deltaTime);
 
         if (isHooked == true)
@@ -123,11 +123,14 @@ public class Grapping_Hook : MonoBehaviour
             beenHooked = false;
         }
 
+
+        if (_animator.GetBool("isIdle") && (!_animator.GetBool("grappingHookStart") && !_animator.GetBool("hook")))
+            lineRenderer.enabled = false;
+
     }
     private IEnumerator DelayRecharge(){
         yield return new WaitForSeconds(0.5f);
         movement.returnOnGroundEvent+=RechargeHook;
-        lineRenderer.enabled=false;
     }
     private void RechargeHook() {
         isHooked=false;

@@ -16,7 +16,7 @@ MonoBehaviour:
   speakerRight: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
   lines:
   - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
-    text: Little guy, the loud stopped, thank you for help. What was the problem?
+    text: Little guy, the noise stopped, thank you for helping me. What was the problem?
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
     text: This guy behind me, he was followed by some evil creatures.
@@ -25,7 +25,7 @@ MonoBehaviour:
     text: "Nice to meet you mr Bartender, I\u2019m Sistor."
     mood: 1
   - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
-    text: "My pleasure, anyway I\u2019ll start making the drink as reward for you."
+    text: "My pleasure, anyway I\u2019ll start making the drink as a reward for you."
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
     text: Wait, can I ask for another kind of favor instead?
@@ -35,10 +35,10 @@ MonoBehaviour:
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
     text: A piece of Sistor is on top of your building, but to reach it we should
-      use the gate behind the pub, can you borrow us the key?
+      use the gate behind the pub, can we borrow the key?
     mood: 0
   - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
-    text: Sure, there are a lot of wastes there, but I think you can still climb
+    text: Sure, there is a lot of garbage there, but I think you can still climb
       to the top.
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
