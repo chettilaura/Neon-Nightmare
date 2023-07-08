@@ -16,18 +16,18 @@ MonoBehaviour:
   speakerRight: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
   lines:
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: Here jump inside this and we will reach the Memory Hill!
+    text: Jump into this bus here and we will be transported to Memory Hill
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: "Are you sure it\u2019s safe?"
+    text: Are you sure it is not dangerous?
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: "Don\u2019t worry, it\u2019s the fastest travel method we have here in
-      Romblant!"
+    text: Don't worry, it is the fastest method of transportation we have here in
+      Romblant!
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: Who could've expected that i would have followed a microchip very similar
-      to a spider, but it is what it is, let's go...
+    text: Who knew I would have to follow a spider-shaped microchip to escape, but
+      still, come on....
     mood: 0
   question: {fileID: 0}
   nextConversation: {fileID: 0}

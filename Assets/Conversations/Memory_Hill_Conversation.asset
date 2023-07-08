@@ -16,15 +16,15 @@ MonoBehaviour:
   speakerRight: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
   lines:
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: "Welcome to Memory Hill, here there should be some pieces, but radar it\u2019s
-      not working properly..."
+    text: Welcome to Memory Hill Andrew! There should be some of my pieces here,
+      but the radar is not working properly...
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: Maybe there are too many enemies to scan, or one of them ate my body part.
-      If we explore, we should be able to reach them anyway.
+    text: Maybe there are too many enemies to scan, or one of them ate my piece.
+      If we explore we should be able to find them anyway.
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: "Look how much effort I must invest in order to come back home\u2026 "
+    text: See how much effort I have to make to come back home..
     mood: 0
   question: {fileID: 0}
   nextConversation: {fileID: 0}

@@ -19,66 +19,66 @@ MonoBehaviour:
     text: Wait a minute, a talking microchip?
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: "Why are you surprised? We\u2019re in Romblant, here there are a lot of
-      talking microchips."
+    text: What are you surprised about? We are in Romblant, here are a lot of talking
+      microchips
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: "What are you saying\u2026 I never been here before."
+    text: "What are you saying\u2026 I have never been here before."
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: But you are here now, where you belong from?
+    text: You're here now though, where are you from?
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: I suppose the real world, not this messy one...
+    text: I think from the real world, not from this messy...
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: Oh so you are an anglox
+    text: Ah, but then you are an Anglox!
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: "An\u2026 anglox?"
+    text: "An\u2026 Anglox?"
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: Yes, here we call people from real world in this way. Anyway what are you
-      doing here?
+    text: Yes, we call people from the real world that way here. What are you doing
+      here anyway?
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: I am just checking what's happening, were you the one doing all this loud
-      noise?
+    text: Just checking what's going on. Were you the one making all that loud noise?
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: I just escaped from evil machines who wanted to kill me. I am Sistor, one
-      of the smartest living being in this world.
+    text: I just escaped from bad cars that wanted to kill me. I am Sistor, one of
+      the most intelligent living beings in this world.
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: You said before I am from real world, do you know how I can come back there?
+    text: Well Sistor, since you are so smart, can you tell me how I can return to
+      the real world?
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: "Actually, there\u2019s a way. I can help you but at the moment like you
-      can see, I don\u2019t have all my powers."
+    text: Actually there is a way, but as you see at the moment I don't have all
+      my powers.
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: "Most of the pieces to repair my functionalities got lost and I\u2019m
-      pretty broken."
+    text: Most of the parts to repair my functionality are scattered and I'm quite
+      broken.
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: What if I help you gather those pieces? Can you bring me to the real world?
+    text: If I help you retrieve them then can you take me back to my world?
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: "Well I would be glad if you help me, since when I was running, some of
-      my legs got hurt and I can\u2019t walk anymore."
+    text: Well, I would be quite happy if you could help me, since some of my legs
+      are injured and I can no longer walk.
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: ' Can you bring me with you? I can attach to your back thanks to my only
-      working chip!'
+    text: Can you take me with you? I can attach to my back because of my one working
+      chip!
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: Fine then come with me, where are we heading?
+    text: Well, then come with me, where are we headed?
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: I have a radar, let me check where the nearest part landed...
+    text: Let me check the radar for the nearest piece...
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: "Oh, we\u2019re pretty lucky, it\u2019s on top of the building here."
+    text: Oh we are quite lucky, it is on the roof of this building
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
     text: You mean the pub?

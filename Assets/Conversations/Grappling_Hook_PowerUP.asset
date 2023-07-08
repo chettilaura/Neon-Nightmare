@@ -16,28 +16,30 @@ MonoBehaviour:
   speakerRight: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
   lines:
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: We found the Rope Fan! This was used to rescue people by allowing me to
-      levitate using the fan, but I think we can modify the functionality.
+    text: We have found the Rope Fan! This was used to save people by allowing me
+      to levitate using the fan, but I think we can modify its functionality.
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: Try to use it as a grappling hook. If you launch me, I can levitate activating
-      the fan, and just use the rope to jump higher!
+    text: Try using it as a grappling hook. If you throw me I can levitate by activating
+      the fan, and later use the rope to jump higher!
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: Isn't this like the most dangerous thing an human being can do?
+    text: Isn't that like the most dangerous thing a human being can do?
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: Come on, trust me, i never put you in a real danger.
+    text: Go ahead, trust me. I have never put you in danger. Use the right mouse
+      button to aim and the left to launch yourself into the air.
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: Allow me to disagre...
+    text: You are asking me to do crazy things...
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: Listen, we found every piece in Memory Hill, now we just need to comeback
-      and the nearest bus is reachable only with the Rope Fan, give it a chance.
+    text: Listen, we have collected all the pieces of Memory Hill, now we just have
+      to go back to the nearest bus from where we are, and it can only be reached
+      by Rope Fan
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: Damn... fine then. Let's try it
+    text: Damn... all right.
     mood: 0
   question: {fileID: 0}
   nextConversation: {fileID: 0}

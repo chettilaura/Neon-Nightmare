@@ -16,24 +16,24 @@ MonoBehaviour:
   speakerRight: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
   lines:
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: You can grab me and let me shoot to every enemy now. I think with this
-      we will be able to reach the next piece I need.
+    text: Now you can grab me and make me shoot the enemies. With that we should
+      be able to get to the next piece we need.
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: The next? How many are there?
+    text: Next? How many more do we need to find?
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: It will be a long journey, but you will be rewarded I promise.
+    text: It will be a long journey, but you will be rewarded, I promise you.
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: Fine then, where are we headed?
+    text: All right then, where are we headed?
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: We should reach the Memory Hill, there should be a bus able to transport
-      us following the road where you found me.
+    text: We should reach Memory Hill, you should find a bus capable of transporting
+      us there following the road where you found me
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: "Fine then, let\u2019s go there."
+    text: Well, then let's go there.
     mood: 0
   question: {fileID: 0}
   nextConversation: {fileID: 0}

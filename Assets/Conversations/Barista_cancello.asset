@@ -16,30 +16,30 @@ MonoBehaviour:
   speakerRight: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
   lines:
   - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
-    text: Little guy, the noise stopped, thank you for helping me. What was the problem?
+    text: Hey you! Finally the noise has stopped, thank you. What was the problem?
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: This guy behind me, he was followed by some evil creatures.
+    text: The little guy behind me, he was being chased by some evil creatures
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: "Nice to meet you mr Bartender, I\u2019m Sistor."
+    text: Nice to meet you Mr Bartender, I am Sistor.
     mood: 1
   - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
-    text: "My pleasure, anyway I\u2019ll start making the drink as a reward for you."
+    text: My pleasure! Anyway, I'll make you the drink I promised you as a prize.
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: Wait, can I ask for another kind of favor instead?
+    text: Wait, can I ask another kind of favor?
     mood: 0
   - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
     text: Sure, tell me.
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: A piece of Sistor is on top of your building, but to reach it we should
-      use the gate behind the pub, can we borrow the key?
+    text: A piece of Sistor is on the top of your pub, can we go up to the top and
+      retrieve it?
     mood: 0
   - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
-    text: Sure, there is a lot of garbage there, but I think you can still climb
-      to the top.
+    text: 'Of course, there is a lot of trash behind, but I think you can still reach
+      the top by jumping '
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
     text: Thank you! See you soon.

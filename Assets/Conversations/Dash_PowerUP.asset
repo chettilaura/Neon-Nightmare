@@ -16,18 +16,19 @@ MonoBehaviour:
   speakerRight: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
   lines:
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: Oh finally, we found the thruster!
+    text: Oh, we finally found the thruster!
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: This allows us to move quickly and jump longer when needed. I can use it
-      also when you are moving, we should be able to reach new points.
+    text: This will allow us to move faster and jump farther when needed. I can also
+      use it when you are jumping, it will allow us to reach new places in Memory
+      Hill
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: Are you sure you can use it to boost me too?
+    text: Are you sure you can also use it to enhance my movements?
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: Sure! Try to use it on the ramp we found, we can use them to boost the
-      thruster power even more!
+    text: Of course! Try using it by clicking LShift, if you use it in the ramps
+      we found in our route you can even get an additional boost!
     mood: 0
   question: {fileID: 0}
   nextConversation: {fileID: 0}

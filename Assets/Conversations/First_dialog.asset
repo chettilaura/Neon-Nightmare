@@ -16,24 +16,24 @@ MonoBehaviour:
   speakerRight: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
   lines:
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: "Wait, how did I reach this pub? I don\u2019t remember anything."
+    text: Wait.... How did I reach this pub? I don't remember anything.
     mood: 0
   - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
-    text: 'Hey you, are you too drunk to walk? '
+    text: Hey you, are you too drunk to walk?
     mood: 0
   - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
-    text: "Listen Here. There were too many loud noises coming from outside of the
-      pub, if you want to have a free drink go check what\u2019s happening."
+    text: Listen to me, there's too much noise outside the pub, if you want a free
+      drink go outside, check what's going on and make it stop.
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: 'Hold on Mr Bartender, did you see me coming in this bar before? '
+    text: Wait a minute Mr Bartender, have you ever seen me come to this pub before?
     mood: 0
   - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
-    text: "What are you saying? You don\u2019t know how you got here?"
+    text: But what are you saying? Don't you know how you got here?
     mood: 0
   - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
-    text: You were sleeping on the table all this whole time, now get up and go check
-      outside behind the pub.
+    text: You were sleeping in this table all the time, now get up and go outside
+      and check what's going on
     mood: 0
   question: {fileID: 0}
   nextConversation: {fileID: 0}
