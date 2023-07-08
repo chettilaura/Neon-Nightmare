@@ -5,7 +5,7 @@ using UnityEngine;
 public class DeactivateTrojanAI : MonoBehaviour
 {
     private Trojan _ai;
-    private float _minDist = 500;
+    private float _minDist = 2500;
     [SerializeField] private GameObject _player;
     // Start is called before the first frame update
     void Start()

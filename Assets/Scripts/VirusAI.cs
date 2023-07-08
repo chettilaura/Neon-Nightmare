@@ -11,7 +11,6 @@ public class VirusAI : MonoBehaviour
     public float bulletSpeed;
     public float bulletSpread;
     public LayerMask WhatIsGround, WhatIsPlayer;
-    public bool isActive;
 
 
     //patroling
@@ -35,15 +34,13 @@ public class VirusAI : MonoBehaviour
 
     private void Update()
     {
-        if (isActive)
-        {
+
             playerInSight = Physics.CheckSphere(transform.position, sightRange, WhatIsPlayer);
             playerInFlee = Physics.CheckSphere(transform.position, fleeRange, WhatIsPlayer);
 
             if (!playerInSight && !playerInFlee) Patrol();
             if (playerInSight && !playerInFlee) Attack();
             if (playerInSight && playerInFlee) Flee();
-        }
     }
 
     private void Patrol()
@@ -91,15 +88,5 @@ public class VirusAI : MonoBehaviour
         Vector3 FleeDestination = transform.position - FleeDirection * fleeRange;
         agent.SetDestination(FleeDestination);
 
-    }
-
-    private void OnBecameVisible()
-    {
-        isActive = true;
-    }
-
-    private void OnBecameInvisible()
-    {
-        isActive = false;
     }
 }

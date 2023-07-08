@@ -5,7 +5,7 @@ using UnityEngine;
 public class DeactivateAI : MonoBehaviour
 {
     private VirusAI _ai;
-    private float _minDist = 500;
+    public float _minDist = 2500;
     [SerializeField] private GameObject _player;
     // Start is called before the first frame update
     void Start()
