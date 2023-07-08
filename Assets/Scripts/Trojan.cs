@@ -27,7 +27,7 @@ public class Trojan : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("PlayerCapsule").transform;
+        player = GameObject.Find("maincharacter").transform;
         agent = GetComponent<NavMeshAgent>();
         ableToCharge=true;
     }

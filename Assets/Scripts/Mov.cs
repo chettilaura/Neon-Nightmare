@@ -41,6 +41,7 @@ public class Mov : MonoBehaviour
     Rigidbody RB;
 
     public MovementState state;
+    private ClosestEnemyNearby _fire;
 
     public enum MovementState
     {
@@ -64,7 +65,7 @@ public class Mov : MonoBehaviour
         animator = GetComponent<Animator>();    
         RB.freezeRotation = true;
         readyToJump = true;
-        RB.AddForce(Vector3.forward , ForceMode.Impulse);
+        _fire = GetComponent<ClosestEnemyNearby>();
     }
     
     private void MyInput()
@@ -313,10 +314,14 @@ public class Mov : MonoBehaviour
         if((animator.GetBool("isJumping") || animator.GetBool("isFalling")) && (animator.GetBool("grappingHookStart") || animator.GetBool("hook")))
         {
             animator.SetLayerWeight(1, 1);
-        } else
+        } else if(!_fire.fire)
         {
             animator.SetLayerWeight(1, 0);
         }
+
+        if (animator.GetBool("isWalking") && ((animator.GetBool("grappingHookStart") || animator.GetBool("hook"))))
+            animator.SetLayerWeight(1, 1);
+
 
     }
 
