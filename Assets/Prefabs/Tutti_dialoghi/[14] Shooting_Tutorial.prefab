@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3139402562253882119}
   - component: {fileID: 3139402562253882118}
   m_Layer: 5
-  m_Name: '[13] PowerUP Presi'
+  m_Name: '[14] Shooting_Tutorial'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1401,8 +1401,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be13f285cdd8a743a6812cebe8e855a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: {fileID: 11400000, guid: 5361bd689051c584585412ed60484467, type: 2}
-  defaultConversation: {fileID: 11400000, guid: 5361bd689051c584585412ed60484467, type: 2}
+  conversation: {fileID: 11400000, guid: 709eabb9f3a980c41b7e6978ac1d59e9, type: 2}
+  defaultConversation: {fileID: 11400000, guid: 709eabb9f3a980c41b7e6978ac1d59e9, type: 2}
   questionEvent:
     m_PersistentCalls:
       m_Calls: []

@@ -10,27 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c0a8bfadc5719d45a11d3ded2f12442, type: 3}
-  m_Name: Bus
+  m_Name: Shooting_tutorial
   m_EditorClassIdentifier: 
   speakerLeft: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
   speakerRight: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
   lines:
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: 'We did it! We reached the Bus!
-
-      Jump here and we will be transported
-      to Memory Hill'
+    text: Be careful, there are enemies on the road to Memory Hill!
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: Are you sure it is not dangerous?
+    text: How can we get to the bus if they are blocking us?
+    mood: 0
+  - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
+    text: How can we get to the bus if they are blocking us?
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: Don't worry, it is the fastest method of transportation we have here in
-      Romblant!
+    text: Remember, we just found my gun!
+    mood: 0
+  - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
+    text: Use the F key to shoot enemies, you won't need to aim, I'll take care of
+      that, but instead think about dodging their shots.
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: Who knew I would have to follow a spider-shaped microchip to escape, but
-      still, come on....
+    text: All right, all the years spent on video games will serve me well.
     mood: 0
   question: {fileID: 0}
   nextConversation: {fileID: 0}
