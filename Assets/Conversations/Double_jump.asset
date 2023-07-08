@@ -10,22 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c0a8bfadc5719d45a11d3ded2f12442, type: 3}
-  m_Name: First_power_up_2
+  m_Name: Double_jump
   m_EditorClassIdentifier: 
   speakerLeft: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
   speakerRight: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
   lines:
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: That's my gun! I can finally defend myself again!
+    text: 'Look, there''s a jumper! '
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: Please bring it to me!
+    text: With this tool I think you will be able to jump twice in a row.
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: 'Now you can grab me and make me shoot the enemies. '
+    text: Try pressing spacebar when you are in midair to jump again.
+    mood: 0
+  - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
+    text: ' The power of the jumper should allow you to reach high places.'
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: Sounds fun!
+    text: Are you sure I won't hurt myself by jumping so high?
+    mood: 0
+  - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
+    text: 'Don''t worry, the jumper allows me to make the fall soft from whatever
+      height you jump. '
     mood: 0
   question: {fileID: 0}
   nextConversation: {fileID: 0}

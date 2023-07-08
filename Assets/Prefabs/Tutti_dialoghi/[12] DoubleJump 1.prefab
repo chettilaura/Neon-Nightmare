@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3139402562253882119}
   - component: {fileID: 3139402562253882118}
   m_Layer: 5
-  m_Name: '[11] Grapplin_Hook_PowerUP (1)'
+  m_Name: '[12] DoubleJump 1'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1401,8 +1401,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be13f285cdd8a743a6812cebe8e855a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: {fileID: 11400000, guid: 7d7f5e39d5049784bbab530ec113159d, type: 2}
-  defaultConversation: {fileID: 11400000, guid: 7d7f5e39d5049784bbab530ec113159d, type: 2}
+  conversation: {fileID: 11400000, guid: e1bd09563aceee04ca251d4bbe4f1fd8, type: 2}
+  defaultConversation: {fileID: 11400000, guid: e1bd09563aceee04ca251d4bbe4f1fd8, type: 2}
   questionEvent:
     m_PersistentCalls:
       m_Calls: []

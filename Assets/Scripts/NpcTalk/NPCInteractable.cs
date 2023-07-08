@@ -9,7 +9,8 @@ public class NPCInteractable : MonoBehaviour, IInteractable {
     private Animator animator;
     public GameObject dialogo;
    // private NPCHeadLookAt npcHeadLookAt;
-
+    public GameObject trigger;
+    public GameObject selfdestroy;
     private void Awake() {
      //   animator = GetComponent<Animator>();
        // npcHeadLookAt = GetComponent<NPCHeadLookAt>();
@@ -21,6 +22,19 @@ public class NPCInteractable : MonoBehaviour, IInteractable {
         GameObject instantiatedPrefab = Instantiate(dialogo);
          ConversationController x= instantiatedPrefab.transform.Find("Dialogue/Conversation_go").GetComponent<ConversationController>();
           x.setMovement_interact(movimenti,dash,rampino,containerGameObject);
+          if(trigger!=null)
+          {
+            PowerUPRaccolti y = trigger.GetComponent<PowerUPRaccolti>();
+            y.contatore++;
+            
+            Destroy(this);
+          }
+
+    }
+
+     private void OnDisable()
+    {
+        Destroy(gameObject);
     }
 
     public string GetInteractText() {
