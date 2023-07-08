@@ -15,7 +15,7 @@ public class ClosestEnemyNearby : MonoBehaviour
 
     private VirusLifeSystem virusLife;
     private int _countTime = 50;
-    private bool fire= false;
+    public bool fire= false;
 
     [SerializeField] float _minDistance = 300;
     
