@@ -21,5 +21,9 @@ public class virusBullet : MonoBehaviour
             playerLifeDeath.lightAttack();
             Destroy(gameObject);
         }
+        else if (other.gameObject.CompareTag("Untagged"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

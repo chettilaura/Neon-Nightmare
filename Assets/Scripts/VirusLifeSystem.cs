@@ -7,8 +7,8 @@ public class VirusLifeSystem : MonoBehaviour
 {
     // Start is called before the first frame update
     [Space]
-    [Range(0, 100f)] public float virusHealth;
-    public float maxVirusHealth = 100f;
+    [Range(0, 250f)] public float virusHealth;
+    public float maxVirusHealth;
     public float damage;
     private Animator _animator;
 
@@ -26,11 +26,11 @@ public class VirusLifeSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(virusHealth == 0)
+        if(virusHealth <= 0)
         {
             _lifeSlider.gameObject.SetActive(false);
             _animator.SetBool("isDead", true);
-            Invoke("Destroy", 10);
+            Invoke("Destroy", 1);
         }
         _lifeSlider.value = virusHealth/100f;
     }
