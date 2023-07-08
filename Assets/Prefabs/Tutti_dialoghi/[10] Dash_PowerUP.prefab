@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 2853272959339912385}
   - component: {fileID: 8060957401630286217}
   m_Layer: 5
-  m_Name: Conversation
+  m_Name: Conversation_go
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

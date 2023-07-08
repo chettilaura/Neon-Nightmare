@@ -86,7 +86,7 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
     text: Yeah, we should go there.
     mood: 0
-  - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
+  - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
     text: "Okay, let\u2019s go then."
     mood: 0
   question: {fileID: 0}

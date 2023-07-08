@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2437621623738598242}
   - component: {fileID: 7607337730599845418}
   m_Layer: 5
-  m_Name: Conversation
+  m_Name: Conversation_go
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
