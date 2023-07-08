@@ -45,8 +45,9 @@ MonoBehaviour:
     text: Just checking what's going on. Were you the one making all that loud noise?
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: I just escaped from bad cars that wanted to kill me. I am Sistor, one of
-      the most intelligent living beings in this world.
+    text: I barely escaped from some robots that were trying to harm me, and as you
+      can see I took quite the beating. I am Sistor, one of the most intelligent
+      living beings in this world.
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
     text: Well Sistor, since you are so smart, can you tell me how I can return to
