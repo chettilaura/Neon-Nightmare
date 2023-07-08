@@ -10,9 +10,7 @@ public class PlayerInteractUI : MonoBehaviour {
 
     private void Update() {
 
-        Debug.Log("Sto controllando!");
         if (playerInteract.GetInteractableObject() != null) {
-            Debug.Log("Sto showando l'UI");
             Debug.Log(playerInteract);
             Show(playerInteract.GetInteractableObject());
         } else {
@@ -27,7 +25,6 @@ public class PlayerInteractUI : MonoBehaviour {
     }
 
     private void Hide() {
-        Debug.Log("Sono nella hide");
         containerGameObject.SetActive(false);
     }
 

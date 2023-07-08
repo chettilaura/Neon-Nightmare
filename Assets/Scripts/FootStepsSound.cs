@@ -22,7 +22,6 @@ public class FootStepsSound : MonoBehaviour
        // AudioClip clip = stoneClips[UnityEngine.Random.Range(0, stoneClips.Length)];
         AudioClip clip = stoneClips[0];
         audioSource.PlayOneShot(clip);
-        Debug.Log("step");
     }
 
 /*

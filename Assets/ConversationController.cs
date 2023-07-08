@@ -33,6 +33,13 @@ public class ConversationController : MonoBehaviour
         AdvanceLine();
     }
 
+    public void setMovement_trigger(MonoBehaviour movimenti, MonoBehaviour dash, MonoBehaviour rampino){
+            this.rampino = rampino;
+            this.movimenti = movimenti;
+            this.dash = dash;
+            this.containerGameObject=null;
+    }
+
     public void setMovement_interact(MonoBehaviour movimenti, MonoBehaviour dash, MonoBehaviour rampino, GameObject containerGameObject){
             this.rampino = rampino;
             this.movimenti = movimenti;
@@ -46,9 +53,7 @@ public class ConversationController : MonoBehaviour
     {
         speakerUILeft  = speakerLeft.GetComponent<SpeakerUIController>();
         speakerUIRight = speakerRight.GetComponent<SpeakerUIController>();
-        this.rampino = rampino;
-        this.movimenti = movimenti;
-        this.dash = dash;
+
     }
 
     private void Update()
@@ -74,6 +79,7 @@ public class ConversationController : MonoBehaviour
         movimenti.enabled = true;
         dash.enabled = true;
         GameObject parentObject = this.transform.parent.gameObject.transform.parent.gameObject;
+        if(containerGameObject!=null)
         containerGameObject.SetActive(true);
         Destroy(parentObject);
     }
@@ -139,7 +145,7 @@ public class ConversationController : MonoBehaviour
     private IEnumerator EffectTypewriter(string text, SpeakerUIController controller) {
         foreach(char character in text.ToCharArray()) {
             controller.Dialog += character;
-            yield return new  WaitForSeconds(0.05f);
+            yield return new  WaitForSeconds(0.01f);
             // yield return null;
         }
     }
