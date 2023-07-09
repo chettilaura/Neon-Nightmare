@@ -18,7 +18,12 @@ public class SpamFSM : MonoBehaviour
     private int _currentWayPointIndex = 0;
 
     private VirusLifeSystem _virusLife;
+    
     private ParticleSystem _particles;
+
+     //suono sciame 
+    [SerializeField] AudioClip[] stoneClips;
+    [SerializeField] AudioSource audioSource;
 
     void Start()
     {
@@ -46,6 +51,9 @@ public class SpamFSM : MonoBehaviour
     void Update()
     {
         _stateMachine.Tik();
+        //suono sciame (va qui??) 
+            AudioClip clip = stoneClips[0];
+            audioSource.PlayOneShot(clip);
 
         if(_virusLife.virusHealth == 0)
         {
@@ -136,7 +144,7 @@ public class StopState : State
 
     public override void Tik()
     {
-
+         
     }
 
     public override void Exit()

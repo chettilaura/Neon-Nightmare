@@ -80,7 +80,7 @@ public class VirusAI : MonoBehaviour
              //suono spari 
                     AudioClip clip = stoneClips[0];
                     audioSource.PlayOneShot(clip);
-                    
+
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
