@@ -966,6 +966,7 @@ MonoBehaviour:
   dash: {fileID: 1735278907}
   rampino: {fileID: 1735278905}
   nextTrigger: {fileID: 1765005773}
+  triggerato: 0
 --- !u!114 &55699085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4269,6 +4270,7 @@ MonoBehaviour:
   dash: {fileID: 1735278907}
   rampino: {fileID: 1735278905}
   nextTrigger: {fileID: 1493600133}
+  triggerato: 0
 --- !u!1001 &215479849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9580,6 +9582,7 @@ MonoBehaviour:
   dash: {fileID: 1735278907}
   rampino: {fileID: 1735278905}
   nextTrigger: {fileID: 0}
+  triggerato: 0
 --- !u!114 &598529550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27356,6 +27359,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1735278910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917042711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90dcabd7e586646368556d57f9e5e673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stoneClips:
+  - {fileID: 8300000, guid: 50a2344fc32ae4a84afe704ccaeae0eb, type: 3}
+  audioSource: {fileID: 917042712}
 --- !u!1001 &1735980207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27998,6 +28016,7 @@ MonoBehaviour:
   dash: {fileID: 1735278907}
   rampino: {fileID: 1735278905}
   nextTrigger: {fileID: 1493600133}
+  triggerato: 0
 --- !u!114 &1765005779
 MonoBehaviour:
   m_ObjectHideFlags: 0
