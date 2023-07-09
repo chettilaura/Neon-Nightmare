@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class stepragnoNonBossSound : MonoBehaviour
+public class StepRagno : MonoBehaviour
 {
     [SerializeField] private AudioClip[] stoneClips;
     [SerializeField] AudioSource audioSource;
-    private void stepragnonoboss()
+    private void stepragno()
     {
     
         AudioClip clip = stoneClips[0];
