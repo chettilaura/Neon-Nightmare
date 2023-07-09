@@ -176,8 +176,9 @@ public class Mov : MonoBehaviour
                 if (returnOnGroundEvent != null)
                 {
                     returnOnGroundEvent.Invoke();
-                    //AudioClip clip2 = stoneClips[0];
-                    //audioSource.PlayOneShot(clip2);
+                    //suono atterraggio
+                    AudioClip clip2 = stoneClips[0];
+                    audioSource.PlayOneShot(clip2);
                 }
             }
 
@@ -274,8 +275,9 @@ public class Mov : MonoBehaviour
             //animator.SetBool("isLanding", false);
             animator.SetBool("doubleJump", false);
             if (atterraggio_post_salto==true && flag_start_partita==false){
-                //AudioClip clip = stoneClips[0];
-                //audioSource.PlayOneShot(clip);
+                //rumore atterraggio
+                AudioClip clip = stoneClips[0];
+                audioSource.PlayOneShot(clip);
                 atterraggio_post_salto=false;
             }
         } else if (Physics.CheckSphere(transform.position , 0.5f, Ground) && animator.GetBool("isFalling"))
