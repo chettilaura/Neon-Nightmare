@@ -45,6 +45,7 @@ public class ClosestEnemyNearby : MonoBehaviour
             }
         }
         _closestEnemy = FindClosestEnemy();
+        Debug.Log("clos enem "+ _closestEnemy);
         //sparo con F
         if (Input.GetKey(KeyCode.F)){
             
@@ -81,8 +82,6 @@ public class ClosestEnemyNearby : MonoBehaviour
             } else
             {
                 fire = false;
-                //_animator.SetBool("firing", false);
-                Debug.Log("secondo else");
             }
         }
         else{
