@@ -15299,7 +15299,7 @@ PrefabInstance:
     - target: {fileID: 8570994164589820012, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
       propertyPath: stoneClips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 055c9bd455c634709894aca89013d336, type: 3}
+      objectReference: {fileID: 8300000, guid: bcd989021f8c544ff9d687ec01d15593, type: 3}
     - target: {fileID: 8570994164956119176, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.75326484
