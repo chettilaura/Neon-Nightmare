@@ -16,7 +16,7 @@ public class PlayerInteract : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.E)) {
+        if (Input.GetKeyDown(KeyCode.E) && containerGameObject.activeSelf) {
             containerGameObject.SetActive(false);
             IInteractable interactable = GetInteractableObject();
             if (interactable != null) {

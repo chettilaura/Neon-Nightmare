@@ -83,7 +83,6 @@ public class ConversationController : MonoBehaviour
         GameObject parentObject = this.transform.parent.gameObject.transform.parent.gameObject;
         if(containerGameObject!=null)
         containerGameObject.SetActive(true);
-        Debug.Log("Conversazione finita");
         Destroy(parentObject);
     }
 
