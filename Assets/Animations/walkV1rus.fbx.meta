@@ -79,28 +79,28 @@ ModelImporter:
       curves: []
       events:
       - time: 0.17977528
-        functionName: stepragnonoboss
+        functionName: stepragno
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.3988764
-        functionName: stepragnonoboss
+        functionName: stepragno
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.6292135
-        functionName: stepragnonoboss
+        functionName: stepragno
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.9044944
-        functionName: stepragnonoboss
+        functionName: stepragno
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

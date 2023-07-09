@@ -757,9 +757,9 @@ GameObject:
   - component: {fileID: 6336615766732501669}
   - component: {fileID: 8871876436610766810}
   - component: {fileID: 6395963635502735662}
-  - component: {fileID: 4630400039375360663}
   - component: {fileID: 1825057788980940501}
   - component: {fileID: 814605463570945774}
+  - component: {fileID: 7559479865361415039}
   m_Layer: 0
   m_Name: v1rus
   m_TagString: enemy
@@ -897,6 +897,9 @@ MonoBehaviour:
   fleeRange: 1
   playerInSight: 0
   playerInFlee: 0
+  stoneClips:
+  - {fileID: 8300000, guid: c4ee3d017f5f6475bb3beea968b87166, type: 3}
+  audioSource: {fileID: 1825057788980940501}
 --- !u!195 &6336615766732501669
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -949,21 +952,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minDist: 2500
   _player: {fileID: 0}
---- !u!114 &4630400039375360663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3941990352683619156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f566d791568364b5da668c8608638b2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stoneClips:
-  - {fileID: 8300000, guid: 49f1330aa139948f893bd0cd851b2e32, type: 3}
-  audioSource: {fileID: 1825057788980940501}
 --- !u!82 &1825057788980940501
 AudioSource:
   m_ObjectHideFlags: 0
@@ -984,8 +972,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.5
+  MaxDistance: 4
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1019,8 +1007,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
+      time: 0.011352539
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1074,6 +1062,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stoneClips:
   - {fileID: 8300000, guid: 96ca6f0b69477465489eee8214fe149c, type: 3}
+  audioSource: {fileID: 1825057788980940501}
+--- !u!114 &7559479865361415039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3941990352683619156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770ba7d220c924d1591034b9321c6317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stoneClips:
+  - {fileID: 8300000, guid: 49f1330aa139948f893bd0cd851b2e32, type: 3}
   audioSource: {fileID: 1825057788980940501}
 --- !u!1 &4291730668062767290
 GameObject:

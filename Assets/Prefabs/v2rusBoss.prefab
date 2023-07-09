@@ -1269,6 +1269,9 @@ MonoBehaviour:
   fleeRange: 0
   playerInSight: 0
   playerInFlee: 0
+  stoneClips:
+  - {fileID: 8300000, guid: c4ee3d017f5f6475bb3beea968b87166, type: 3}
+  audioSource: {fileID: 4241657124716006453}
 --- !u!114 &7078346341877633598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1303,8 +1306,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.5
+  MaxDistance: 4
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1339,7 +1342,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
