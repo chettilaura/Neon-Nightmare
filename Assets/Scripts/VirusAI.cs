@@ -26,6 +26,10 @@ public class VirusAI : MonoBehaviour
     public float sightRange, fleeRange;
     public bool playerInSight, playerInFlee;
 
+     //suono spari 
+    [SerializeField] private AudioClip[] stoneClips;
+    [SerializeField] AudioSource audioSource;
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -72,6 +76,11 @@ public class VirusAI : MonoBehaviour
             var bullet = Instantiate(bulletPrefab, BulletSpawnPoint.position, BulletSpawnPoint.rotation);
             bullet.GetComponent<Rigidbody>().velocity = Quaternion.Euler(0f, randomRange, 0f) * BulletSpawnPoint.forward * bulletSpeed;
             alreadyAttacked = true;
+
+             //suono spari 
+                    AudioClip clip = stoneClips[0];
+                    audioSource.PlayOneShot(clip);
+                    
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }

@@ -1269,6 +1269,9 @@ MonoBehaviour:
   fleeRange: 0
   playerInSight: 0
   playerInFlee: 0
+  stoneClips:
+  - {fileID: 8300000, guid: c4ee3d017f5f6475bb3beea968b87166, type: 3}
+  audioSource: {fileID: 4241657124716006453}
 --- !u!114 &7078346341877633598
 MonoBehaviour:
   m_ObjectHideFlags: 0
