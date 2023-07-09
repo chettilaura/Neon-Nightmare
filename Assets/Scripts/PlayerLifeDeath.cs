@@ -7,6 +7,7 @@ public class PlayerLifeDeath : MonoBehaviour
 {
     [SerializeField] private Animator _playerAnimator;
     [SerializeField] private GameObject _playerCamera;
+    private Look_Around _lookAround;
 
     [Space]
     [Range(0, 100f)] public float playerHealth;
@@ -37,6 +38,7 @@ public class PlayerLifeDeath : MonoBehaviour
         _scriptDash = GetComponent<Dash_script>();
         _scriptHook = GetComponent<Grapping_Hook>();
         _scriptClosestEnemyNearby = GetComponent<ClosestEnemyNearby>();
+        _lookAround = _playerCamera.transform.Find("Camera").GetComponent<Look_Around>();
     }
 
     // Update is called once per frame
@@ -55,6 +57,7 @@ public class PlayerLifeDeath : MonoBehaviour
             _movementScript.enabled = false;
             _scriptDash.enabled = false;
             _scriptHook.enabled = false;
+            _lookAround.enabled = false;
             _scriptClosestEnemyNearby.enabled = false;
             _time += Time.deltaTime;
             if (_time >= _timeForRespawn)
@@ -67,6 +70,7 @@ public class PlayerLifeDeath : MonoBehaviour
                 _scriptDash.enabled = true;
                 _scriptHook.enabled = true;
                 _scriptClosestEnemyNearby.enabled = true;
+                _lookAround.enabled = true;
                 _time = 0;
             }
         }
