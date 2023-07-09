@@ -8,19 +8,23 @@ public class PlayerInteract : MonoBehaviour {
     public MonoBehaviour movimenti;
     public MonoBehaviour dash;
     private Look_Around look_Around;
+    private Animator animator;
     [SerializeField] private GameObject containerGameObject;
 
     public void Start()
     {
         look_Around = GameObject.Find("Camera").GetComponent<Look_Around>();
+        animator = GameObject.Find("Player").GetComponent<Animator>();
     }
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
             containerGameObject.SetActive(false);
+
             IInteractable interactable = GetInteractableObject();
             if (interactable != null) {
-
+                animator.SetBool("isIdle", true);
+                animator.SetBool("isWalking", false);
                 rampino.enabled = false;
                 movimenti.enabled = false;
                 dash.enabled = false;
