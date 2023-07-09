@@ -18,6 +18,10 @@ public class ClosestEnemyNearby : MonoBehaviour
     public bool fire= false;
 
     [SerializeField] float _minDistance = 300;
+
+    //suono spari 
+    [SerializeField] private AudioClip[] stoneClips;
+    [SerializeField] AudioSource audioSource;
     
 
     void Start()
@@ -60,6 +64,11 @@ public class ClosestEnemyNearby : MonoBehaviour
                     _countTime++;
                     _animator.SetLayerWeight(1, 1);
                     _animator.SetBool("firing", true);
+
+                    //suono spari 
+                    AudioClip clip = stoneClips[0];
+                    audioSource.PlayOneShot(clip);
+                    
                 } else
                 {
                     fire = false;
