@@ -77,8 +77,8 @@ public class Grapping_Hook : MonoBehaviour
                 
                 
 
-                //AudioClip clip2 = stoneClips[0];
-                //audioSource.PlayOneShot(clip2);
+                AudioClip clip2 = stoneClips[0];
+                audioSource.PlayOneShot(clip2);
             }
 
 
