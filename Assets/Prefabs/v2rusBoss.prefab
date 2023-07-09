@@ -1093,6 +1093,7 @@ GameObject:
   - component: {fileID: 7078346341877633598}
   - component: {fileID: 4241657124716006453}
   - component: {fileID: 2351597298202419800}
+  - component: {fileID: -3481669863092127410}
   m_Layer: 0
   m_Name: v2rusBoss
   m_TagString: enemy
@@ -1392,6 +1393,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stoneClips:
   - {fileID: 8300000, guid: 49f1330aa139948f893bd0cd851b2e32, type: 3}
+  audioSource: {fileID: 4241657124716006453}
+--- !u!114 &-3481669863092127410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6499872859152945539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae698361d5dcd4feab75d3563ce276c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stoneClips:
+  - {fileID: 8300000, guid: 96ca6f0b69477465489eee8214fe149c, type: 3}
   audioSource: {fileID: 4241657124716006453}
 --- !u!1 &6659396135923894925
 GameObject:
