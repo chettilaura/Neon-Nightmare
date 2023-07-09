@@ -82,8 +82,9 @@ public class Mov : MonoBehaviour
                 state = MovementState.idle;
         }
 
-        //if (Input.GetKey(KeyCode.Space) && readyToJump && isGrounded)
-         if (Input.GetKeyDown(KeyCode.Space) && readyToJump && isGrounded)
+
+            //if (Input.GetKey(KeyCode.Space) && readyToJump && isGrounded)
+            if (Input.GetKeyDown(KeyCode.Space) && readyToJump && isGrounded)
         {
             _jumpButtonPressedTime = Time.time;
             readyToJump = false;
