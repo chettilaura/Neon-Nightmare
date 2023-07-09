@@ -27,8 +27,8 @@ MonoBehaviour:
     text: Are you sure you can also use it to enhance my movements?
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: Of course! Try using it by clicking LShift, if you use it in the ramps
-      we found in our route you can even get an additional boost!
+    text: Of course! Try using it by clicking LShift, if you use it on the ramps
+      we find in our route you can even get an additional boost!
     mood: 0
   question: {fileID: 0}
   nextConversation: {fileID: 0}

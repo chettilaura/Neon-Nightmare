@@ -29,10 +29,10 @@ MonoBehaviour:
     text: Wait a minute Mr Bartender, have you ever seen me come to this pub before?
     mood: 0
   - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
-    text: But what are you saying? Don't you know how you got here?
+    text: What are you talking about? Don't you know how you got here?
     mood: 0
   - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
-    text: You were sleeping in this table all the time, now get up and go outside
+    text: You were sleeping on this table all this time, now get up and go outside
       and check what's going on
     mood: 0
   question: {fileID: 0}

@@ -19,8 +19,8 @@ MonoBehaviour:
     text: Wait a minute, a talking microchip?
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: What are you surprised about? We are in Romblant, here are a lot of talking
-      microchips
+    text: What are you surprised about? We are in Romblant, there are a lot of talking
+      microchips here
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
     text: "What are you saying\u2026 I have never been here before."
@@ -46,8 +46,8 @@ MonoBehaviour:
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
     text: I barely escaped from some robots that were trying to harm me, and as you
-      can see I took quite the beating. I am Sistor, one of the most intelligent
-      living beings in this world.
+      can see I am ina real bad shape. I am Sistor, one of the most intelligent living
+      beings in this world.
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
     text: Well Sistor, since you are so smart, can you tell me how I can return to
@@ -69,7 +69,7 @@ MonoBehaviour:
       are injured and I can no longer walk.
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: Can you take me with you? I can attach to my back because of my one working
+    text: Can you take me with you? I can attach to your back because of my one working
       chip!
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}

@@ -27,8 +27,8 @@ MonoBehaviour:
     text: Isn't that like the most dangerous thing a human being can do?
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: Go ahead, trust me. I have never put you in danger. Use the right mouse
-      button to aim and the left to launch yourself into the air.
+    text: Go ahead, trust me. I would never put you in any danger. Use the right
+      mouse button to aim and the left to launch yourself into the air.
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
     text: You are asking me to do crazy things...

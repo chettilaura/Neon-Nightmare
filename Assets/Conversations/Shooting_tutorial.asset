@@ -21,9 +21,6 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
     text: How can we get to the bus if they are blocking us?
     mood: 0
-  - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: How can we get to the bus if they are blocking us?
-    mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
     text: Remember, we just found my gun!
     mood: 0

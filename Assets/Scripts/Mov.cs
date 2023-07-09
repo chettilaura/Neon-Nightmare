@@ -142,7 +142,7 @@ public class Mov : MonoBehaviour
             RB.drag = 1f;
         }
 
-
+        Debug.Log("onSlope = " + OnSlope());
     }
 
     private void FixedUpdate()
@@ -249,6 +249,7 @@ public class Mov : MonoBehaviour
         }
         return false;
     }
+
 
     public bool OnRamp()
     {

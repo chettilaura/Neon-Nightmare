@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 1080936292}
   - component: {fileID: 1080936293}
   - component: {fileID: 2010294204}
+  - component: {fileID: 5201147380147340466}
   m_Layer: 0
   m_Name: sp4m
   m_TagString: enemy
@@ -503,6 +504,20 @@ MonoBehaviour:
   maxVirusHealth: 100
   damage: 20
   _lifeSlider: {fileID: 857692039}
+--- !u!114 &5201147380147340466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259880176221654222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f35cc6481292dc468b1293a38a00c96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minDist: 2500
+  _player: {fileID: 0}
 --- !u!1 &4562870630561140966
 GameObject:
   m_ObjectHideFlags: 0

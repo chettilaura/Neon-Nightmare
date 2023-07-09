@@ -19,13 +19,13 @@ MonoBehaviour:
     text: 'Look, there''s a jumper! '
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: With this tool I think you will be able to jump twice in a row.
+    text: I think you will be able to jump twice in a row with this tool.
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: Try pressing spacebar when you are in midair to jump again.
+    text: Try pressing spacebar when you are midair to jump again.
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: ' The power of the jumper should allow you to reach high places.'
+    text: ' The power of the jumper should allow you to reach higher places.'
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
     text: Are you sure I won't hurt myself by jumping so high?

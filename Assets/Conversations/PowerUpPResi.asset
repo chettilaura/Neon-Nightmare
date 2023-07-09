@@ -16,7 +16,7 @@ MonoBehaviour:
   speakerRight: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
   lines:
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: Are you complete now? Can you tell me how to return to my world?
+    text: Are you fully equipped now? Can you tell me how to return to my world?
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
     text: Not yet, this was just one of the pieces I missed
@@ -35,7 +35,7 @@ MonoBehaviour:
       us there following the road where you found me
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: Well, then let's go there.
+    text: Well, let's go there then.
     mood: 0
   question: {fileID: 0}
   nextConversation: {fileID: 0}

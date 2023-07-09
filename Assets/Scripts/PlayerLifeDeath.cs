@@ -67,6 +67,7 @@ public class PlayerLifeDeath : MonoBehaviour
                 _scriptDash.enabled = true;
                 _scriptHook.enabled = true;
                 _scriptClosestEnemyNearby.enabled = true;
+                _time = 0;
             }
         }
     }

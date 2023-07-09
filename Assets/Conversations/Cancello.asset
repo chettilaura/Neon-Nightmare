@@ -16,16 +16,16 @@ MonoBehaviour:
   speakerRight: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
   lines:
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
-    text: "There\u2019s a problem, the gate won\u2019t let us pass."
+    text: "There\u2019s a problem, the gate won\u2019t let us through."
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
     text: We should find the key to open the gate
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: Don't worry, i think the bartender has the key of this gate.
+    text: Don't worry, i think the bartender has the key for this gate.
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
-    text: He will help us i think. He owes me a favor
+    text: I think he will help us. He owes me a favor
     mood: 0
   - character: {fileID: 11400000, guid: 5037e0927489c8740a32ad0264674a59, type: 2}
     text: Let's go talk to him then!
