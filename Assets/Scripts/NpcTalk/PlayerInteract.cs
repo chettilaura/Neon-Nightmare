@@ -7,8 +7,13 @@ public class PlayerInteract : MonoBehaviour {
     public MonoBehaviour rampino;
     public MonoBehaviour movimenti;
     public MonoBehaviour dash;
+    private Look_Around look_Around;
     [SerializeField] private GameObject containerGameObject;
 
+    public void Start()
+    {
+        look_Around = GameObject.Find("Camera").GetComponent<Look_Around>();
+    }
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
@@ -19,6 +24,7 @@ public class PlayerInteract : MonoBehaviour {
                 rampino.enabled = false;
                 movimenti.enabled = false;
                 dash.enabled = false;
+                look_Around.enabled = false;
                 interactable.Interact(transform,rampino,dash,movimenti,containerGameObject);
             }
         }

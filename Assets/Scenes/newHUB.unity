@@ -966,6 +966,7 @@ MonoBehaviour:
   dash: {fileID: 1735278907}
   rampino: {fileID: 1735278905}
   nextTrigger: {fileID: 1765005773}
+  Look_Around: {fileID: 1380080478}
 --- !u!114 &55699085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1528,7 +1529,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-962986
+  m_Name: pb_Mesh59762
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4280,6 +4281,7 @@ MonoBehaviour:
   dash: {fileID: 1735278907}
   rampino: {fileID: 1735278905}
   nextTrigger: {fileID: 1493600133}
+  Look_Around: {fileID: 1380080478}
 --- !u!1001 &215479849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9626,6 +9628,7 @@ MonoBehaviour:
   dash: {fileID: 1735278907}
   rampino: {fileID: 1735278905}
   nextTrigger: {fileID: 0}
+  Look_Around: {fileID: 1380080478}
 --- !u!114 &598529550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10306,7 +10309,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-893118
+  m_Name: pb_Mesh60638
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15018,7 +15021,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh800534
+  m_Name: pb_Mesh59880
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21847,6 +21850,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53511846966b6ce4c8acb830be33adff, type: 3}
+--- !u!114 &1380080478 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8570994165940775971, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
+  m_PrefabInstance: {fileID: 917042710}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa66e5404080964d834e4688823e97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1382389849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24592,7 +24606,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-975356
+  m_Name: pb_Mesh60824
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26700,7 +26714,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-849726
+  m_Name: pb_Mesh60114
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27887,6 +27901,7 @@ MonoBehaviour:
   dash: {fileID: 1735278907}
   rampino: {fileID: 1735278905}
   nextTrigger: {fileID: 1493600133}
+  Look_Around: {fileID: 1380080478}
 --- !u!114 &1765005779
 MonoBehaviour:
   m_ObjectHideFlags: 0

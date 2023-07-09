@@ -21,6 +21,7 @@ public class ConversationController : MonoBehaviour
     public MonoBehaviour rampino;
     public MonoBehaviour movimenti;
     public MonoBehaviour dash;
+    private Look_Around _look_around;
     [SerializeField] private GameObject containerGameObject;
 
     private int activeLineIndex;
@@ -53,7 +54,7 @@ public class ConversationController : MonoBehaviour
     {
         speakerUILeft  = speakerLeft.GetComponent<SpeakerUIController>();
         speakerUIRight = speakerRight.GetComponent<SpeakerUIController>();
-
+        _look_around = GameObject.Find("Camera").GetComponent<Look_Around>();
     }
 
     private void Update()
@@ -78,6 +79,7 @@ public class ConversationController : MonoBehaviour
         rampino.enabled = true;
         movimenti.enabled = true;
         dash.enabled = true;
+        _look_around.enabled = true;
         GameObject parentObject = this.transform.parent.gameObject.transform.parent.gameObject;
         if(containerGameObject!=null)
         containerGameObject.SetActive(true);
