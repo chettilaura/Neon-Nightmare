@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    private PlayerLifeDeath playerLifeDeath;
+    public PlayerLifeDeath playerLifeDeath;
     public float life=2;
     public Collider eplosion_collider;
     
@@ -26,7 +26,6 @@ public class Explosion : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            playerLifeDeath = other.GetComponent<PlayerLifeDeath>();
             playerLifeDeath.lightAttack();
         }
     }
