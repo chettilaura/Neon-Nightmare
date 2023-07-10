@@ -27,6 +27,7 @@ public class ConversationController : MonoBehaviour
     private int activeLineIndex;
     private bool conversationStarted = false;
     private bool first_line = false;
+    private bool old_dash,old_rampino;
 
     public void ChangeConversation(Conversation nextConversation) {
         conversationStarted = false;
@@ -34,7 +35,9 @@ public class ConversationController : MonoBehaviour
         AdvanceLine();
     }
 
-    public void setMovement_trigger(MonoBehaviour movimenti, MonoBehaviour dash, MonoBehaviour rampino){
+    public void setMovement_trigger(MonoBehaviour movimenti, MonoBehaviour dash, MonoBehaviour rampino,bool dashvalue,bool rampinovalue){
+            old_dash=dashvalue;
+            old_rampino=rampinovalue;
             this.rampino = rampino;
             this.movimenti = movimenti;
             this.dash = dash;
@@ -76,9 +79,15 @@ public class ConversationController : MonoBehaviour
         conversationStarted = false;
         speakerUILeft.Hide();
         speakerUIRight.Hide();
+        if(old_rampino)
+        {
         rampino.enabled = true;
+        }
         movimenti.enabled = true;
+        if(old_dash)
+        {
         dash.enabled = true;
+        }
         _look_around.enabled = true;
         GameObject parentObject = this.transform.parent.gameObject.transform.parent.gameObject;
         if(containerGameObject!=null)
