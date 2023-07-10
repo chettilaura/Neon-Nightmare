@@ -11,12 +11,13 @@ public class VirusLifeSystem : MonoBehaviour
     public float maxVirusHealth;
     public float damage;
     private Animator _animator;
-
+    private bool dead;
     [SerializeField] private Slider _lifeSlider;
-
+    public GameObject trigger;
 
     void Start()
     {
+        dead= false;
         virusHealth = maxVirusHealth;
         //_lifeSlider =  GetComponent<Slider>();
         _lifeSlider.value = maxVirusHealth;
@@ -46,6 +47,12 @@ public class VirusLifeSystem : MonoBehaviour
 
     public void Destroy()
     {
+        if(trigger!=null && dead == false)
+        {
+               Dash_Spawner y = trigger.GetComponent<Dash_Spawner>();
+                y.contatore++;
+                dead=true;
+        }
         transform.gameObject.SetActive(false);
     }
 }

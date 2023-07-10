@@ -14,11 +14,9 @@ public class PowerUPRaccolti : MonoBehaviour
 
       private void OnTriggerExit()
     {
-        Debug.Log("OntriggerStay");
         if(contatore== 3 && !triggerato)
         {
         triggerato=true;
-        Debug.Log("Dentro");
         rampino.enabled = false;
         movimenti.enabled = false;
         dash.enabled = false;
@@ -38,7 +36,6 @@ public class PowerUPRaccolti : MonoBehaviour
 
     void Start()
     {
-        contatore=0;
         triggerato=false;
         
     }
