@@ -33,8 +33,10 @@ public class Trigger_dialoghi : MonoBehaviour
             movimenti.enabled = false;
             dash.enabled = false;
             Look_Around.enabled = false;
-            animator.SetBool("isIdle", true);
+            animator.SetBool("isTalking", true);
             animator.SetBool("isWalking", false);
+            animator.SetLayerWeight(1, 0);
+            animator.SetLayerWeight(2, 0);
             GameObject instantiatedPrefab = Instantiate(dialogo);
             instantiatedPrefab.SetActive(true);
             ConversationController x= instantiatedPrefab.transform.Find("Dialogue/Conversation_go").GetComponent<ConversationController>();

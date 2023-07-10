@@ -315,7 +315,7 @@ public class Mov : MonoBehaviour
         if((animator.GetBool("isJumping") || animator.GetBool("isFalling")) && (animator.GetBool("grappingHookStart") || animator.GetBool("hook")))
         {
             animator.SetLayerWeight(1, 1);
-        } else if(!_fire.fire)
+        } else if(!_fire.fPressed)
         {
             animator.SetLayerWeight(1, 0);
         }

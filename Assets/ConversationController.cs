@@ -29,6 +29,8 @@ public class ConversationController : MonoBehaviour
     private bool first_line = false;
     private bool old_dash,old_rampino;
 
+    private Animator animator;
+
     public void ChangeConversation(Conversation nextConversation) {
         conversationStarted = false;
         conversation = nextConversation;
@@ -58,6 +60,7 @@ public class ConversationController : MonoBehaviour
         speakerUILeft  = speakerLeft.GetComponent<SpeakerUIController>();
         speakerUIRight = speakerRight.GetComponent<SpeakerUIController>();
         _look_around = GameObject.Find("Camera").GetComponent<Look_Around>();
+        animator = GameObject.Find("Player").GetComponent<Animator>();
     }
 
     private void Update()
@@ -89,6 +92,7 @@ public class ConversationController : MonoBehaviour
         dash.enabled = true;
         }
         _look_around.enabled = true;
+        animator.SetBool("isTalking", false);
         GameObject parentObject = this.transform.parent.gameObject.transform.parent.gameObject;
         if(containerGameObject!=null)
         containerGameObject.SetActive(true);

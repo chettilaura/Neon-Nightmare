@@ -23,8 +23,10 @@ public class PlayerInteract : MonoBehaviour {
 
             IInteractable interactable = GetInteractableObject();
             if (interactable != null) {
-                animator.SetBool("isIdle", true);
+                animator.SetBool("isTalking", true);
                 animator.SetBool("isWalking", false);
+                animator.SetLayerWeight(1, 0);
+                animator.SetLayerWeight(2, 0);
                 rampino.enabled = false;
                 movimenti.enabled = false;
                 dash.enabled = false;

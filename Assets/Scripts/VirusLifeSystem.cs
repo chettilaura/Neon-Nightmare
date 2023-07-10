@@ -32,7 +32,7 @@ public class VirusLifeSystem : MonoBehaviour
             _lifeSlider.gameObject.SetActive(false);
             if(_animator != null)
                _animator.SetBool("isDead", true);
-            Invoke("Destroy", 1);
+            Invoke("Destroy", 5);
         }
 
         if(virusHealth < 0)

@@ -11,6 +11,7 @@ public class VirusAI : MonoBehaviour
     public float bulletSpeed;
     public float bulletSpread;
     public LayerMask WhatIsGround, WhatIsPlayer;
+    private VirusLifeSystem _health;
 
 
     //patroling
@@ -34,17 +35,21 @@ public class VirusAI : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
+        _health = GetComponent<VirusLifeSystem>();  
     }
 
     private void Update()
     {
-
+        if(_health.virusHealth > 0)
+        {
             playerInSight = Physics.CheckSphere(transform.position, sightRange, WhatIsPlayer);
             playerInFlee = Physics.CheckSphere(transform.position, fleeRange, WhatIsPlayer);
 
             if (!playerInSight && !playerInFlee) Patrol();
             if (playerInSight && !playerInFlee) Attack();
             if (playerInSight && playerInFlee) Flee();
+        }
+
     }
 
     private void Patrol()

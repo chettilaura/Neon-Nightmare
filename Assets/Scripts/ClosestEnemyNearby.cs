@@ -16,6 +16,7 @@ public class ClosestEnemyNearby : MonoBehaviour
     private VirusLifeSystem virusLife;
     private int _countTime = 50;
     public bool fire= false;
+    public bool fPressed = false;
 
     [SerializeField] float _minDistance = 300;
 
@@ -48,11 +49,23 @@ public class ClosestEnemyNearby : MonoBehaviour
         Debug.Log("clos enem "+ _closestEnemy);
         //sparo con F
         if (Input.GetKey(KeyCode.F)){
-            
+
+            _animator.SetLayerWeight(1, 1);
+            _animator.SetBool("firing", true);
+
+            fPressed = true; 
+
             if (_closestEnemy != null)
             {
+                virusLife = _closestEnemy.GetComponent<VirusLifeSystem>();
+                if(virusLife == null)
+                {
+                    virusLife = _closestEnemy.GetComponentInChildren<VirusLifeSystem>();
+                    if(virusLife == null)
+                        virusLife = _closestEnemy.GetComponentInParent<VirusLifeSystem>();
+                }
                 float dist = (_closestEnemy.transform.position - transform.position).sqrMagnitude;
-                if(dist <= _minDistance)
+                if(dist <= _minDistance && virusLife.virusHealth!=0)
                 {
                     fire = true;
                     Debug.Log("sparo");
@@ -61,10 +74,11 @@ public class ClosestEnemyNearby : MonoBehaviour
                     {
                         virusLife.Attack();
                         _countTime = 0;
+                        Debug.Log("attacchiamo");
                     }
+                    
                     _countTime++;
-                    _animator.SetLayerWeight(1, 1);
-                    _animator.SetBool("firing", true);
+
 
                     //suono spari 
                     AudioClip clip = stoneClips[0];
@@ -78,17 +92,33 @@ public class ClosestEnemyNearby : MonoBehaviour
                         _animator.SetBool("firing", false);
                     Debug.Log("primo else");
                 }
+                
+                if (virusLife.virusHealth == 0)
+                    _countTime = 0;
 
             } else
             {
                 fire = false;
             }
+
+            /*if(_enemiesNearby.Count != 0)
+            {
+                _animator.SetLayerWeight(1, 1);
+                _animator.SetBool("firing", true);
+            } else
+            {
+                _animator.SetBool("firing", false);
+                if (_animator.GetCurrentAnimatorStateInfo(1).IsName("NotFire"))
+                    _animator.SetLayerWeight(1, 0);
+            }*/
         }
         else{
             fire=false;
             _animator.SetBool("firing", false);
             if(_animator.GetCurrentAnimatorStateInfo(1).IsName("NotFire"))
                 _animator.SetLayerWeight(1, 0);
+            Debug.Log("non spara più e layer 0");
+            fPressed = false;
         }
 
 
@@ -145,37 +175,27 @@ public class ClosestEnemyNearby : MonoBehaviour
             //a fine ciclo sugli enemies controllo che non ci sia oggetto in mezzo tra player e nemico scelto
             //se c'è e quello è il più vicino ritorno null -> nella update andrà a prendermi il lastTarget
 
-            RaycastHit hit;
+            /* RaycastHit hit;
             if (closestEnemy != null)
             {
-                if (Physics.Raycast(playerObj_orientation.position, closestEnemy.transform.position - playerObj_orientation.position, out hit, Mathf.Infinity, 9))
+                virusLife = closestEnemy.GetComponent<VirusLifeSystem>();
+                /*if (Physics.Raycast(playerObj_orientation.position, closestEnemy.transform.position - playerObj_orientation.position, out hit, Mathf.Infinity, 9))
                 { //9 è il layer del player, così ignora quel layer nel raycast
                     Debug.DrawRay(playerObj_orientation.position, closestEnemy.transform.position - playerObj_orientation.position, Color.red);
-                    //  Debug.Log(hit.transform.tag);
-
-                    if (hit.transform.tag != "enemy" /*&& hit.transform.tag != "Player"*/ )
+                    virusLife = hit.transform.GetComponent<VirusLifeSystem>();
+                    if (virusLife == null)
                     {
-                        projectiles.enabled = false;
-                        fire=false;
-                        //Debug.Log(hit.transform.tag);
-                        //Debug.Log("oggetto in mezzo che non è enemy");
-                        closestEnemy = null;
-                    }
-                    else
-                    {
-                        virusLife = hit.transform.GetComponent<VirusLifeSystem>();
+                        virusLife = hit.transform.GetComponentInChildren<VirusLifeSystem>();
                         if (virusLife == null)
                         {
-                            virusLife = hit.transform.GetComponentInChildren<VirusLifeSystem>();
-                            if (virusLife == null)
-                            {
-                                virusLife = hit.transform.GetComponentInParent<VirusLifeSystem>();
-                            }
+                            virusLife = hit.transform.GetComponentInParent<VirusLifeSystem>();
                         }
                     }
-
-                }
-            }
+                } else
+                {
+                    closestEnemy = null;
+                } */
+            //}
 
         }
         
