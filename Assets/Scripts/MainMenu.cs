@@ -55,6 +55,9 @@ public class MainMenu : MonoBehaviour
             case 2:
                 Screen.SetResolution(3840, 2160, !_notFullScreen.isOn);
                 break;
+            default:
+                Screen.SetResolution(Screen.width, Screen.height, !_notFullScreen.isOn);
+                break;
         }
     }
 }
