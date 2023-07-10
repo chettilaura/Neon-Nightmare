@@ -13,18 +13,34 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject PauseMenuUI;
 
+    private Animator animator;
+
+    public void Start()
+    {
+        animator = GameObject.Find("Player").GetComponent<Animator>();
+    }
+
+
     void Update()
     {
+
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(GameIsPaused)
+            if (!animator.GetBool("isTalking"))
             {
-                Resume();
-            }else
-            {
-                Pause();
+                if (GameIsPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
+
         }
+
+
     }
 
     public void Resume()
