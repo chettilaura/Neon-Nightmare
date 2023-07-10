@@ -26,13 +26,16 @@ public class VirusLifeSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(virusHealth <= 0)
+        if(virusHealth == 0)
         {
             _lifeSlider.gameObject.SetActive(false);
             if(_animator != null)
                _animator.SetBool("isDead", true);
             Invoke("Destroy", 1);
         }
+
+        if(virusHealth < 0)
+            virusHealth = 0;
         _lifeSlider.value = virusHealth/maxVirusHealth;
     }
 

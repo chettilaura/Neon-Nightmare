@@ -89,7 +89,6 @@ public class Mov : MonoBehaviour
             _jumpButtonPressedTime = Time.time;
             readyToJump = false;
             Jump();
-            Debug.Log("jump");
             canDoubleJump=true;
             animator.SetBool("isJumping", true);
            
@@ -99,7 +98,6 @@ public class Mov : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump==true &&  RB.velocity.y!=0f && !isGrounded){ //doppio salto
             animator.SetBool("doubleJump", true);
             RB.velocity = new Vector3(RB.velocity.x, /*RB.velocity.y*doubleJumpOffset*/ jumpForce, RB.velocity.z);
-            Debug.Log("double jump");
             canDoubleJump=false;
         } 
     }
@@ -143,7 +141,6 @@ public class Mov : MonoBehaviour
             RB.drag = 1f;
         }
 
-        Debug.Log("onSlope = " + OnSlope());
     }
 
     private void FixedUpdate()
