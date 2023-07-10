@@ -1,11 +1,14 @@
 fileFormatVersion: 2
-guid: 6c69b6597a5dda2428d7e8b8cd8eddbc
+guid: f650b810399f1864a96a8d66fd30c739
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: 6498203290706699628
-    second: transistor|Eyes
+      74: 1868573380467055614
+    second: transistor.001|Eyes
+  - first:
+      74: -312560892647729681
+    second: transistor.001|Eyes.001
   externalObjects: {}
   materials:
     materialImportMode: 2

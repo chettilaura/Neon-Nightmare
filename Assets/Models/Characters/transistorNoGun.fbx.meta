@@ -1,11 +1,14 @@
 fileFormatVersion: 2
-guid: 6c69b6597a5dda2428d7e8b8cd8eddbc
+guid: ca2d23812098b334f824db3bd97356fa
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
       74: 6498203290706699628
     second: transistor|Eyes
+  - first:
+      74: 5682151015823923963
+    second: transistor|Eyes.001
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -79,7 +82,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []
