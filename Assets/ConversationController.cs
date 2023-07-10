@@ -88,10 +88,6 @@ public class ConversationController : MonoBehaviour
         speakerUILeft.Hide();
         speakerUIRight.Hide();
 
-        Debug.Log("Ora sono nella end conversation");
-        Debug.Log("old_rampino= "+old_rampino);
-        Debug.Log("old_dash= "+old_dash);
-
         if(old_rampino)
         {
             Debug.Log("Se stampa questo è sbagliato");

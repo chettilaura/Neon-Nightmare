@@ -50,7 +50,7 @@ public class Grapping_Hook : MonoBehaviour
             _player.rotation = Quaternion.Slerp(_player.rotation, orientation.rotation, Time.deltaTime * 4);
             if(_rotation!= _player.rotation)
             {
-                Debug.Log("qui");
+              //  Debug.Log("qui");
                 _animator.SetBool("rotating", true);
             } else 
                 _animator.SetBool("rotating", false);
