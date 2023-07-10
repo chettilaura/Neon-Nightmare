@@ -11,7 +11,7 @@ public class PlayerInteractUI : MonoBehaviour {
     private void Update() {
 
         if (playerInteract.GetInteractableObject() != null) {
-            Debug.Log(playerInteract);
+            //Debug.Log(playerInteract);
             Show(playerInteract.GetInteractableObject());
         } else {
             Hide();

@@ -46,7 +46,7 @@ public class ClosestEnemyNearby : MonoBehaviour
             }
         }
         _closestEnemy = FindClosestEnemy();
-        Debug.Log("clos enem "+ _closestEnemy);
+        //Debug.Log("clos enem "+ _closestEnemy);
         //sparo con F
         if (Input.GetKey(KeyCode.F)){
 
@@ -68,13 +68,13 @@ public class ClosestEnemyNearby : MonoBehaviour
                 if(dist <= _minDistance && virusLife.virusHealth!=0)
                 {
                     fire = true;
-                    Debug.Log("sparo");
+                  //  Debug.Log("sparo");
                     fireAtEnemy(_closestEnemy.transform.position);
                     if (_countTime == 50 && virusLife.virusHealth > 0)
                     {
                         virusLife.Attack();
                         _countTime = 0;
-                        Debug.Log("attacchiamo");
+                    //    Debug.Log("attacchiamo");
                     }
                     
                     _countTime++;
@@ -90,7 +90,7 @@ public class ClosestEnemyNearby : MonoBehaviour
                     _animator.SetLayerWeight(1, 0);
                     if (_animator.GetCurrentAnimatorStateInfo(1).IsName("NotFire"))
                         _animator.SetBool("firing", false);
-                    Debug.Log("primo else");
+                   // Debug.Log("primo else");
                 }
                 
                 if (virusLife.virusHealth == 0)
@@ -117,7 +117,7 @@ public class ClosestEnemyNearby : MonoBehaviour
             _animator.SetBool("firing", false);
             if(_animator.GetCurrentAnimatorStateInfo(1).IsName("NotFire"))
                 _animator.SetLayerWeight(1, 0);
-            Debug.Log("non spara più e layer 0");
+           // Debug.Log("non spara più e layer 0");
             fPressed = false;
         }
 

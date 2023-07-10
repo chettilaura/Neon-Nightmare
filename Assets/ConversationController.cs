@@ -46,11 +46,16 @@ public class ConversationController : MonoBehaviour
             this.containerGameObject=null;
     }
 
-    public void setMovement_interact(MonoBehaviour movimenti, MonoBehaviour dash, MonoBehaviour rampino, GameObject containerGameObject){
+    public void setMovement_interact(MonoBehaviour movimenti, MonoBehaviour dash, MonoBehaviour rampino, GameObject containerGameObject,bool dashvalue,bool rampinovalue){
+            
+            old_dash=dashvalue;
+            old_rampino=rampinovalue;
             this.rampino = rampino;
             this.movimenti = movimenti;
             this.dash = dash;
             this.containerGameObject = containerGameObject;
+          //  Debug.Log("Old_dash setMovement= " + dashvalue);
+            //Debug.Log("Old_rampino setMovement= " + rampinovalue);
 
             this.containerGameObject.SetActive(false);
     }
@@ -82,13 +87,21 @@ public class ConversationController : MonoBehaviour
         conversationStarted = false;
         speakerUILeft.Hide();
         speakerUIRight.Hide();
+
+        Debug.Log("Ora sono nella end conversation");
+        Debug.Log("old_rampino= "+old_rampino);
+        Debug.Log("old_dash= "+old_dash);
+
         if(old_rampino)
         {
+            Debug.Log("Se stampa questo è sbagliato");
         rampino.enabled = true;
         }
         movimenti.enabled = true;
         if(old_dash)
         {
+         Debug.Log("Se stampa questo è giusto");
+
         dash.enabled = true;
         }
         _look_around.enabled = true;

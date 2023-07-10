@@ -9,6 +9,7 @@ public class PlayerInteract : MonoBehaviour {
     public MonoBehaviour dash;
     private Look_Around look_Around;
     private Animator animator;
+    private bool old_dash,old_rampino;
     [SerializeField] private GameObject containerGameObject;
 
     public void Start()
@@ -25,13 +26,16 @@ public class PlayerInteract : MonoBehaviour {
             if (interactable != null) {
                 animator.SetBool("isTalking", true);
                 animator.SetBool("isWalking", false);
+
                 animator.SetLayerWeight(1, 0);
                 animator.SetLayerWeight(2, 0);
+                old_dash = dash.enabled;
+                old_rampino=rampino.enabled;
                 rampino.enabled = false;
                 movimenti.enabled = false;
                 dash.enabled = false;
                 look_Around.enabled = false;
-                interactable.Interact(transform,rampino,dash,movimenti,containerGameObject);
+                interactable.Interact(transform,movimenti,dash,rampino,containerGameObject,old_dash,old_rampino);
             }
         }
     }
