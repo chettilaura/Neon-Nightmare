@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/newHUB.unity
     guid: ccba3089d0a57954bb12ac1cb490224b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/testing(con dialoghi).unity
     guid: 3e5775f99875f30468ddc0e6f9d54c51
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/testing.unity
     guid: e93124bedb1f1a74cb6ef59963056dd2
   m_configObjects: {}
