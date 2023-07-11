@@ -508,6 +508,7 @@ MonoBehaviour:
   maxVirusHealth: 100
   damage: 20
   _lifeSlider: {fileID: 857692039}
+  trigger: {fileID: 0}
 --- !u!114 &5201147380147340466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,7 +535,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.502
   m_Pitch: 1
   Loop: 0
   Mute: 0

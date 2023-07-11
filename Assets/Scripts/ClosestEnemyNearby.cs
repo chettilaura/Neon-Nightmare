@@ -23,6 +23,7 @@ public class ClosestEnemyNearby : MonoBehaviour
     //suono spari 
     [SerializeField] private AudioClip[] stoneClips;
     [SerializeField] AudioSource audioSource;
+    private int contatoresuonosparo=0; 
     
 
     void Start()
@@ -68,6 +69,7 @@ public class ClosestEnemyNearby : MonoBehaviour
                 if(dist <= _minDistance && virusLife.virusHealth!=0)
                 {
                     fire = true;
+                    contatoresuonosparo++;
                   //  Debug.Log("sparo");
                     fireAtEnemy(_closestEnemy.transform.position);
                     if (_countTime == 50 && virusLife.virusHealth > 0)
@@ -81,8 +83,12 @@ public class ClosestEnemyNearby : MonoBehaviour
 
 
                     //suono spari 
-                    AudioClip clip = stoneClips[0];
-                    audioSource.PlayOneShot(clip);
+                    //AudioClip clip = stoneClips[0];
+                    //audioSource.PlayOneShot(clip);
+                    if (contatoresuonosparo%20==0){
+                        sparoSound();
+                    }
+                    
                     
                 } else
                 {
@@ -228,5 +234,11 @@ public class ClosestEnemyNearby : MonoBehaviour
 
         particleSys.SetParticles(particles, count);
         //Debug.Log(virusLife.gameObject.name);
+    }
+
+
+    void sparoSound(){
+        AudioClip clip = stoneClips[0];
+        audioSource.PlayOneShot(clip);
     }
 }
