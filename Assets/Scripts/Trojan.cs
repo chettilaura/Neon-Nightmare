@@ -25,6 +25,9 @@ public class Trojan : MonoBehaviour
     public bool playerInSight, playerInExplosionRange;
     public bool ableToCharge;
 
+    //vita
+    private VirusLifeSystem _health;
+
       //suono trojan 
     [SerializeField] private AudioClip[] stoneClips;
     [SerializeField] AudioSource audioSource;
@@ -33,17 +36,22 @@ public class Trojan : MonoBehaviour
     {
         player = GameObject.Find("maincharacter").transform;
         agent = GetComponent<NavMeshAgent>();
+        _health = GetComponent<VirusLifeSystem>();  
         ableToCharge=true;
     }
 
     private void Update()
     {
-        playerInSight = Physics.CheckSphere(transform.position, sightRange, WhatIsPlayer);
-        playerInExplosionRange = Physics.CheckSphere(transform.position, explosionRange, WhatIsPlayer);
+        if(_health.virusHealth> 0)
+        {
+            playerInSight = Physics.CheckSphere(transform.position, sightRange, WhatIsPlayer);
+            playerInExplosionRange = Physics.CheckSphere(transform.position, explosionRange, WhatIsPlayer);
 
-        if (!playerInSight && !playerInExplosionRange) Patrol();
-        if (playerInSight && ableToCharge) Charge();
-       // if (playerInSight && playerInExplosionRange) Explode();
+            if (!playerInSight && !playerInExplosionRange) Patrol();
+            if (playerInSight && ableToCharge) Charge();
+            // if (playerInSight && playerInExplosionRange) Explode();
+        }
+
     }
 
     private void Patrol()

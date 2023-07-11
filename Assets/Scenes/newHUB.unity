@@ -18139,6 +18139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _volumeSlider: {fileID: 529277415}
   _notFullScreen: {fileID: 489809085}
+  _options: {fileID: 855114803}
+  _controls: {fileID: 50988736}
   PauseMenuUI: {fileID: 98779153}
 --- !u!114 &1022020147
 MonoBehaviour:

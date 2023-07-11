@@ -10,6 +10,8 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     [SerializeField] private Slider _volumeSlider;
     [SerializeField] private Toggle _notFullScreen;
+    [SerializeField] private GameObject _options;
+    [SerializeField] private GameObject _controls;
 
     public GameObject PauseMenuUI;
 
@@ -31,6 +33,8 @@ public class PauseMenu : MonoBehaviour
                 if (GameIsPaused)
                 {
                     Resume();
+                    _options.SetActive(false);
+                    _controls.SetActive(false);
                 }
                 else
                 {
