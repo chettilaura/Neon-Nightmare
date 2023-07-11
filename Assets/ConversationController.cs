@@ -78,8 +78,6 @@ public class ConversationController : MonoBehaviour
         }
         if (Input.GetKeyDown("space"))
             AdvanceLine();
-        else if (Input.GetKeyDown("x"))
-            EndConversation();
     }
 
     private void EndConversation() {
