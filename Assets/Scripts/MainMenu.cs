@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
     public void Start()
     {
         Screen.SetResolution(1920, 1080, true);
+        _volume.value = AudioListener.volume;
     }
 
     public void PlayGame()
@@ -31,7 +32,6 @@ public class MainMenu : MonoBehaviour
     public void ChangeVolume()
     {
         AudioListener.volume = _volume.value;
-        Debug.Log("volume :" + _volume.value);
     }
 
     public void FullScreen()
