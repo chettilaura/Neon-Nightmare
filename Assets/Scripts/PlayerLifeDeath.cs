@@ -10,7 +10,7 @@ public class PlayerLifeDeath : MonoBehaviour
     private Look_Around _lookAround;
 
     [Space]
-    [Range(0, 100f)] public float playerHealth;
+    public float playerHealth;
     public float maxPlayerHealth = 100f;
     public Image[] HealthBarIMG;
     public Image bonus;
@@ -103,7 +103,7 @@ public class PlayerLifeDeath : MonoBehaviour
     {
         for(int i=0; i < HealthBarIMG.Length; i++)
         {
-            if (playerHealth <= maxPlayerHealth && playerHealth > maxPlayerHealth / HealthBarIMG.Length * i)
+            if (playerHealth > maxPlayerHealth / HealthBarIMG.Length * i)
                 HealthBarIMG[i].enabled = true;
             else
                 HealthBarIMG[i].enabled = false;
@@ -115,12 +115,15 @@ public class PlayerLifeDeath : MonoBehaviour
             else if (playerHealth < 30)
                 HealthBarIMG[i].color = Color.red;
         }
+
         if (playerHealth > maxPlayerHealth)
         {
-            bonus.enabled = true;
-        } else
+            bonus.gameObject.SetActive(true);
+        }
+        else
         {
-            bonus.enabled = false;
+            bonus.gameObject.SetActive(false);
+
         }
 
 
@@ -129,6 +132,7 @@ public class PlayerLifeDeath : MonoBehaviour
     public void BonusLife()
     {
         playerHealth += 50;
+
 
     }
 
