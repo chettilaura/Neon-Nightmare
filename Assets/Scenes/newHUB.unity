@@ -14272,7 +14272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8570994164589820014, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
       propertyPath: jumpForce
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8570994164589820014, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
       propertyPath: airMultiplier
