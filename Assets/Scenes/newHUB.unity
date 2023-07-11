@@ -14198,6 +14198,10 @@ PrefabInstance:
       propertyPath: m_Parameters.colorGradient.key1.r
       value: 0.08885722
       objectReference: {fileID: 0}
+    - target: {fileID: 8570994164589820001, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8570994164589820002, guid: bc0052ddabeb49047af38966e9448e61, type: 3}
       propertyPath: bonus
       value: 
