@@ -25,6 +25,10 @@ public class Trojan : MonoBehaviour
     public bool playerInSight, playerInExplosionRange;
     public bool ableToCharge;
 
+      //suono trojan 
+    [SerializeField] private AudioClip[] stoneClips;
+    [SerializeField] AudioSource audioSource;
+
     private void Awake()
     {
         player = GameObject.Find("maincharacter").transform;
@@ -83,7 +87,14 @@ private void OnCollisionEnter(Collision other)
         if (other.collider.gameObject.CompareTag("Player"))
         {
         // Avvia il Particle System
+
+        
         explosionParticleSystem.Play();
+
+        //suono trojan 
+        AudioClip clip = stoneClips[0];
+        audioSource.PlayOneShot(clip);
+        
         StartCoroutine(WaitBeforeNextAttack());
         StartCoroutine(explotion_script.ChangeColliderStatus());
         }
