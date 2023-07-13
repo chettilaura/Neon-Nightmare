@@ -22,7 +22,7 @@ MonoBehaviour:
     text: Hey you, are you too drunk to walk?
     mood: 0
   - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
-    text: Listen to me, there's too much noise outside the pub, if you want a free
+    text: Listen to me, there's too much noise behind the pub, if you want a free
       drink go outside, check what's going on and make it stop.
     mood: 0
   - character: {fileID: 11400000, guid: 34351db9e77cdb74f92e6846d26df2c7, type: 2}
@@ -32,8 +32,8 @@ MonoBehaviour:
     text: What are you talking about? Don't you know how you got here?
     mood: 0
   - character: {fileID: 11400000, guid: c632dc21e6668544393fa962bcb9ac45, type: 2}
-    text: You were sleeping on this table all this time, now get up and go outside
-      and check what's going on
+    text: You were sleeping on this table all this time, now get up and go behind
+      the pub and check what's going on
     mood: 0
   question: {fileID: 0}
   nextConversation: {fileID: 0}
