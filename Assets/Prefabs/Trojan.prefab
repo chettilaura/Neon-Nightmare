@@ -741,6 +741,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 65410b44f7a622e49926ea1bc414cb66, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c02e5308f77a5cd4e861bcc2042b0aa8, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 65410b44f7a622e49926ea1bc414cb66, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7707038276896823685, guid: 65410b44f7a622e49926ea1bc414cb66, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

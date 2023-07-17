@@ -29,6 +29,19 @@ public class PlayerLifeDeath : MonoBehaviour
     private float _time = 0;
 
     private Vector3 _respawnPoint;
+
+    private bool _attacked = false;
+
+    [Space]
+    [SerializeField] private CanvasGroup _brokenGlass;
+    private float _damageTimer= 10f;
+
+    [Space]
+    [SerializeField] private AudioClip damageAudio;
+    private AudioSource _healthAudioSource;
+
+
+    private float _lastTime = 1000;
     void Start()
     {
         playerHealth = maxPlayerHealth;
@@ -71,31 +84,48 @@ public class PlayerLifeDeath : MonoBehaviour
                 _scriptHook.enabled = true;
                 _scriptClosestEnemyNearby.enabled = true;
                 _lookAround.enabled = true;
+                _brokenGlass.alpha = 0;
                 _time = 0;
             }
         }
+
+        if (_attacked)
+            DamageGUI();
+        if((Time.realtimeSinceStartup - _lastTime) > _damageTimer && _brokenGlass.alpha > 0)
+        {
+            _attacked = false;
+            RestoreGUI();
+        }
+
     }
 
 
     public void lightAttack()
     {
         playerHealth -= lightDamage;
-        if (playerHealth < 0)
+        if (playerHealth <= 0)
             playerHealth = 0;
+        _lastTime = Time.time;
+        _attacked = true;
     }
 
     public void mediumAttack()
     {
         playerHealth -= mediumDamage;
-        if (playerHealth < 0)
+        if (playerHealth <= 0)
             playerHealth = 0;
+
+        _lastTime = Time.time;
+        _attacked = true;
     }
 
     public void bigAttack()
     {
         playerHealth -= bigDamage;
-        if (playerHealth < 0)
+        if (playerHealth <= 0)
             playerHealth = 0;
+        _lastTime = Time.time;
+        _attacked = true;
     }
 
 
@@ -132,8 +162,6 @@ public class PlayerLifeDeath : MonoBehaviour
     public void BonusLife()
     {
         playerHealth += 50;
-
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -145,4 +173,25 @@ public class PlayerLifeDeath : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+
+    private void DamageGUI()
+    {
+        if(_brokenGlass.alpha < 1)
+        {
+            _brokenGlass.alpha += Time.deltaTime;
+        }
+        //_healthAudioSource.PlayOneShot(damageAudio);
+
+    }
+
+
+    private void RestoreGUI()
+    {
+        if (_brokenGlass.alpha >= 0)
+        {
+            _brokenGlass.alpha -= Time.deltaTime;
+        } 
+    }
+
 }

@@ -28,7 +28,7 @@ public class Enemy_script : MonoBehaviour
                 count = 0;
             }
             count++;
-        }
+        } 
             
     }
 

@@ -66,30 +66,34 @@ public class ClosestEnemyNearby : MonoBehaviour
                         virusLife = _closestEnemy.GetComponentInParent<VirusLifeSystem>();
                 }
                 float dist = (_closestEnemy.transform.position - transform.position).sqrMagnitude;
-                if(dist <= _minDistance && virusLife.virusHealth!=0)
+                if(dist <= _minDistance && virusLife!= null)
                 {
-                    fire = true;
-                    contatoresuonosparo++;
-                  //  Debug.Log("sparo");
-                    fireAtEnemy(_closestEnemy.transform.position);
-                    if (_countTime == 50 && virusLife.virusHealth > 0)
+                    if(virusLife.virusHealth != 0)
                     {
-                        virusLife.Attack();
-                        _countTime = 0;
-                    //    Debug.Log("attacchiamo");
-                    }
-                    
-                    _countTime++;
+                        fire = true;
+                        contatoresuonosparo++;
+                        //  Debug.Log("sparo");
+                        fireAtEnemy(_closestEnemy.transform.position);
+                        if (_countTime == 50 && virusLife.virusHealth > 0)
+                        {
+                            virusLife.Attack();
+                            _countTime = 0;
+                        }
+
+                        _countTime++;
 
 
-                    //suono spari 
-                    //AudioClip clip = stoneClips[0];
-                    //audioSource.PlayOneShot(clip);
-                    if (contatoresuonosparo%20==0){
-                        sparoSound();
+                        //suono spari 
+                        //AudioClip clip = stoneClips[0];
+                        //audioSource.PlayOneShot(clip);
+                        if (contatoresuonosparo % 20 == 0)
+                        {
+                            sparoSound();
+                        }
+
+
                     }
-                    
-                    
+
                 } else
                 {
                     fire = false;

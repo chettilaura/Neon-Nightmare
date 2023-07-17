@@ -94,17 +94,17 @@ private void OnCollisionEnter(Collision other)
     {
         if (other.collider.gameObject.CompareTag("Player"))
         {
-        // Avvia il Particle System
+            // Avvia il Particle System
 
         
-        explosionParticleSystem.Play();
+            explosionParticleSystem.Play();
 
-        //suono trojan 
-        AudioClip clip = stoneClips[0];
-        audioSource.PlayOneShot(clip);
+            //suono trojan 
+            AudioClip clip = stoneClips[0];
+            audioSource.PlayOneShot(clip);
         
-        StartCoroutine(WaitBeforeNextAttack());
-        StartCoroutine(explotion_script.ChangeColliderStatus());
+            StartCoroutine(WaitBeforeNextAttack());
+            StartCoroutine(explotion_script.ChangeColliderStatus());
         }
     }
 

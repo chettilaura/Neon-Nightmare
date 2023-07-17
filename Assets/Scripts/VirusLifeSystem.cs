@@ -15,6 +15,7 @@ public class VirusLifeSystem : MonoBehaviour
     [SerializeField] private Slider _lifeSlider;
     public GameObject trigger;
 
+
     void Start()
     {
         dead= false;
@@ -22,6 +23,8 @@ public class VirusLifeSystem : MonoBehaviour
         //_lifeSlider =  GetComponent<Slider>();
         _lifeSlider.value = maxVirusHealth;
         _animator = GetComponent<Animator>();
+        if(_animator == null)
+            _animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -30,8 +33,13 @@ public class VirusLifeSystem : MonoBehaviour
         if(virusHealth == 0)
         {
             _lifeSlider.gameObject.SetActive(false);
-            if(_animator != null)
-               _animator.SetBool("isDead", true);
+            _animator.SetBool("isDead", true);
+            
+            if(GetComponent<Trojan>() != null)
+            {
+                //inserire cose per esplosione dopo morte
+            }
+
             Invoke("Destroy", 5);
         }
 
