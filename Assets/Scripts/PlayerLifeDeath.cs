@@ -57,12 +57,7 @@ public class PlayerLifeDeath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y < 15f)
-        {
-            _playerCamera.transform.position = _respawnPoint;
-            transform.position = _respawnPoint;
-            playerHealth = maxPlayerHealth;
-        }
+
         HealthBarFiller();
         if (playerHealth == 0)
         {
@@ -171,6 +166,13 @@ public class PlayerLifeDeath : MonoBehaviour
             _respawnPoint = other.transform.position;
             //_respawnPoint.y = 20f;
             Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("death"))
+        {
+            _playerCamera.transform.position = _respawnPoint;
+            transform.position = _respawnPoint;
+            playerHealth = maxPlayerHealth;
         }
     }
 
