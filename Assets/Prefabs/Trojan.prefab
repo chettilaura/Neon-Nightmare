@@ -487,6 +487,7 @@ MonoBehaviour:
   damage: 10
   _lifeSlider: {fileID: 0}
   trigger: {fileID: 0}
+  explosionParticleSystem: {fileID: 1549981710866976888}
 --- !u!195 &988644836
 NavMeshAgent:
   m_ObjectHideFlags: 0

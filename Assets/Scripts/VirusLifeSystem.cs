@@ -14,6 +14,7 @@ public class VirusLifeSystem : MonoBehaviour
     private bool dead;
     [SerializeField] private Slider _lifeSlider;
     public GameObject trigger;
+    public ParticleSystem explosionParticleSystem;
 
 
     void Start()
@@ -38,9 +39,11 @@ public class VirusLifeSystem : MonoBehaviour
             if(GetComponent<Trojan>() != null)
             {
                 //inserire cose per esplosione dopo morte
+                explosionParticleSystem.Play();
+
             }
 
-            Invoke("Destroy", 5);
+            Invoke("Destroy", 2);
         }
 
         if(virusHealth < 0)
