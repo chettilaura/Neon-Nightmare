@@ -326,6 +326,21 @@ public class Mov : MonoBehaviour
 
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Platform"))
+        {
+            transform.parent.SetParent(other.transform);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Platform"))
+        {
+            other.transform.DetachChildren();
+        }
+    }
 
 
 }

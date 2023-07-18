@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - 30eLodeGameDesign
   - death
+  - Platform
   layers:
   - Default
   - TransparentFX
