@@ -6886,6 +6886,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 917042713}
     - target: {fileID: 1080936292, guid: 9885ae0a057c4a345869ad4f8e9e3fbf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080936292, guid: 9885ae0a057c4a345869ad4f8e9e3fbf, type: 3}
       propertyPath: _waypoints.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -30982,6 +30986,10 @@ PrefabInstance:
       propertyPath: _target
       value: 
       objectReference: {fileID: 917042713}
+    - target: {fileID: 1080936292, guid: 9885ae0a057c4a345869ad4f8e9e3fbf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1080936292, guid: 9885ae0a057c4a345869ad4f8e9e3fbf, type: 3}
       propertyPath: _waypoints.Array.size
       value: 3

@@ -15,6 +15,10 @@ public class VirusLifeSystem : MonoBehaviour
     [SerializeField] private Slider _lifeSlider;
     public GameObject trigger;
     public ParticleSystem explosionParticleSystem;
+    [SerializeField]  AudioClip[] stoneClipsTrojan;
+    [SerializeField]  AudioClip[] stoneClipsVirus;
+    [SerializeField] AudioSource audioSource;
+
 
 
     void Start()
@@ -38,8 +42,19 @@ public class VirusLifeSystem : MonoBehaviour
             
             if(GetComponent<Trojan>() != null)
             {
-                //inserire cose per esplosione dopo morte
+                //esplosione dopo morte + suoni morte
                 explosionParticleSystem.Play();
+                AudioClip clipTrojan = stoneClipsTrojan[0];
+                audioSource.PlayOneShot(clipTrojan);
+
+            }
+
+            if(GetComponent<VirusAI>() != null)
+            {
+                //suoni morte
+                AudioClip clipVirus = stoneClipsVirus[0];
+                audioSource.PlayOneShot(clipVirus);
+           
 
             }
 

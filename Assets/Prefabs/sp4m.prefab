@@ -509,6 +509,12 @@ MonoBehaviour:
   damage: 20
   _lifeSlider: {fileID: 857692039}
   trigger: {fileID: 0}
+  explosionParticleSystem: {fileID: 0}
+  stoneClipsTrojan:
+  - {fileID: 8300000, guid: 0647aeb01ebe84122a78b89a24548a50, type: 3}
+  stoneClipsVirus:
+  - {fileID: 8300000, guid: d8b3ebe2b06d6451a99e9c9a2aa9a2b2, type: 3}
+  audioSource: {fileID: 2004859196992838368}
 --- !u!114 &5201147380147340466
 MonoBehaviour:
   m_ObjectHideFlags: 0
