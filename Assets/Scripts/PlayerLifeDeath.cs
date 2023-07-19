@@ -34,7 +34,7 @@ public class PlayerLifeDeath : MonoBehaviour
 
     [Space]
     [SerializeField] private CanvasGroup _brokenGlass;
-    private float _damageTimer= 3f;
+    private float _damageTimer= 5f;
 
     [Space]
     [SerializeField] private AudioClip damageAudio;
