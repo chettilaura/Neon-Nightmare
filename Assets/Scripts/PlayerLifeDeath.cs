@@ -37,8 +37,8 @@ public class PlayerLifeDeath : MonoBehaviour
     private float _damageTimer= 5f;
 
     [Space]
-    [SerializeField] private AudioClip damageAudio;
-    private AudioSource _healthAudioSource;
+    [SerializeField] AudioClip damageAudio;
+    [SerializeField] AudioSource _healthAudioSource;
 
 
     private float _lastTime = 1000;
@@ -183,7 +183,10 @@ public class PlayerLifeDeath : MonoBehaviour
         {
             _brokenGlass.alpha += Time.deltaTime;
         }
-        //_healthAudioSource.PlayOneShot(damageAudio);
+        //suono damage
+        if(playerHealth > 0){
+        _healthAudioSource.PlayOneShot(damageAudio);
+        }
 
     }
 
