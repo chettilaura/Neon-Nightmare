@@ -6905,6 +6905,10 @@ PrefabInstance:
       propertyPath: _waypoints.Array.data[2]
       value: 
       objectReference: {fileID: 343223450}
+    - target: {fileID: 1080936293, guid: 9885ae0a057c4a345869ad4f8e9e3fbf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 259880176221654222, guid: 9885ae0a057c4a345869ad4f8e9e3fbf, type: 3}
       propertyPath: m_Name
       value: sp4m
@@ -6957,6 +6961,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 917042713}
+    - target: {fileID: 5201147380147340466, guid: 9885ae0a057c4a345869ad4f8e9e3fbf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9885ae0a057c4a345869ad4f8e9e3fbf, type: 3}
 --- !u!1001 &423397020
@@ -18127,7 +18135,7 @@ GameObject:
   - component: {fileID: 1022020147}
   - component: {fileID: 1022020146}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: PauseGUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18209,7 +18217,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!224 &1022020150
 RectTransform:
@@ -31006,6 +31014,10 @@ PrefabInstance:
       propertyPath: _waypoints.Array.data[2]
       value: 
       objectReference: {fileID: 304401180}
+    - target: {fileID: 1080936293, guid: 9885ae0a057c4a345869ad4f8e9e3fbf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 259880176221654222, guid: 9885ae0a057c4a345869ad4f8e9e3fbf, type: 3}
       propertyPath: m_Name
       value: sp4m (1)
@@ -31058,6 +31070,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 917042713}
+    - target: {fileID: 5201147380147340466, guid: 9885ae0a057c4a345869ad4f8e9e3fbf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9885ae0a057c4a345869ad4f8e9e3fbf, type: 3}
 --- !u!1001 &1809144724
@@ -32532,6 +32548,14 @@ PrefabInstance:
     - target: {fileID: 4630590914408006439, guid: 091377be6e6b21b49a6c92cb7c0c0748, type: 3}
       propertyPath: m_Name
       value: DamageGui
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630590914408006439, guid: 091377be6e6b21b49a6c92cb7c0c0748, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630590914408006440, guid: 091377be6e6b21b49a6c92cb7c0c0748, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4630590914408006443, guid: 091377be6e6b21b49a6c92cb7c0c0748, type: 3}
       propertyPath: m_Pivot.x
@@ -34994,6 +35018,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1617057498819643496, guid: b3b7b15fcb63af24e83c21ef8d45b1a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617057498819643499, guid: b3b7b15fcb63af24e83c21ef8d45b1a7, type: 3}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

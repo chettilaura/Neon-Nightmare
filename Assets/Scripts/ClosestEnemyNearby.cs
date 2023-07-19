@@ -103,6 +103,7 @@ public class ClosestEnemyNearby : MonoBehaviour
                    // Debug.Log("primo else");
                 }
                 
+                if(virusLife.virusHealth != null)
                 if (virusLife.virusHealth == 0)
                     _countTime = 0;
 
