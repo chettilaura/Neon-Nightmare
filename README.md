@@ -13,7 +13,7 @@ To play Neon Nightmare, download it from our itch.io page:
 https://agn-ese.itch.io/neonnightmare
 
 ## Usage
-![Alt text](add url)
+![Alt text](https://github.com/chettilaura/Neon-Nightmare/blob/main/navigation.png)
 
 
 ## Credits
